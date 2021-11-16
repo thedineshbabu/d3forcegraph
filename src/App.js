@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ForceLayout from "./Components/ForceLayout";
+import GroupInBoxLayout from "./Components/GroupInBoxLayout";
+import React, { useState } from "react";
 
 function App() {
+  const [layout, setLayout] = useState("GroupInBoxLayout");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="btnContainer">
+        <button onClick={() => setLayout("Basic")}>Basic</button>{" "}
+        <button onClick={() => setLayout("GroupInBoxLayout")}>
+          GroupInBoxLayout
+        </button>
+      </div>
+      {layout === "Basic" && <ForceLayout width={960} height={500} />}
+      {layout === "GroupInBoxLayout" && <GroupInBoxLayout />}
     </div>
   );
 }
