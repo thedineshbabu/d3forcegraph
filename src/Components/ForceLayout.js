@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
-import data from "./data.json";
+import sampleData from "./sampleData.json";
 
 const ForceLayout = (props) => {
   const myContainer = useRef(null);
+  const data = sampleData.graph;
   const { width, height } = props;
   const style = {
     width,
@@ -72,7 +73,7 @@ const ForceLayout = (props) => {
       .style("stroke", "white")
       .style("stroke-width", 1.5)
       .style("fill", function (d) {
-        return color(d.group);
+        return color(d.subFunction);
       })
       .call(
         d3

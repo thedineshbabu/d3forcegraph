@@ -1,0 +1,5206 @@
+{
+  "graph": {
+    "name": "Career Path",
+    "title": "Career Path: Software Engineer III",
+    "desc": "",
+    "properties": {
+      "currentJob": "ITM316"
+    },
+    "metadata": {
+      "function": ["Function1", "Function2", "Function3"],
+      "grades": ["A", "B", "C", "D", "E", "F"]
+    },
+    "nodes": [
+      {
+        "id": "ITA0416",
+        "name": "Development Supervisor III",
+        "title": "Development Supervisor III",
+        "subFunction": "Application Development",
+        "level": "Front Line Manager",
+        "subLevel": "Professional Staff Manager",
+        "grade": 16
+      },
+      {
+        "id": "ITA0417",
+        "name": "Development Supervisor IV",
+        "title": "Development Supervisor IV",
+        "subFunction": "Application Development",
+        "level": "Front Line Manager",
+        "subLevel": "Professional Staff Manager",
+        "grade": 17
+      },
+      {
+        "id": "ITA0518",
+        "name": "Development Manager II",
+        "title": "Development Manager II",
+        "subFunction": "Application Development",
+        "level": "Front Line Manager",
+        "subLevel": "Professional Staff Manager",
+        "grade": 18
+      },
+      {
+        "id": "ITA0519",
+        "name": "Development Manager III",
+        "title": "Development Manager III",
+        "subFunction": "Application Development",
+        "level": "Front Line Manager",
+        "subLevel": "Professional Staff Manager",
+        "grade": 19
+      },
+      {
+        "id": "ITA0520",
+        "name": "Development Manager IV",
+        "title": "Development Manager IV",
+        "subFunction": "Application Development",
+        "level": "Front Line Manager",
+        "subLevel": "Professional Staff Manager",
+        "grade": 20
+      },
+      {
+        "id": "ITA0915",
+        "name": "Implementation Manager/Engineer / ERP Consultant II",
+        "title": "Implementation Manager/Engineer / ERP Consultant II",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 15
+      },
+      {
+        "id": "ITA0916",
+        "name": "Implementation Manager/Engineer / ERP Consultant III",
+        "title": "Implementation Manager/Engineer / ERP Consultant III",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 16
+      },
+      {
+        "id": "ITA0917",
+        "name": "Implementation Manager/Engineer / ERP Consultant IV",
+        "title": "Implementation Manager/Engineer / ERP Consultant IV",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 17
+      },
+      {
+        "id": "ITA0918",
+        "name": "Implementation Manager/Engineer / ERP Consultant V",
+        "title": "Implementation Manager/Engineer / ERP Consultant V",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 18
+      },
+      {
+        "id": "ITA1017",
+        "name": "Lead Developer I",
+        "title": "Lead Developer I",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 17
+      },
+      {
+        "id": "ITA1018",
+        "name": "Lead Developer II",
+        "title": "Lead Developer II",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 18
+      },
+      {
+        "id": "ITA1019",
+        "name": "Lead Developer III",
+        "title": "Lead Developer III",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Expert Professional",
+        "grade": 19
+      },
+      {
+        "id": "ITA1415",
+        "name": "Web Developer III",
+        "title": "Web Developer III",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 15
+      },
+      {
+        "id": "ITB0612",
+        "name": "System Administrator III",
+        "title": "System Administrator III",
+        "subFunction": "Infrastructure Development",
+        "level": "Individual Contributor",
+        "subLevel": "Vocational Contributor",
+        "grade": 12
+      },
+      {
+        "id": "ITB0613",
+        "name": "System Administrator IV",
+        "title": "System Administrator IV",
+        "subFunction": "Infrastructure Development",
+        "level": "Individual Contributor",
+        "subLevel": "Vocational Contributor",
+        "grade": 13
+      },
+      {
+        "id": "ITB0614",
+        "name": "System Administrator V",
+        "title": "System Administrator V",
+        "subFunction": "Infrastructure Development",
+        "level": "Individual Contributor",
+        "subLevel": "Vocational Contributor",
+        "grade": 14
+      },
+      {
+        "id": "ITC0415",
+        "name": "Help Desk Manager III",
+        "title": "Help Desk Manager III",
+        "subFunction": "Technical Operations and End User Support",
+        "level": "Front Line Manager",
+        "subLevel": "Operational Staff Manager",
+        "grade": 15
+      },
+      {
+        "id": "ITC0416",
+        "name": "Help Desk Manager IV",
+        "title": "Help Desk Manager IV",
+        "subFunction": "Technical Operations and End User Support",
+        "level": "Front Line Manager",
+        "subLevel": "Operational Staff Manager",
+        "grade": 16
+      },
+      {
+        "id": "ITC0417",
+        "name": "Help Desk Manager V",
+        "title": "Help Desk Manager V",
+        "subFunction": "Technical Operations and End User Support",
+        "level": "Front Line Manager",
+        "subLevel": "Operational Staff Manager",
+        "grade": 17
+      },
+      {
+        "id": "ITC0418",
+        "name": "Help Desk Manager VI",
+        "title": "Help Desk Manager VI",
+        "subFunction": "Technical Operations and End User Support",
+        "level": "Mid Level Manager",
+        "subLevel": "Business Unit Mid Level Manager",
+        "grade": 18
+      },
+      {
+        "id": "ITD0916",
+        "name": "Database Manager I",
+        "title": "Database Manager I",
+        "subFunction": "Data Management and Security",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 16
+      },
+      {
+        "id": "ITD0917",
+        "name": "Database Manager II",
+        "title": "Database Manager II",
+        "subFunction": "Data Management and Security",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 17
+      },
+      {
+        "id": "ITD0918",
+        "name": "Database Manager III",
+        "title": "Database Manager III",
+        "subFunction": "Data Management and Security",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 18
+      },
+      {
+        "id": "ITH0516",
+        "name": "IT Consultant I",
+        "title": "IT Consultant I",
+        "subFunction": "Enterprise Information Architecture",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 16
+      },
+      {
+        "id": "ITH0517",
+        "name": "IT Consultant II",
+        "title": "IT Consultant II",
+        "subFunction": "Enterprise Information Architecture",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 17
+      },
+      {
+        "id": "ITH0518",
+        "name": "IT Consultant III",
+        "title": "IT Consultant III",
+        "subFunction": "Enterprise Information Architecture",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 18
+      },
+      {
+        "id": "ITH0519",
+        "name": "IT Consultant IV",
+        "title": "IT Consultant IV",
+        "subFunction": "Enterprise Information Architecture",
+        "level": "Individual Contributor",
+        "subLevel": "Expert Professional",
+        "grade": 19
+      },
+      {
+        "id": "ITI0313",
+        "name": "Business Analyst I",
+        "title": "Business Analyst I",
+        "subFunction": "Business and Systems Analysis",
+        "level": "Individual Contributor",
+        "subLevel": "Vocational Contributor",
+        "grade": 13
+      },
+      {
+        "id": "ITI0314",
+        "name": "Business Analyst II",
+        "title": "Business Analyst II",
+        "subFunction": "Business and Systems Analysis",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 14
+      },
+      {
+        "id": "ITI0315",
+        "name": "Business Analyst III",
+        "title": "Business Analyst III",
+        "subFunction": "Business and Systems Analysis",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 15
+      },
+      {
+        "id": "ITI0316",
+        "name": "Business Analyst IV",
+        "title": "Business Analyst IV",
+        "subFunction": "Business and Systems Analysis",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 16
+      },
+      {
+        "id": "ITI0317",
+        "name": "Business Analyst V",
+        "title": "Business Analyst V",
+        "subFunction": "Business and Systems Analysis",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 17
+      },
+      {
+        "id": "ITM1019",
+        "name": "Application Architect II",
+        "title": "Application Architect II",
+        "subFunction": "Software Engineering",
+        "level": "Individual Contributor",
+        "subLevel": "Expert Professional",
+        "grade": 19
+      },
+      {
+        "id": "ITM1113",
+        "name": "Assistant Software Developer II",
+        "title": "Assistant Software Developer II",
+        "subFunction": "Software Engineering",
+        "level": "Individual Contributor",
+        "subLevel": "Vocational Contributor",
+        "grade": 13
+      },
+      {
+        "id": "ITM1215",
+        "name": "Localization Engineer II",
+        "title": "Localization Engineer II",
+        "subFunction": "Software Engineering",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 15
+      },
+      {
+        "id": "ITM1314",
+        "name": "Software Engineer I",
+        "title": "Software Engineer I",
+        "subFunction": "Software Engineering",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 14
+      },
+      {
+        "id": "ITM1315",
+        "name": "Software Engineer II",
+        "title": "Software Engineer II",
+        "subFunction": "Software Engineering",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 15
+      },
+      {
+        "id": "ITM1316",
+        "name": "Software Engineer III",
+        "title": "Software Engineer III",
+        "subFunction": "Software Engineering",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 16
+      },
+      {
+        "id": "ITM1317",
+        "name": "Software Engineer IV",
+        "title": "Software Engineer IV",
+        "subFunction": "Software Engineering",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 17
+      },
+      {
+        "id": "ITM1318",
+        "name": "Software Engineer V",
+        "title": "Software Engineer V",
+        "subFunction": "Software Engineering",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 18
+      },
+      {
+        "id": "ITM1420",
+        "name": "Software Engineering Manager III",
+        "title": "Software Engineering Manager III",
+        "subFunction": "Software Engineering",
+        "level": "Mid Level Manager",
+        "subLevel": "Functional Mid Level Manager",
+        "grade": 20
+      },
+      {
+        "id": "ITZ0817",
+        "name": "IT Manager I",
+        "title": "IT Manager I",
+        "subFunction": "General Executive",
+        "level": "Front Line Manager",
+        "subLevel": "Professional Staff Manager",
+        "grade": 17
+      },
+      {
+        "id": "ITZ0818",
+        "name": "IT Manager II",
+        "title": "IT Manager II",
+        "subFunction": "General Executive",
+        "level": "Front Line Manager",
+        "subLevel": "Professional Staff Manager",
+        "grade": 18
+      },
+      {
+        "id": "ITZ0819",
+        "name": "IT Manager III",
+        "title": "IT Manager III",
+        "subFunction": "General Executive",
+        "level": "Mid Level Manager",
+        "subLevel": "Functional Mid Level Manager",
+        "grade": 19
+      },
+      {
+        "id": "ITZ0820",
+        "name": "IT Manager IV",
+        "title": "IT Manager IV",
+        "subFunction": "General Executive",
+        "level": "Mid Level Manager",
+        "subLevel": "Functional Mid Level Manager",
+        "grade": 20
+      },
+      {
+        "id": "ITA0113",
+        "name": "Development Support II",
+        "title": "Development Support II",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Vocational Contributor",
+        "grade": 13
+      },
+      {
+        "id": "ITA0214",
+        "name": "Application Developer I",
+        "title": "Application Developer I",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 14
+      },
+      {
+        "id": "ITA0215",
+        "name": "Application Developer II",
+        "title": "Application Developer II",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 15
+      },
+      {
+        "id": "ITA0216",
+        "name": "Application Developer III",
+        "title": "Application Developer III",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 16
+      },
+      {
+        "id": "ITA0217",
+        "name": "Application Developer IV",
+        "title": "Application Developer IV",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 17
+      },
+      {
+        "id": "ITA0617",
+        "name": "Lead Mobile App Developer II",
+        "title": "Lead Mobile App Developer II",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 17
+      },
+      {
+        "id": "ITA0813",
+        "name": "Mobile App Developer I",
+        "title": "Mobile App Developer I",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Vocational Contributor",
+        "grade": 13
+      },
+      {
+        "id": "ITA0815",
+        "name": "Mobile App Developer III",
+        "title": "Mobile App Developer III",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 15
+      },
+      {
+        "id": "ITA1115",
+        "name": "Quality Assurance / Test Manager I",
+        "title": "Quality Assurance / Test Manager I",
+        "subFunction": "Application Development",
+        "level": "Front Line Manager",
+        "subLevel": "Professional Staff Manager",
+        "grade": 15
+      },
+      {
+        "id": "ITA1116",
+        "name": "Quality Assurance / Test Manager II",
+        "title": "Quality Assurance / Test Manager II",
+        "subFunction": "Application Development",
+        "level": "Front Line Manager",
+        "subLevel": "Professional Staff Manager",
+        "grade": 16
+      },
+      {
+        "id": "ITA1117",
+        "name": "Quality Assurance / Test Manager III",
+        "title": "Quality Assurance / Test Manager III",
+        "subFunction": "Application Development",
+        "level": "Front Line Manager",
+        "subLevel": "Professional Staff Manager",
+        "grade": 17
+      },
+      {
+        "id": "ITA1118",
+        "name": "Quality Assurance / Test Manager IV",
+        "title": "Quality Assurance / Test Manager IV",
+        "subFunction": "Application Development",
+        "level": "Front Line Manager",
+        "subLevel": "Professional Staff Manager",
+        "grade": 18
+      },
+      {
+        "id": "ITA1213",
+        "name": "Quality Assurance Analyst / Tester I",
+        "title": "Quality Assurance Analyst / Tester I",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Vocational Contributor",
+        "grade": 13
+      },
+      {
+        "id": "ITA1214",
+        "name": "Quality Assurance Analyst / Tester II",
+        "title": "Quality Assurance Analyst / Tester II",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 14
+      },
+      {
+        "id": "ITA1215",
+        "name": "Quality Assurance Analyst / Tester III",
+        "title": "Quality Assurance Analyst / Tester III",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 15
+      },
+      {
+        "id": "ITB0418",
+        "name": "Infrastructure Manager I",
+        "title": "Infrastructure Manager I",
+        "subFunction": "Infrastructure Development",
+        "level": "Front Line Manager",
+        "subLevel": "Professional Staff Manager",
+        "grade": 18
+      },
+      {
+        "id": "ITB0419",
+        "name": "Infrastructure Manager II",
+        "title": "Infrastructure Manager II",
+        "subFunction": "Infrastructure Development",
+        "level": "Front Line Manager",
+        "subLevel": "Professional Staff Manager",
+        "grade": 19
+      },
+      {
+        "id": "ITB0420",
+        "name": "Infrastructure Manager III",
+        "title": "Infrastructure Manager III",
+        "subFunction": "Infrastructure Development",
+        "level": "Front Line Manager",
+        "subLevel": "Professional Staff Manager",
+        "grade": 20
+      },
+      {
+        "id": "ITB0514",
+        "name": "Network Specialist I",
+        "title": "Network Specialist I",
+        "subFunction": "Infrastructure Development",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 14
+      },
+      {
+        "id": "ITB0515",
+        "name": "Network Specialist II",
+        "title": "Network Specialist II",
+        "subFunction": "Infrastructure Development",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 15
+      },
+      {
+        "id": "ITB0516",
+        "name": "Network Specialist III",
+        "title": "Network Specialist III",
+        "subFunction": "Infrastructure Development",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 16
+      },
+      {
+        "id": "ITB0517",
+        "name": "Network Specialist IV",
+        "title": "Network Specialist IV",
+        "subFunction": "Infrastructure Development",
+        "level": "Front Line Manager",
+        "subLevel": "Professional Staff Manager",
+        "grade": 17
+      },
+      {
+        "id": "ITC0112",
+        "name": "Help Desk Analyst III",
+        "title": "Help Desk Analyst III",
+        "subFunction": "Technical Operations and End User Support",
+        "level": "Individual Contributor",
+        "subLevel": "Vocational Contributor",
+        "grade": 12
+      },
+      {
+        "id": "ITC0113",
+        "name": "Help Desk Analyst IV",
+        "title": "Help Desk Analyst IV",
+        "subFunction": "Technical Operations and End User Support",
+        "level": "Individual Contributor",
+        "subLevel": "Vocational Contributor",
+        "grade": 13
+      },
+      {
+        "id": "ITC0114",
+        "name": "Help Desk Analyst V",
+        "title": "Help Desk Analyst V",
+        "subFunction": "Technical Operations and End User Support",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 14
+      },
+      {
+        "id": "ITC0613",
+        "name": "Training Specialist I",
+        "title": "Training Specialist I",
+        "subFunction": "Technical Operations and End User Support",
+        "level": "Individual Contributor",
+        "subLevel": "Vocational Contributor",
+        "grade": 13
+      },
+      {
+        "id": "ITC0614",
+        "name": "Training Specialist II",
+        "title": "Training Specialist II",
+        "subFunction": "Technical Operations and End User Support",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 14
+      },
+      {
+        "id": "ITC0615",
+        "name": "Training Specialist III",
+        "title": "Training Specialist III",
+        "subFunction": "Technical Operations and End User Support",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 15
+      },
+      {
+        "id": "ITD0213",
+        "name": "Database Administrator I",
+        "title": "Database Administrator I",
+        "subFunction": "Data Management and Security",
+        "level": "Individual Contributor",
+        "subLevel": "Vocational Contributor",
+        "grade": 13
+      },
+      {
+        "id": "ITD0214",
+        "name": "Database Administrator II",
+        "title": "Database Administrator II",
+        "subFunction": "Data Management and Security",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 14
+      },
+      {
+        "id": "ITD0215",
+        "name": "Database Administrator III",
+        "title": "Database Administrator III",
+        "subFunction": "Data Management and Security",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 15
+      },
+      {
+        "id": "ITD0216",
+        "name": "Database Administrator IV",
+        "title": "Database Administrator IV",
+        "subFunction": "Data Management and Security",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 16
+      },
+      {
+        "id": "ITD0518",
+        "name": "Data Security Specialist III",
+        "title": "Data Security Specialist III",
+        "subFunction": "Data Management and Security",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 18
+      },
+      {
+        "id": "ITD0614",
+        "name": "Data Modeler I",
+        "title": "Data Modeler I",
+        "subFunction": "Data Management and Security",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 14
+      },
+      {
+        "id": "ITD0615",
+        "name": "Data Modeler II",
+        "title": "Data Modeler II",
+        "subFunction": "Data Management and Security",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 15
+      },
+      {
+        "id": "ITD0616",
+        "name": "Data Modeler III",
+        "title": "Data Modeler III",
+        "subFunction": "Data Management and Security",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 16
+      },
+      {
+        "id": "ITD0617",
+        "name": "Data Modeler IV",
+        "title": "Data Modeler IV",
+        "subFunction": "Data Management and Security",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 17
+      },
+      {
+        "id": "ITD0816",
+        "name": "Database Architect I",
+        "title": "Database Architect I",
+        "subFunction": "Data Management and Security",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 16
+      },
+      {
+        "id": "ITD0817",
+        "name": "Database Architect II",
+        "title": "Database Architect II",
+        "subFunction": "Data Management and Security",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 17
+      },
+      {
+        "id": "ITD0818",
+        "name": "Database Architect III",
+        "title": "Database Architect III",
+        "subFunction": "Data Management and Security",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 18
+      },
+      {
+        "id": "ITD1014",
+        "name": "Extract, Transform, Load (ETL) Developer I",
+        "title": "Extract, Transform, Load (ETL) Developer I",
+        "subFunction": "Data Management and Security",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 14
+      },
+      {
+        "id": "ITD1016",
+        "name": "Extract, Transform, Load (ETL) Developer III",
+        "title": "Extract, Transform, Load (ETL) Developer III",
+        "subFunction": "Data Management and Security",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 16
+      },
+      {
+        "id": "ITD1017",
+        "name": "Extract, Transform, Load (ETL) Developer IV",
+        "title": "Extract, Transform, Load (ETL) Developer IV",
+        "subFunction": "Data Management and Security",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 17
+      },
+      {
+        "id": "ITD1114",
+        "name": "Non-Relational Database Specialist I",
+        "title": "Non-Relational Database Specialist I",
+        "subFunction": "Data Management and Security",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 14
+      },
+      {
+        "id": "ITH0217",
+        "name": "Digital Architect I",
+        "title": "Digital Architect I",
+        "subFunction": "Enterprise Information Architecture",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 17
+      },
+      {
+        "id": "ITH0218",
+        "name": "Digital Architect II",
+        "title": "Digital Architect II",
+        "subFunction": "Enterprise Information Architecture",
+        "level": "Individual Contributor",
+        "subLevel": "Expert Professional",
+        "grade": 18
+      },
+      {
+        "id": "ITH0219",
+        "name": "Digital Architect III",
+        "title": "Digital Architect III",
+        "subFunction": "Enterprise Information Architecture",
+        "level": "Individual Contributor",
+        "subLevel": "Expert Professional",
+        "grade": 19
+      },
+      {
+        "id": "ITH0318",
+        "name": "Enterprise Architect I",
+        "title": "Enterprise Architect I",
+        "subFunction": "Enterprise Information Architecture",
+        "level": "Individual Contributor",
+        "subLevel": "Expert Professional",
+        "grade": 18
+      },
+      {
+        "id": "ITH0319",
+        "name": "Enterprise Architect II",
+        "title": "Enterprise Architect II",
+        "subFunction": "Enterprise Information Architecture",
+        "level": "Individual Contributor",
+        "subLevel": "Expert Professional",
+        "grade": 19
+      },
+      {
+        "id": "ITH0320",
+        "name": "Enterprise Architect III",
+        "title": "Enterprise Architect III",
+        "subFunction": "Enterprise Information Architecture",
+        "level": "Individual Contributor",
+        "subLevel": "Expert Professional",
+        "grade": 20
+      },
+      {
+        "id": "ITI0118",
+        "name": "Application / Integration Architect I",
+        "title": "Application / Integration Architect I",
+        "subFunction": "Business and Systems Analysis",
+        "level": "Individual Contributor",
+        "subLevel": "Expert Professional",
+        "grade": 18
+      },
+      {
+        "id": "ITI0119",
+        "name": "Application / Integration Architect II",
+        "title": "Application / Integration Architect II",
+        "subFunction": "Business and Systems Analysis",
+        "level": "Individual Contributor",
+        "subLevel": "Expert Professional",
+        "grade": 19
+      },
+      {
+        "id": "ITI0120",
+        "name": "Application / Integration Architect III",
+        "title": "Application / Integration Architect III",
+        "subFunction": "Business and Systems Analysis",
+        "level": "Individual Contributor",
+        "subLevel": "Expert Professional",
+        "grade": 20
+      },
+      {
+        "id": "ITK0112",
+        "name": "Cyber Security Administrator I",
+        "title": "Cyber Security Administrator I",
+        "subFunction": "Cyber Security",
+        "level": "Individual Contributor",
+        "subLevel": "Vocational Contributor",
+        "grade": 12
+      },
+      {
+        "id": "ITK0113",
+        "name": "Cyber Security Administrator II",
+        "title": "Cyber Security Administrator II",
+        "subFunction": "Cyber Security",
+        "level": "Individual Contributor",
+        "subLevel": "Vocational Contributor",
+        "grade": 13
+      },
+      {
+        "id": "ITK0114",
+        "name": "Cyber Security Administrator III",
+        "title": "Cyber Security Administrator III",
+        "subFunction": "Cyber Security",
+        "level": "Individual Contributor",
+        "subLevel": "Vocational Contributor",
+        "grade": 14
+      },
+      {
+        "id": "ITK0214",
+        "name": "Cyber Security Analyst I",
+        "title": "Cyber Security Analyst I",
+        "subFunction": "Cyber Security",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 14
+      },
+      {
+        "id": "ITK0215",
+        "name": "Cyber Security Analyst II",
+        "title": "Cyber Security Analyst II",
+        "subFunction": "Cyber Security",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 15
+      },
+      {
+        "id": "ITK0216",
+        "name": "Cyber Security Analyst III",
+        "title": "Cyber Security Analyst III",
+        "subFunction": "Cyber Security",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 16
+      },
+      {
+        "id": "ITK0316",
+        "name": "Cyber Security Architect / Specialist I",
+        "title": "Cyber Security Architect / Specialist I",
+        "subFunction": "Cyber Security",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 16
+      },
+      {
+        "id": "ITK0317",
+        "name": "Cyber Security Architect / Specialist II",
+        "title": "Cyber Security Architect / Specialist II",
+        "subFunction": "Cyber Security",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 17
+      },
+      {
+        "id": "ITK0318",
+        "name": "Cyber Security Architect / Specialist III",
+        "title": "Cyber Security Architect / Specialist III",
+        "subFunction": "Cyber Security",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 18
+      },
+      {
+        "id": "ITK0417",
+        "name": "Cyber Security Manager I",
+        "title": "Cyber Security Manager I",
+        "subFunction": "Cyber Security",
+        "level": "Front Line Manager",
+        "subLevel": "Professional Staff Manager",
+        "grade": 17
+      },
+      {
+        "id": "ITK0418",
+        "name": "Cyber Security Manager II",
+        "title": "Cyber Security Manager II",
+        "subFunction": "Cyber Security",
+        "level": "Front Line Manager",
+        "subLevel": "Professional Staff Manager",
+        "grade": 18
+      },
+      {
+        "id": "ITK0419",
+        "name": "Cyber Security Manager III",
+        "title": "Cyber Security Manager III",
+        "subFunction": "Cyber Security",
+        "level": "Front Line Manager",
+        "subLevel": "Professional Staff Manager",
+        "grade": 19
+      },
+      {
+        "id": "ITK0420",
+        "name": "Cyber Security Manager IV",
+        "title": "Cyber Security Manager IV",
+        "subFunction": "Cyber Security",
+        "level": "Front Line Manager",
+        "subLevel": "Professional Staff Manager",
+        "grade": 20
+      },
+      {
+        "id": "ITK0517",
+        "name": "Data Protection Officer / Privacy Manager I",
+        "title": "Data Protection Officer / Privacy Manager I",
+        "subFunction": "Cyber Security",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 17
+      },
+      {
+        "id": "ITK0518",
+        "name": "Data Protection Officer / Privacy Manager II",
+        "title": "Data Protection Officer / Privacy Manager II",
+        "subFunction": "Cyber Security",
+        "level": "Individual Contributor",
+        "subLevel": "Expert Professional",
+        "grade": 18
+      },
+      {
+        "id": "ITK0519",
+        "name": "Data Protection Officer / Privacy Manager III",
+        "title": "Data Protection Officer / Privacy Manager III",
+        "subFunction": "Cyber Security",
+        "level": "Individual Contributor",
+        "subLevel": "Expert Professional",
+        "grade": 19
+      },
+      {
+        "id": "ITK0615",
+        "name": "Privacy Officer II",
+        "title": "Privacy Officer II",
+        "subFunction": "Cyber Security",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 15
+      },
+      {
+        "id": "ITK0616",
+        "name": "Privacy Officer III",
+        "title": "Privacy Officer III",
+        "subFunction": "Cyber Security",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 16
+      },
+      {
+        "id": "ITL0114",
+        "name": "Blockchain Analyst I",
+        "title": "Blockchain Analyst I",
+        "subFunction": "Blockchain",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 14
+      },
+      {
+        "id": "ITL0115",
+        "name": "Blockchain Analyst II",
+        "title": "Blockchain Analyst II",
+        "subFunction": "Blockchain",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 15
+      },
+      {
+        "id": "ITL0116",
+        "name": "Blockchain Analyst III",
+        "title": "Blockchain Analyst III",
+        "subFunction": "Blockchain",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 16
+      },
+      {
+        "id": "ITL0217",
+        "name": "Blockchain Architect I",
+        "title": "Blockchain Architect I",
+        "subFunction": "Blockchain",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 17
+      },
+      {
+        "id": "ITL0218",
+        "name": "Blockchain Architect II",
+        "title": "Blockchain Architect II",
+        "subFunction": "Blockchain",
+        "level": "Individual Contributor",
+        "subLevel": "Expert Professional",
+        "grade": 18
+      },
+      {
+        "id": "ITL0219",
+        "name": "Blockchain Architect III",
+        "title": "Blockchain Architect III",
+        "subFunction": "Blockchain",
+        "level": "Individual Contributor",
+        "subLevel": "Expert Professional",
+        "grade": 19
+      },
+      {
+        "id": "ITA1318",
+        "name": "Head of Software Development and Implementation",
+        "title": "Head of Software Development and Implementation",
+        "subFunction": "Application Development",
+        "level": "Mid Level Manager",
+        "subLevel": "Functional Mid Level Manager",
+        "grade": 18
+      },
+      {
+        "id": "ITB0718",
+        "name": "Head of Infrastructure",
+        "title": "Head of Infrastructure",
+        "subFunction": "Infrastructure Development",
+        "level": "Mid Level Manager",
+        "subLevel": "Functional Mid Level Manager",
+        "grade": 18
+      },
+      {
+        "id": "ITC0918",
+        "name": "Head of End User Support",
+        "title": "Head of End User Support",
+        "subFunction": "Technical Operations and End User Support",
+        "level": "Mid Level Manager",
+        "subLevel": "Functional Mid Level Manager",
+        "grade": 18
+      },
+      {
+        "id": "ITD1218",
+        "name": "Head of Data Management",
+        "title": "Head of Data Management",
+        "subFunction": "Data Management and Security",
+        "level": "Mid Level Manager",
+        "subLevel": "Functional Mid Level Manager",
+        "grade": 18
+      },
+      {
+        "id": "ITA0013",
+        "name": "Information Technology - Software Development and Implementation - Vocational Contributor II",
+        "title": "Information Technology - Software Development and Implementation - Vocational Contributor II",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Vocational Contributor",
+        "grade": 13
+      },
+      {
+        "id": "ITA0014",
+        "name": "Information Technology - Software Development and Implementation - Entry-Level Professional I",
+        "title": "Information Technology - Software Development and Implementation - Entry-Level Professional I",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 14
+      },
+      {
+        "id": "ITA0015",
+        "name": "Information Technology - Software Development and Implementation - Entry-Level Professional II",
+        "title": "Information Technology - Software Development and Implementation - Entry-Level Professional II",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 15
+      },
+      {
+        "id": "ITA9918",
+        "name": "Information Technology - Software Development and Implementation - Functional Manager of Managers II",
+        "title": "Information Technology - Software Development and Implementation - Functional Manager of Managers II",
+        "subFunction": "Application Development",
+        "level": "Mid Level Manager",
+        "subLevel": "Functional Mid Level Manager",
+        "grade": 18
+      },
+      {
+        "id": "ITA9919",
+        "name": "Information Technology - Software Development and Implementation - Functional Manager of Managers III",
+        "title": "Information Technology - Software Development and Implementation - Functional Manager of Managers III",
+        "subFunction": "Application Development",
+        "level": "Mid Level Manager",
+        "subLevel": "Functional Mid Level Manager",
+        "grade": 19
+      },
+      {
+        "id": "ITA9920",
+        "name": "Information Technology - Software Development and Implementation - Business Manager of Managers I",
+        "title": "Information Technology - Software Development and Implementation - Business Manager of Managers I",
+        "subFunction": "Application Development",
+        "level": "Mid Level Manager",
+        "subLevel": "Business Unit Mid Level Manager",
+        "grade": 20
+      },
+      {
+        "id": "ITX9918",
+        "name": "Information Technology - General - Functional Manager of Managers II",
+        "title": "Information Technology - General - Functional Manager of Managers II",
+        "subFunction": "General Non Executive",
+        "level": "Mid Level Manager",
+        "subLevel": "Functional Mid Level Manager",
+        "grade": 18
+      },
+      {
+        "id": "ITX0017",
+        "name": "Information Technology - General - Specialist Professional II",
+        "title": "Information Technology - General - Specialist Professional II",
+        "subFunction": "General Non Executive",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 17
+      },
+      {
+        "id": "ITX0016",
+        "name": "Information Technology - General - Specialist Professional I",
+        "title": "Information Technology - General - Specialist Professional I",
+        "subFunction": "General Non Executive",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 16
+      },
+      {
+        "id": "ITX0015",
+        "name": "Information Technology - General - Entry-Level Professional II",
+        "title": "Information Technology - General - Entry-Level Professional II",
+        "subFunction": "General Non Executive",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 15
+      },
+      {
+        "id": "ITK9918",
+        "name": "Information Technology - Cyber Security - Functional Manager of Managers II",
+        "title": "Information Technology - Cyber Security - Functional Manager of Managers II",
+        "subFunction": "Cyber Security",
+        "level": "Mid Level Manager",
+        "subLevel": "Functional Mid Level Manager",
+        "grade": 18
+      },
+      {
+        "id": "ITI0016",
+        "name": "Information Technology - Business and Systems Analysis - Specialist Professional I",
+        "title": "Information Technology - Business and Systems Analysis - Specialist Professional I",
+        "subFunction": "Business and Systems Analysis",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 16
+      },
+      {
+        "id": "ITI0015",
+        "name": "Information Technology - Business and Systems Analysis - Entry-Level Professional II",
+        "title": "Information Technology - Business and Systems Analysis - Entry-Level Professional II",
+        "subFunction": "Business and Systems Analysis",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 15
+      },
+      {
+        "id": "ITI0014",
+        "name": "Information Technology - Business and Systems Analysis - Entry-Level Professional I",
+        "title": "Information Technology - Business and Systems Analysis - Entry-Level Professional I",
+        "subFunction": "Business and Systems Analysis",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 14
+      },
+      {
+        "id": "ITI0013",
+        "name": "Information Technology - Business and Systems Analysis - Vocational Contributor II",
+        "title": "Information Technology - Business and Systems Analysis - Vocational Contributor II",
+        "subFunction": "Business and Systems Analysis",
+        "level": "Individual Contributor",
+        "subLevel": "Vocational Contributor",
+        "grade": 13
+      },
+      {
+        "id": "ITD9918",
+        "name": "Information Technology - Data Management - Functional Manager of Managers II",
+        "title": "Information Technology - Data Management - Functional Manager of Managers II",
+        "subFunction": "Data Management and Security",
+        "level": "Mid Level Manager",
+        "subLevel": "Functional Mid Level Manager",
+        "grade": 18
+      },
+      {
+        "id": "ITD0016",
+        "name": "Information Technology - Data Management - Specialist Professional I",
+        "title": "Information Technology - Data Management - Specialist Professional I",
+        "subFunction": "Data Management and Security",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 16
+      },
+      {
+        "id": "ITC9918",
+        "name": "Information Technology - End User Support - Functional Manager of Managers I",
+        "title": "Information Technology - End User Support - Functional Manager of Managers I",
+        "subFunction": "Technical Operations and End User Support",
+        "level": "Mid Level Manager",
+        "subLevel": "Functional Mid Level Manager",
+        "grade": 18
+      },
+      {
+        "id": "ITC0017",
+        "name": "Information Technology - End User Support - Specialist Professional II",
+        "title": "Information Technology - End User Support - Specialist Professional II",
+        "subFunction": "Technical Operations and End User Support",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 17
+      },
+      {
+        "id": "ITC0016",
+        "name": "Information Technology - End User Support - Specialist Professional I",
+        "title": "Information Technology - End User Support - Specialist Professional I",
+        "subFunction": "Technical Operations and End User Support",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 16
+      },
+      {
+        "id": "ITC0014",
+        "name": "Information Technology - End User Support - Entry-Level Professional I",
+        "title": "Information Technology - End User Support - Entry-Level Professional I",
+        "subFunction": "Technical Operations and End User Support",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 14
+      },
+      {
+        "id": "ITC0013",
+        "name": "Information Technology - End User Support - Vocational Contributor II",
+        "title": "Information Technology - End User Support - Vocational Contributor II",
+        "subFunction": "Technical Operations and End User Support",
+        "level": "Individual Contributor",
+        "subLevel": "Vocational Contributor",
+        "grade": 13
+      },
+      {
+        "id": "ITC0012",
+        "name": "Information Technology - End User Support - Vocational Contributor I",
+        "title": "Information Technology - End User Support - Vocational Contributor I",
+        "subFunction": "Technical Operations and End User Support",
+        "level": "Individual Contributor",
+        "subLevel": "Vocational Contributor",
+        "grade": 12
+      },
+      {
+        "id": "ITC0011",
+        "name": "Information Technology - End User Support - Procedural Contributor IV",
+        "title": "Information Technology - End User Support - Procedural Contributor IV",
+        "subFunction": "Technical Operations and End User Support",
+        "level": "Individual Contributor",
+        "subLevel": "Procedural Contributor",
+        "grade": 11
+      },
+      {
+        "id": "ITB9920",
+        "name": "Information Technology - Infrastructure - Business Manager of Managers I",
+        "title": "Information Technology - Infrastructure - Business Manager of Managers I",
+        "subFunction": "Infrastructure Development",
+        "level": "Mid Level Manager",
+        "subLevel": "Business Unit Mid Level Manager",
+        "grade": 20
+      },
+      {
+        "id": "ITB9918",
+        "name": "Information Technology - Infrastructure - Functional Manager of Managers II",
+        "title": "Information Technology - Infrastructure - Functional Manager of Managers II",
+        "subFunction": "Infrastructure Development",
+        "level": "Mid Level Manager",
+        "subLevel": "Functional Mid Level Manager",
+        "grade": 18
+      },
+      {
+        "id": "ITB0017",
+        "name": "Information Technology - Infrastructure - Specialist Professional II",
+        "title": "Information Technology - Infrastructure - Specialist Professional II",
+        "subFunction": "Infrastructure Development",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 17
+      },
+      {
+        "id": "ITB0015",
+        "name": "Information Technology - Infrastructure - Entry-Level Professional II",
+        "title": "Information Technology - Infrastructure - Entry-Level Professional II",
+        "subFunction": "Infrastructure Development",
+        "level": "Individual Contributor",
+        "subLevel": "Entry Level Professional",
+        "grade": 15
+      },
+      {
+        "id": "ITB0013",
+        "name": "Information Technology - Infrastructure - Vocational Contributor II",
+        "title": "Information Technology - Infrastructure - Vocational Contributor II",
+        "subFunction": "Infrastructure Development",
+        "level": "Individual Contributor",
+        "subLevel": "Vocational Contributor",
+        "grade": 13
+      },
+      {
+        "id": "ITA0017",
+        "name": "Information Technology - Software Development and Implementation - Specialist Professional II",
+        "title": "Information Technology - Software Development and Implementation - Specialist Professional II",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 17
+      },
+      {
+        "id": "ITA0016",
+        "name": "Information Technology - Software Development and Implementation - Specialist Professional I",
+        "title": "Information Technology - Software Development and Implementation - Specialist Professional I",
+        "subFunction": "Application Development",
+        "level": "Individual Contributor",
+        "subLevel": "Specialist Professional",
+        "grade": 16
+      }
+    ],
+    "links": [
+      {
+        "source": "ITB0612",
+        "target": "ITB0514",
+        "transition_prob": 0.0364
+      },
+      {
+        "source": "ITB0612",
+        "target": "ITZ0818",
+        "transition_prob": 0.0159
+      },
+      {
+        "source": "ITB0612",
+        "target": "ITA9919",
+        "transition_prob": 0.0113
+      },
+      {
+        "source": "ITC0016",
+        "target": "ITH0517",
+        "transition_prob": 0.013
+      },
+      {
+        "source": "ITC0016",
+        "target": "ITC9918",
+        "transition_prob": 0.0168
+      },
+      {
+        "source": "ITA0518",
+        "target": "ITA0519",
+        "transition_prob": 0.0198
+      },
+      {
+        "source": "ITA0518",
+        "target": "ITA0520",
+        "transition_prob": 0.0101
+      },
+      {
+        "source": "ITH0517",
+        "target": "ITH0519",
+        "transition_prob": 0.0126
+      },
+      {
+        "source": "ITH0517",
+        "target": "ITI0118",
+        "transition_prob": 0.021
+      },
+      {
+        "source": "ITH0517",
+        "target": "ITZ0818",
+        "transition_prob": 0.0286
+      },
+      {
+        "source": "ITH0218",
+        "target": "ITK0419",
+        "transition_prob": 0.0167
+      },
+      {
+        "source": "ITA0915",
+        "target": "ITI0317",
+        "transition_prob": 0.0186
+      },
+      {
+        "source": "ITA0915",
+        "target": "ITZ0818",
+        "transition_prob": 0.0257
+      },
+      {
+        "source": "ITB0613",
+        "target": "ITA0014",
+        "transition_prob": 0.0294
+      },
+      {
+        "source": "ITB0613",
+        "target": "ITM1315",
+        "transition_prob": 0.0287
+      },
+      {
+        "source": "ITB0613",
+        "target": "ITA0214",
+        "transition_prob": 0.0103
+      },
+      {
+        "source": "ITH0516",
+        "target": "ITI0317",
+        "transition_prob": 0.0224
+      },
+      {
+        "source": "ITH0516",
+        "target": "ITI0118",
+        "transition_prob": 0.0115
+      },
+      {
+        "source": "ITI0015",
+        "target": "ITH0516",
+        "transition_prob": 0.0194
+      },
+      {
+        "source": "ITI0015",
+        "target": "ITA0216",
+        "transition_prob": 0.0165
+      },
+      {
+        "source": "ITI0015",
+        "target": "ITI0016",
+        "transition_prob": 0.0316
+      },
+      {
+        "source": "ITI0317",
+        "target": "ITA1318",
+        "transition_prob": 0.0123
+      },
+      {
+        "source": "ITI0317",
+        "target": "ITZ0818",
+        "transition_prob": 0.0334
+      },
+      {
+        "source": "ITI0317",
+        "target": "ITH0519",
+        "transition_prob": 0.0131
+      },
+      {
+        "source": "ITI0315",
+        "target": "ITH0516",
+        "transition_prob": 0.0263
+      },
+      {
+        "source": "ITI0315",
+        "target": "ITI0317",
+        "transition_prob": 0.0408
+      },
+      {
+        "source": "ITI0315",
+        "target": "ITH0517",
+        "transition_prob": 0.0159
+      },
+      {
+        "source": "ITA0015",
+        "target": "ITH0320",
+        "transition_prob": 0.0151
+      },
+      {
+        "source": "ITA0015",
+        "target": "ITH0519",
+        "transition_prob": 0.0309
+      },
+      {
+        "source": "ITA0015",
+        "target": "ITL0219",
+        "transition_prob": 0.0311
+      },
+      {
+        "source": "ITA0015",
+        "target": "ITM1318",
+        "transition_prob": 0.0307
+      },
+      {
+        "source": "ITA0015",
+        "target": "ITI0316",
+        "transition_prob": 0.0189
+      },
+      {
+        "source": "ITA0015",
+        "target": "ITA0216",
+        "transition_prob": 0.0184
+      },
+      {
+        "source": "ITC9918",
+        "target": "ITL0219",
+        "transition_prob": 0.0255
+      },
+      {
+        "source": "ITC9918",
+        "target": "ITH0320",
+        "transition_prob": 0.0101
+      },
+      {
+        "source": "ITC9918",
+        "target": "ITZ0820",
+        "transition_prob": 0.0101
+      },
+      {
+        "source": "ITC9918",
+        "target": "ITB0419",
+        "transition_prob": 0.0101
+      },
+      {
+        "source": "ITA0014",
+        "target": "ITM1315",
+        "transition_prob": 0.0438
+      },
+      {
+        "source": "ITA0014",
+        "target": "ITX9918",
+        "transition_prob": 0.0206
+      },
+      {
+        "source": "ITA0014",
+        "target": "ITL0219",
+        "transition_prob": 0.0832
+      },
+      {
+        "source": "ITA0014",
+        "target": "ITA1017",
+        "transition_prob": 0.0204
+      },
+      {
+        "source": "ITA0813",
+        "target": "ITA0014",
+        "transition_prob": 0.0195
+      },
+      {
+        "source": "ITA0813",
+        "target": "ITL0219",
+        "transition_prob": 0.0827
+      },
+      {
+        "source": "ITA0813",
+        "target": "ITZ0818",
+        "transition_prob": 0.0363
+      },
+      {
+        "source": "ITA0813",
+        "target": "ITC0014",
+        "transition_prob": 0.0129
+      },
+      {
+        "source": "ITA0813",
+        "target": "ITM1314",
+        "transition_prob": 0.0168
+      },
+      {
+        "source": "ITA0813",
+        "target": "ITA0915",
+        "transition_prob": 0.0107
+      },
+      {
+        "source": "ITK0112",
+        "target": "ITH0516",
+        "transition_prob": 0.0137
+      },
+      {
+        "source": "ITK0112",
+        "target": "ITI0317",
+        "transition_prob": 0.0108
+      },
+      {
+        "source": "ITK0112",
+        "target": "ITA0214",
+        "transition_prob": 0.0101
+      },
+      {
+        "source": "ITK0112",
+        "target": "ITA0216",
+        "transition_prob": 0.0133
+      },
+      {
+        "source": "ITK0112",
+        "target": "ITB0613",
+        "transition_prob": 0.0103
+      },
+      {
+        "source": "ITK0112",
+        "target": "ITC0614",
+        "transition_prob": 0.0229
+      },
+      {
+        "source": "ITI0118",
+        "target": "ITH0319",
+        "transition_prob": 0.0488
+      },
+      {
+        "source": "ITI0118",
+        "target": "ITL0219",
+        "transition_prob": 0.0177
+      },
+      {
+        "source": "ITI0118",
+        "target": "ITM1019",
+        "transition_prob": 0.0211
+      },
+      {
+        "source": "ITI0118",
+        "target": "ITH0320",
+        "transition_prob": 0.0275
+      },
+      {
+        "source": "ITI0313",
+        "target": "ITH0516",
+        "transition_prob": 0.0225
+      },
+      {
+        "source": "ITI0313",
+        "target": "ITI0315",
+        "transition_prob": 0.0324
+      },
+      {
+        "source": "ITI0313",
+        "target": "ITA0915",
+        "transition_prob": 0.0116
+      },
+      {
+        "source": "ITI0313",
+        "target": "ITI0016",
+        "transition_prob": 0.0428
+      },
+      {
+        "source": "ITX9918",
+        "target": "ITM1019",
+        "transition_prob": 0.012
+      },
+      {
+        "source": "ITX9918",
+        "target": "ITL0219",
+        "transition_prob": 0.0341
+      },
+      {
+        "source": "ITD0616",
+        "target": "ITA0217",
+        "transition_prob": 0.0106
+      },
+      {
+        "source": "ITD0616",
+        "target": "ITZ0818",
+        "transition_prob": 0.0154
+      },
+      {
+        "source": "ITD0616",
+        "target": "ITL0219",
+        "transition_prob": 0.0356
+      },
+      {
+        "source": "ITD0616",
+        "target": "ITH0517",
+        "transition_prob": 0.0117
+      },
+      {
+        "source": "ITD0616",
+        "target": "ITI0317",
+        "transition_prob": 0.0126
+      },
+      {
+        "source": "ITM1314",
+        "target": "ITX9918",
+        "transition_prob": 0.0184
+      },
+      {
+        "source": "ITM1314",
+        "target": "ITA0215",
+        "transition_prob": 0.0184
+      },
+      {
+        "source": "ITM1314",
+        "target": "ITM1315",
+        "transition_prob": 0.1598
+      },
+      {
+        "source": "ITM1314",
+        "target": "ITM1316",
+        "transition_prob": 0.0374
+      },
+      {
+        "source": "ITM1314",
+        "target": "ITA0217",
+        "transition_prob": 0.0124
+      },
+      {
+        "source": "ITA0917",
+        "target": "ITX9918",
+        "transition_prob": 0.0184
+      },
+      {
+        "source": "ITA0917",
+        "target": "ITZ0818",
+        "transition_prob": 0.0131
+      },
+      {
+        "source": "ITA0917",
+        "target": "ITL0219",
+        "transition_prob": 0.0321
+      },
+      {
+        "source": "ITA0917",
+        "target": "ITA9919",
+        "transition_prob": 0.0237
+      },
+      {
+        "source": "ITA0917",
+        "target": "ITM1318",
+        "transition_prob": 0.0121
+      },
+      {
+        "source": "ITA0216",
+        "target": "ITL0219",
+        "transition_prob": 0.0357
+      },
+      {
+        "source": "ITA0216",
+        "target": "ITX9918",
+        "transition_prob": 0.012
+      },
+      {
+        "source": "ITA0216",
+        "target": "ITA0217",
+        "transition_prob": 0.0119
+      },
+      {
+        "source": "ITA0216",
+        "target": "ITA1017",
+        "transition_prob": 0.0233
+      },
+      {
+        "source": "ITA0216",
+        "target": "ITA1018",
+        "transition_prob": 0.0104
+      },
+      {
+        "source": "ITA0216",
+        "target": "ITZ0818",
+        "transition_prob": 0.0141
+      },
+      {
+        "source": "ITZ0817",
+        "target": "ITC0418",
+        "transition_prob": 0.0115
+      },
+      {
+        "source": "ITZ0817",
+        "target": "ITZ0819",
+        "transition_prob": 0.014
+      },
+      {
+        "source": "ITZ0817",
+        "target": "ITL0219",
+        "transition_prob": 0.038
+      },
+      {
+        "source": "ITZ0817",
+        "target": "ITZ0818",
+        "transition_prob": 0.0648
+      },
+      {
+        "source": "ITB0514",
+        "target": "ITK0317",
+        "transition_prob": 0.0106
+      },
+      {
+        "source": "ITB0514",
+        "target": "ITB0515",
+        "transition_prob": 0.0382
+      },
+      {
+        "source": "ITB0514",
+        "target": "ITB0517",
+        "transition_prob": 0.0361
+      },
+      {
+        "source": "ITB0514",
+        "target": "ITL0219",
+        "transition_prob": 0.0242
+      },
+      {
+        "source": "ITB0514",
+        "target": "ITB0516",
+        "transition_prob": 0.018
+      },
+      {
+        "source": "ITI0013",
+        "target": "ITC0114",
+        "transition_prob": 0.0225
+      },
+      {
+        "source": "ITI0013",
+        "target": "ITI0016",
+        "transition_prob": 0.0135
+      },
+      {
+        "source": "ITI0013",
+        "target": "ITH0516",
+        "transition_prob": 0.0189
+      },
+      {
+        "source": "ITI0013",
+        "target": "ITB0514",
+        "transition_prob": 0.0297
+      },
+      {
+        "source": "ITI0013",
+        "target": "ITI0014",
+        "transition_prob": 0.0128
+      },
+      {
+        "source": "ITI0013",
+        "target": "ITL0219",
+        "transition_prob": 0.0365
+      },
+      {
+        "source": "ITB0614",
+        "target": "ITI0118",
+        "transition_prob": 0.0108
+      },
+      {
+        "source": "ITB0614",
+        "target": "ITL0219",
+        "transition_prob": 0.0318
+      },
+      {
+        "source": "ITB0614",
+        "target": "ITZ0818",
+        "transition_prob": 0.0175
+      },
+      {
+        "source": "ITB0614",
+        "target": "ITI0016",
+        "transition_prob": 0.0141
+      },
+      {
+        "source": "ITB0614",
+        "target": "ITH0516",
+        "transition_prob": 0.0187
+      },
+      {
+        "source": "ITB0614",
+        "target": "ITB0515",
+        "transition_prob": 0.0159
+      },
+      {
+        "source": "ITD0918",
+        "target": "ITL0219",
+        "transition_prob": 0.0439
+      },
+      {
+        "source": "ITH0519",
+        "target": "ITH0320",
+        "transition_prob": 0.0134
+      },
+      {
+        "source": "ITD0215",
+        "target": "ITZ0818",
+        "transition_prob": 0.0187
+      },
+      {
+        "source": "ITD0215",
+        "target": "ITA1017",
+        "transition_prob": 0.0118
+      },
+      {
+        "source": "ITD0215",
+        "target": "ITI0316",
+        "transition_prob": 0.0173
+      },
+      {
+        "source": "ITD0215",
+        "target": "ITI0016",
+        "transition_prob": 0.0196
+      },
+      {
+        "source": "ITD0215",
+        "target": "ITD0216",
+        "transition_prob": 0.0174
+      },
+      {
+        "source": "ITD0215",
+        "target": "ITI0317",
+        "transition_prob": 0.0181
+      },
+      {
+        "source": "ITD0215",
+        "target": "ITL0219",
+        "transition_prob": 0.051
+      },
+      {
+        "source": "ITA1214",
+        "target": "ITA0216",
+        "transition_prob": 0.0185
+      },
+      {
+        "source": "ITA1214",
+        "target": "ITA1117",
+        "transition_prob": 0.0201
+      },
+      {
+        "source": "ITA1214",
+        "target": "ITA1017",
+        "transition_prob": 0.0201
+      },
+      {
+        "source": "ITA1214",
+        "target": "ITA1115",
+        "transition_prob": 0.0565
+      },
+      {
+        "source": "ITA1214",
+        "target": "ITA1215",
+        "transition_prob": 0.0716
+      },
+      {
+        "source": "ITA0016",
+        "target": "ITA0917",
+        "transition_prob": 0.0238
+      },
+      {
+        "source": "ITA0016",
+        "target": "ITA1017",
+        "transition_prob": 0.0347
+      },
+      {
+        "source": "ITA0016",
+        "target": "ITL0219",
+        "transition_prob": 0.0286
+      },
+      {
+        "source": "ITA0016",
+        "target": "ITA9919",
+        "transition_prob": 0.0105
+      },
+      {
+        "source": "ITA0016",
+        "target": "ITX9918",
+        "transition_prob": 0.0146
+      },
+      {
+        "source": "ITA1117",
+        "target": "ITA1118",
+        "transition_prob": 0.0182
+      },
+      {
+        "source": "ITA1117",
+        "target": "ITZ0818",
+        "transition_prob": 0.0388
+      },
+      {
+        "source": "ITA1117",
+        "target": "ITA0518",
+        "transition_prob": 0.0166
+      },
+      {
+        "source": "ITA1117",
+        "target": "ITH0319",
+        "transition_prob": 0.0103
+      },
+      {
+        "source": "ITB0515",
+        "target": "ITB0517",
+        "transition_prob": 0.0655
+      },
+      {
+        "source": "ITB0515",
+        "target": "ITB0516",
+        "transition_prob": 0.05
+      },
+      {
+        "source": "ITB0515",
+        "target": "ITH0319",
+        "transition_prob": 0.0143
+      },
+      {
+        "source": "ITB0515",
+        "target": "ITL0219",
+        "transition_prob": 0.0202
+      },
+      {
+        "source": "ITB0515",
+        "target": "ITK0317",
+        "transition_prob": 0.0261
+      },
+      {
+        "source": "ITB0515",
+        "target": "ITH0517",
+        "transition_prob": 0.0129
+      },
+      {
+        "source": "ITC0112",
+        "target": "ITA0216",
+        "transition_prob": 0.0135
+      },
+      {
+        "source": "ITC0112",
+        "target": "ITZ0818",
+        "transition_prob": 0.0168
+      },
+      {
+        "source": "ITC0112",
+        "target": "ITI0313",
+        "transition_prob": 0.0132
+      },
+      {
+        "source": "ITC0112",
+        "target": "ITB0613",
+        "transition_prob": 0.0125
+      },
+      {
+        "source": "ITC0112",
+        "target": "ITM1315",
+        "transition_prob": 0.0186
+      },
+      {
+        "source": "ITC0112",
+        "target": "ITC0014",
+        "transition_prob": 0.0157
+      },
+      {
+        "source": "ITC0112",
+        "target": "ITA0013",
+        "transition_prob": 0.0105
+      },
+      {
+        "source": "ITC0112",
+        "target": "ITI0016",
+        "transition_prob": 0.0107
+      },
+      {
+        "source": "ITD0213",
+        "target": "ITA0014",
+        "transition_prob": 0.0212
+      },
+      {
+        "source": "ITD0213",
+        "target": "ITD0215",
+        "transition_prob": 0.0136
+      },
+      {
+        "source": "ITD0213",
+        "target": "ITM1318",
+        "transition_prob": 0.014
+      },
+      {
+        "source": "ITD0213",
+        "target": "ITI0315",
+        "transition_prob": 0.0134
+      },
+      {
+        "source": "ITD0213",
+        "target": "ITL0219",
+        "transition_prob": 0.078
+      },
+      {
+        "source": "ITD0213",
+        "target": "ITZ0818",
+        "transition_prob": 0.0194
+      },
+      {
+        "source": "ITD0213",
+        "target": "ITA0216",
+        "transition_prob": 0.0168
+      },
+      {
+        "source": "ITD0213",
+        "target": "ITA1017",
+        "transition_prob": 0.0156
+      },
+      {
+        "source": "ITM1315",
+        "target": "ITM1318",
+        "transition_prob": 0.0274
+      },
+      {
+        "source": "ITM1315",
+        "target": "ITL0219",
+        "transition_prob": 0.0616
+      },
+      {
+        "source": "ITM1315",
+        "target": "ITA1017",
+        "transition_prob": 0.0255
+      },
+      {
+        "source": "ITM1315",
+        "target": "ITX9918",
+        "transition_prob": 0.0196
+      },
+      {
+        "source": "ITM1315",
+        "target": "ITH0516",
+        "transition_prob": 0.0139
+      },
+      {
+        "source": "ITM1315",
+        "target": "ITM1316",
+        "transition_prob": 0.0332
+      },
+      {
+        "source": "ITM1315",
+        "target": "ITZ0818",
+        "transition_prob": 0.013
+      },
+      {
+        "source": "ITA0916",
+        "target": "ITI0317",
+        "transition_prob": 0.0349
+      },
+      {
+        "source": "ITA0916",
+        "target": "ITA1318",
+        "transition_prob": 0.0147
+      },
+      {
+        "source": "ITA0916",
+        "target": "ITH0320",
+        "transition_prob": 0.0121
+      },
+      {
+        "source": "ITA0916",
+        "target": "ITA0217",
+        "transition_prob": 0.0127
+      },
+      {
+        "source": "ITA0916",
+        "target": "ITZ0818",
+        "transition_prob": 0.0351
+      },
+      {
+        "source": "ITA0916",
+        "target": "ITH0517",
+        "transition_prob": 0.034
+      },
+      {
+        "source": "ITA0916",
+        "target": "ITX9918",
+        "transition_prob": 0.0114
+      },
+      {
+        "source": "ITA0916",
+        "target": "ITA1017",
+        "transition_prob": 0.0138
+      },
+      {
+        "source": "ITA0013",
+        "target": "ITX9918",
+        "transition_prob": 0.0151
+      },
+      {
+        "source": "ITA0013",
+        "target": "ITA1017",
+        "transition_prob": 0.0331
+      },
+      {
+        "source": "ITA0013",
+        "target": "ITZ0818",
+        "transition_prob": 0.011
+      },
+      {
+        "source": "ITA0013",
+        "target": "ITA0215",
+        "transition_prob": 0.0258
+      },
+      {
+        "source": "ITA0013",
+        "target": "ITA1415",
+        "transition_prob": 0.018
+      },
+      {
+        "source": "ITI0314",
+        "target": "ITI0317",
+        "transition_prob": 0.0348
+      },
+      {
+        "source": "ITI0314",
+        "target": "ITI0016",
+        "transition_prob": 0.0237
+      },
+      {
+        "source": "ITI0314",
+        "target": "ITI0315",
+        "transition_prob": 0.0219
+      },
+      {
+        "source": "ITI0314",
+        "target": "ITZ0817",
+        "transition_prob": 0.0101
+      },
+      {
+        "source": "ITI0314",
+        "target": "ITH0516",
+        "transition_prob": 0.0239
+      },
+      {
+        "source": "ITI0314",
+        "target": "ITL0219",
+        "transition_prob": 0.0394
+      },
+      {
+        "source": "ITI0314",
+        "target": "ITI0316",
+        "transition_prob": 0.0428
+      },
+      {
+        "source": "ITI0314",
+        "target": "ITH0517",
+        "transition_prob": 0.0205
+      },
+      {
+        "source": "ITI0316",
+        "target": "ITI0317",
+        "transition_prob": 0.0541
+      },
+      {
+        "source": "ITI0316",
+        "target": "ITH0318",
+        "transition_prob": 0.0163
+      },
+      {
+        "source": "ITI0316",
+        "target": "ITL0219",
+        "transition_prob": 0.0183
+      },
+      {
+        "source": "ITI0316",
+        "target": "ITH0517",
+        "transition_prob": 0.0221
+      },
+      {
+        "source": "ITI0316",
+        "target": "ITZ0818",
+        "transition_prob": 0.0165
+      },
+      {
+        "source": "ITI0316",
+        "target": "ITA0217",
+        "transition_prob": 0.0145
+      },
+      {
+        "source": "ITI0316",
+        "target": "ITH0519",
+        "transition_prob": 0.0105
+      },
+      {
+        "source": "ITI0016",
+        "target": "ITZ0818",
+        "transition_prob": 0.0199
+      },
+      {
+        "source": "ITI0016",
+        "target": "ITA0217",
+        "transition_prob": 0.0164
+      },
+      {
+        "source": "ITI0016",
+        "target": "ITH0517",
+        "transition_prob": 0.0191
+      },
+      {
+        "source": "ITI0016",
+        "target": "ITL0219",
+        "transition_prob": 0.0187
+      },
+      {
+        "source": "ITI0016",
+        "target": "ITI0317",
+        "transition_prob": 0.0206
+      },
+      {
+        "source": "ITA1017",
+        "target": "ITL0219",
+        "transition_prob": 0.0321
+      },
+      {
+        "source": "ITA1017",
+        "target": "ITZ0818",
+        "transition_prob": 0.0109
+      },
+      {
+        "source": "ITA1017",
+        "target": "ITM1019",
+        "transition_prob": 0.0101
+      },
+      {
+        "source": "ITA1017",
+        "target": "ITM1318",
+        "transition_prob": 0.0221
+      },
+      {
+        "source": "ITA1017",
+        "target": "ITA0518",
+        "transition_prob": 0.0138
+      },
+      {
+        "source": "ITA1017",
+        "target": "ITA1018",
+        "transition_prob": 0.0222
+      },
+      {
+        "source": "ITA1017",
+        "target": "ITX9918",
+        "transition_prob": 0.0228
+      },
+      {
+        "source": "ITC0012",
+        "target": "ITB0613",
+        "transition_prob": 0.0135
+      },
+      {
+        "source": "ITC0012",
+        "target": "ITB0612",
+        "transition_prob": 0.0176
+      },
+      {
+        "source": "ITC0012",
+        "target": "ITA0216",
+        "transition_prob": 0.0169
+      },
+      {
+        "source": "ITC0012",
+        "target": "ITL0219",
+        "transition_prob": 0.0823
+      },
+      {
+        "source": "ITC0012",
+        "target": "ITH0516",
+        "transition_prob": 0.0126
+      },
+      {
+        "source": "ITC0012",
+        "target": "ITM1314",
+        "transition_prob": 0.03
+      },
+      {
+        "source": "ITC0012",
+        "target": "ITA0014",
+        "transition_prob": 0.0189
+      },
+      {
+        "source": "ITB9918",
+        "target": "ITH0320",
+        "transition_prob": 0.0116
+      },
+      {
+        "source": "ITB9918",
+        "target": "ITL0219",
+        "transition_prob": 0.062
+      },
+      {
+        "source": "ITL0114",
+        "target": "ITA0216",
+        "transition_prob": 0.0122
+      },
+      {
+        "source": "ITL0114",
+        "target": "ITL0219",
+        "transition_prob": 0.1174
+      },
+      {
+        "source": "ITL0114",
+        "target": "ITM1315",
+        "transition_prob": 0.0354
+      },
+      {
+        "source": "ITL0114",
+        "target": "ITK0517",
+        "transition_prob": 0.0102
+      },
+      {
+        "source": "ITL0114",
+        "target": "ITD0215",
+        "transition_prob": 0.0124
+      },
+      {
+        "source": "ITL0114",
+        "target": "ITZ0818",
+        "transition_prob": 0.021
+      },
+      {
+        "source": "ITA0214",
+        "target": "ITA0216",
+        "transition_prob": 0.0526
+      },
+      {
+        "source": "ITA0214",
+        "target": "ITA0217",
+        "transition_prob": 0.0164
+      },
+      {
+        "source": "ITA0214",
+        "target": "ITD1017",
+        "transition_prob": 0.0172
+      },
+      {
+        "source": "ITA0214",
+        "target": "ITI0119",
+        "transition_prob": 0.0117
+      },
+      {
+        "source": "ITA0214",
+        "target": "ITI0016",
+        "transition_prob": 0.0168
+      },
+      {
+        "source": "ITA0214",
+        "target": "ITH0516",
+        "transition_prob": 0.0208
+      },
+      {
+        "source": "ITA0214",
+        "target": "ITA1017",
+        "transition_prob": 0.0196
+      },
+      {
+        "source": "ITC0014",
+        "target": "ITC0016",
+        "transition_prob": 0.0154
+      },
+      {
+        "source": "ITC0014",
+        "target": "ITH0516",
+        "transition_prob": 0.0186
+      },
+      {
+        "source": "ITC0014",
+        "target": "ITL0219",
+        "transition_prob": 0.0683
+      },
+      {
+        "source": "ITC0014",
+        "target": "ITA0216",
+        "transition_prob": 0.0226
+      },
+      {
+        "source": "ITC0014",
+        "target": "ITM1315",
+        "transition_prob": 0.0154
+      },
+      {
+        "source": "ITC0014",
+        "target": "ITI0015",
+        "transition_prob": 0.0102
+      },
+      {
+        "source": "ITA1415",
+        "target": "ITA9919",
+        "transition_prob": 0.0446
+      },
+      {
+        "source": "ITA1415",
+        "target": "ITH0516",
+        "transition_prob": 0.0102
+      },
+      {
+        "source": "ITA1415",
+        "target": "ITA0216",
+        "transition_prob": 0.0292
+      },
+      {
+        "source": "ITA1415",
+        "target": "ITZ0818",
+        "transition_prob": 0.0122
+      },
+      {
+        "source": "ITA1415",
+        "target": "ITA1017",
+        "transition_prob": 0.0297
+      },
+      {
+        "source": "ITA1415",
+        "target": "ITA1018",
+        "transition_prob": 0.0118
+      },
+      {
+        "source": "ITC0011",
+        "target": "ITC0114",
+        "transition_prob": 0.028
+      },
+      {
+        "source": "ITC0011",
+        "target": "ITB0614",
+        "transition_prob": 0.0258
+      },
+      {
+        "source": "ITC0011",
+        "target": "ITC0113",
+        "transition_prob": 0.0465
+      },
+      {
+        "source": "ITC0011",
+        "target": "ITL0219",
+        "transition_prob": 0.0393
+      },
+      {
+        "source": "ITC0011",
+        "target": "ITC0614",
+        "transition_prob": 0.0517
+      },
+      {
+        "source": "ITC0011",
+        "target": "ITC0012",
+        "transition_prob": 0.0344
+      },
+      {
+        "source": "ITC0011",
+        "target": "ITC0112",
+        "transition_prob": 0.0236
+      },
+      {
+        "source": "ITC0011",
+        "target": "ITZ0818",
+        "transition_prob": 0.0117
+      },
+      {
+        "source": "ITC0011",
+        "target": "ITI0013",
+        "transition_prob": 0.039
+      },
+      {
+        "source": "ITC0011",
+        "target": "ITB0514",
+        "transition_prob": 0.0408
+      },
+      {
+        "source": "ITC0011",
+        "target": "ITC0415",
+        "transition_prob": 0.0102
+      },
+      {
+        "source": "ITB0013",
+        "target": "ITL0219",
+        "transition_prob": 0.0839
+      },
+      {
+        "source": "ITB0013",
+        "target": "ITB0515",
+        "transition_prob": 0.011
+      },
+      {
+        "source": "ITB0013",
+        "target": "ITH0516",
+        "transition_prob": 0.0212
+      },
+      {
+        "source": "ITB0013",
+        "target": "ITZ0818",
+        "transition_prob": 0.0246
+      },
+      {
+        "source": "ITB0013",
+        "target": "ITB0514",
+        "transition_prob": 0.0271
+      },
+      {
+        "source": "ITB0013",
+        "target": "ITM1315",
+        "transition_prob": 0.0254
+      },
+      {
+        "source": "ITB0013",
+        "target": "ITI0015",
+        "transition_prob": 0.0102
+      },
+      {
+        "source": "ITB0013",
+        "target": "ITC0014",
+        "transition_prob": 0.0195
+      },
+      {
+        "source": "ITB0013",
+        "target": "ITM1314",
+        "transition_prob": 0.0186
+      },
+      {
+        "source": "ITB0013",
+        "target": "ITC0614",
+        "transition_prob": 0.0195
+      },
+      {
+        "source": "ITB0013",
+        "target": "ITC0918",
+        "transition_prob": 0.0144
+      },
+      {
+        "source": "ITB0013",
+        "target": "ITX9918",
+        "transition_prob": 0.0102
+      },
+      {
+        "source": "ITB0013",
+        "target": "ITB0614",
+        "transition_prob": 0.0229
+      },
+      {
+        "source": "ITB0013",
+        "target": "ITD0215",
+        "transition_prob": 0.0144
+      },
+      {
+        "source": "ITB0013",
+        "target": "ITA0216",
+        "transition_prob": 0.0203
+      },
+      {
+        "source": "ITB0013",
+        "target": "ITA0014",
+        "transition_prob": 0.011
+      },
+      {
+        "source": "ITB0013",
+        "target": "ITI0314",
+        "transition_prob": 0.0119
+      },
+      {
+        "source": "ITB0013",
+        "target": "ITH0517",
+        "transition_prob": 0.011
+      },
+      {
+        "source": "ITB0013",
+        "target": "ITA0214",
+        "transition_prob": 0.0119
+      },
+      {
+        "source": "ITB0013",
+        "target": "ITC0114",
+        "transition_prob": 0.0161
+      },
+      {
+        "source": "ITD0817",
+        "target": "ITM1318",
+        "transition_prob": 0.0156
+      },
+      {
+        "source": "ITD0817",
+        "target": "ITB0418",
+        "transition_prob": 0.0113
+      },
+      {
+        "source": "ITD0817",
+        "target": "ITM1019",
+        "transition_prob": 0.0143
+      },
+      {
+        "source": "ITD0817",
+        "target": "ITD9918",
+        "transition_prob": 0.0131
+      },
+      {
+        "source": "ITD0817",
+        "target": "ITI0118",
+        "transition_prob": 0.0219
+      },
+      {
+        "source": "ITD0817",
+        "target": "ITD0918",
+        "transition_prob": 0.0172
+      },
+      {
+        "source": "ITD0817",
+        "target": "ITA1018",
+        "transition_prob": 0.0133
+      },
+      {
+        "source": "ITD0817",
+        "target": "ITZ0818",
+        "transition_prob": 0.0206
+      },
+      {
+        "source": "ITD0817",
+        "target": "ITD0818",
+        "transition_prob": 0.0156
+      },
+      {
+        "source": "ITD0817",
+        "target": "ITH0320",
+        "transition_prob": 0.0127
+      },
+      {
+        "source": "ITD0817",
+        "target": "ITX9918",
+        "transition_prob": 0.0111
+      },
+      {
+        "source": "ITD0817",
+        "target": "ITL0219",
+        "transition_prob": 0.0165
+      },
+      {
+        "source": "ITD0817",
+        "target": "ITH0319",
+        "transition_prob": 0.0201
+      },
+      {
+        "source": "ITA1215",
+        "target": "ITA0016",
+        "transition_prob": 0.0153
+      },
+      {
+        "source": "ITA1215",
+        "target": "ITX9918",
+        "transition_prob": 0.0105
+      },
+      {
+        "source": "ITA1215",
+        "target": "ITA1017",
+        "transition_prob": 0.0159
+      },
+      {
+        "source": "ITA1215",
+        "target": "ITA1117",
+        "transition_prob": 0.0218
+      },
+      {
+        "source": "ITA1215",
+        "target": "ITH0516",
+        "transition_prob": 0.0107
+      },
+      {
+        "source": "ITA1215",
+        "target": "ITL0219",
+        "transition_prob": 0.0344
+      },
+      {
+        "source": "ITA1215",
+        "target": "ITI0316",
+        "transition_prob": 0.0104
+      },
+      {
+        "source": "ITA1215",
+        "target": "ITA0216",
+        "transition_prob": 0.0146
+      },
+      {
+        "source": "ITA1213",
+        "target": "ITA1215",
+        "transition_prob": 0.0515
+      },
+      {
+        "source": "ITA1213",
+        "target": "ITM1314",
+        "transition_prob": 0.066
+      },
+      {
+        "source": "ITA1213",
+        "target": "ITA1117",
+        "transition_prob": 0.014
+      },
+      {
+        "source": "ITA1213",
+        "target": "ITA0016",
+        "transition_prob": 0.0143
+      },
+      {
+        "source": "ITA1213",
+        "target": "ITA1214",
+        "transition_prob": 0.0745
+      },
+      {
+        "source": "ITA1213",
+        "target": "ITA1115",
+        "transition_prob": 0.0497
+      },
+      {
+        "source": "ITA1213",
+        "target": "ITI0016",
+        "transition_prob": 0.011
+      },
+      {
+        "source": "ITA1213",
+        "target": "ITL0219",
+        "transition_prob": 0.0315
+      },
+      {
+        "source": "ITA1213",
+        "target": "ITC0614",
+        "transition_prob": 0.0119
+      },
+      {
+        "source": "ITA1213",
+        "target": "ITA0214",
+        "transition_prob": 0.0104
+      },
+      {
+        "source": "ITD0216",
+        "target": "ITL0219",
+        "transition_prob": 0.0116
+      },
+      {
+        "source": "ITD0216",
+        "target": "ITD0817",
+        "transition_prob": 0.0513
+      },
+      {
+        "source": "ITD0216",
+        "target": "ITD0918",
+        "transition_prob": 0.0211
+      },
+      {
+        "source": "ITD0216",
+        "target": "ITD0818",
+        "transition_prob": 0.0401
+      },
+      {
+        "source": "ITD0216",
+        "target": "ITX9918",
+        "transition_prob": 0.0103
+      },
+      {
+        "source": "ITD0214",
+        "target": "ITI0317",
+        "transition_prob": 0.0127
+      },
+      {
+        "source": "ITD0214",
+        "target": "ITD0918",
+        "transition_prob": 0.0109
+      },
+      {
+        "source": "ITD0214",
+        "target": "ITH0517",
+        "transition_prob": 0.0148
+      },
+      {
+        "source": "ITD0214",
+        "target": "ITD0216",
+        "transition_prob": 0.0903
+      },
+      {
+        "source": "ITD0214",
+        "target": "ITD0817",
+        "transition_prob": 0.0216
+      },
+      {
+        "source": "ITD0214",
+        "target": "ITZ0818",
+        "transition_prob": 0.0332
+      },
+      {
+        "source": "ITD0214",
+        "target": "ITL0219",
+        "transition_prob": 0.022
+      },
+      {
+        "source": "ITD1114",
+        "target": "ITH0516",
+        "transition_prob": 0.0246
+      },
+      {
+        "source": "ITD1114",
+        "target": "ITD0916",
+        "transition_prob": 0.0117
+      },
+      {
+        "source": "ITD1114",
+        "target": "ITI0016",
+        "transition_prob": 0.0152
+      },
+      {
+        "source": "ITD1114",
+        "target": "ITD0817",
+        "transition_prob": 0.0293
+      },
+      {
+        "source": "ITD1114",
+        "target": "ITA0215",
+        "transition_prob": 0.0141
+      },
+      {
+        "source": "ITD1114",
+        "target": "ITA0217",
+        "transition_prob": 0.0152
+      },
+      {
+        "source": "ITD1114",
+        "target": "ITX9918",
+        "transition_prob": 0.0176
+      },
+      {
+        "source": "ITH0217",
+        "target": "ITZ0818",
+        "transition_prob": 0.0272
+      },
+      {
+        "source": "ITH0217",
+        "target": "ITL0219",
+        "transition_prob": 0.0718
+      },
+      {
+        "source": "ITH0217",
+        "target": "ITA1018",
+        "transition_prob": 0.023
+      },
+      {
+        "source": "ITH0217",
+        "target": "ITX9918",
+        "transition_prob": 0.0178
+      },
+      {
+        "source": "ITH0217",
+        "target": "ITM1318",
+        "transition_prob": 0.0322
+      },
+      {
+        "source": "ITH0217",
+        "target": "ITI0118",
+        "transition_prob": 0.0107
+      },
+      {
+        "source": "ITH0217",
+        "target": "ITH0319",
+        "transition_prob": 0.0102
+      },
+      {
+        "source": "ITC0615",
+        "target": "ITL0219",
+        "transition_prob": 0.0567
+      },
+      {
+        "source": "ITC0615",
+        "target": "ITA0216",
+        "transition_prob": 0.0219
+      },
+      {
+        "source": "ITC0615",
+        "target": "ITH0516",
+        "transition_prob": 0.0226
+      },
+      {
+        "source": "ITC0615",
+        "target": "ITI0317",
+        "transition_prob": 0.0156
+      },
+      {
+        "source": "ITC0615",
+        "target": "ITH0517",
+        "transition_prob": 0.0137
+      },
+      {
+        "source": "ITX0016",
+        "target": "ITL0219",
+        "transition_prob": 0.0639
+      },
+      {
+        "source": "ITX0016",
+        "target": "ITK0517",
+        "transition_prob": 0.0219
+      },
+      {
+        "source": "ITX0016",
+        "target": "ITI0317",
+        "transition_prob": 0.0103
+      },
+      {
+        "source": "ITX0016",
+        "target": "ITB9918",
+        "transition_prob": 0.014
+      },
+      {
+        "source": "ITC0113",
+        "target": "ITL0219",
+        "transition_prob": 0.057
+      },
+      {
+        "source": "ITC0113",
+        "target": "ITC0114",
+        "transition_prob": 0.0278
+      },
+      {
+        "source": "ITC0113",
+        "target": "ITM1314",
+        "transition_prob": 0.0169
+      },
+      {
+        "source": "ITC0113",
+        "target": "ITB0514",
+        "transition_prob": 0.0253
+      },
+      {
+        "source": "ITC0113",
+        "target": "ITB0614",
+        "transition_prob": 0.0232
+      },
+      {
+        "source": "ITC0113",
+        "target": "ITM1315",
+        "transition_prob": 0.0156
+      },
+      {
+        "source": "ITC0113",
+        "target": "ITH0516",
+        "transition_prob": 0.018
+      },
+      {
+        "source": "ITC0113",
+        "target": "ITC0014",
+        "transition_prob": 0.0187
+      },
+      {
+        "source": "ITC0113",
+        "target": "ITC0614",
+        "transition_prob": 0.0443
+      },
+      {
+        "source": "ITC0113",
+        "target": "ITA0014",
+        "transition_prob": 0.012
+      },
+      {
+        "source": "ITC0113",
+        "target": "ITC0418",
+        "transition_prob": 0.0108
+      },
+      {
+        "source": "ITC0113",
+        "target": "ITZ0818",
+        "transition_prob": 0.0125
+      },
+      {
+        "source": "ITL0217",
+        "target": "ITC0918",
+        "transition_prob": 0.0154
+      },
+      {
+        "source": "ITL0217",
+        "target": "ITL0219",
+        "transition_prob": 0.1009
+      },
+      {
+        "source": "ITL0217",
+        "target": "ITZ0818",
+        "transition_prob": 0.0636
+      },
+      {
+        "source": "ITL0217",
+        "target": "ITA0518",
+        "transition_prob": 0.011
+      },
+      {
+        "source": "ITL0217",
+        "target": "ITH0519",
+        "transition_prob": 0.0154
+      },
+      {
+        "source": "ITL0217",
+        "target": "ITB0419",
+        "transition_prob": 0.011
+      },
+      {
+        "source": "ITL0217",
+        "target": "ITH0320",
+        "transition_prob": 0.0132
+      },
+      {
+        "source": "ITA0217",
+        "target": "ITA1318",
+        "transition_prob": 0.012
+      },
+      {
+        "source": "ITA0217",
+        "target": "ITZ0818",
+        "transition_prob": 0.026
+      },
+      {
+        "source": "ITA0217",
+        "target": "ITI0118",
+        "transition_prob": 0.019
+      },
+      {
+        "source": "ITA0217",
+        "target": "ITM1019",
+        "transition_prob": 0.0133
+      },
+      {
+        "source": "ITA0217",
+        "target": "ITH0519",
+        "transition_prob": 0.0133
+      },
+      {
+        "source": "ITA0217",
+        "target": "ITM1318",
+        "transition_prob": 0.0139
+      },
+      {
+        "source": "ITK0419",
+        "target": "ITH0320",
+        "transition_prob": 0.0119
+      },
+      {
+        "source": "ITK0419",
+        "target": "ITK0420",
+        "transition_prob": 0.0145
+      },
+      {
+        "source": "ITM1019",
+        "target": "ITH0320",
+        "transition_prob": 0.0163
+      },
+      {
+        "source": "ITM1318",
+        "target": "ITM1019",
+        "transition_prob": 0.029
+      },
+      {
+        "source": "ITM1318",
+        "target": "ITH0219",
+        "transition_prob": 0.0169
+      },
+      {
+        "source": "ITM1318",
+        "target": "ITH0320",
+        "transition_prob": 0.024
+      },
+      {
+        "source": "ITM1318",
+        "target": "ITH0319",
+        "transition_prob": 0.0147
+      },
+      {
+        "source": "ITM1318",
+        "target": "ITL0219",
+        "transition_prob": 0.0316
+      },
+      {
+        "source": "ITB0517",
+        "target": "ITB0418",
+        "transition_prob": 0.019
+      },
+      {
+        "source": "ITB0517",
+        "target": "ITL0219",
+        "transition_prob": 0.0146
+      },
+      {
+        "source": "ITB0517",
+        "target": "ITZ0818",
+        "transition_prob": 0.0219
+      },
+      {
+        "source": "ITB0517",
+        "target": "ITM1019",
+        "transition_prob": 0.0119
+      },
+      {
+        "source": "ITB0517",
+        "target": "ITA1018",
+        "transition_prob": 0.0119
+      },
+      {
+        "source": "ITB0517",
+        "target": "ITI0118",
+        "transition_prob": 0.0157
+      },
+      {
+        "source": "ITD1017",
+        "target": "ITX9918",
+        "transition_prob": 0.0129
+      },
+      {
+        "source": "ITD1017",
+        "target": "ITA9919",
+        "transition_prob": 0.0109
+      },
+      {
+        "source": "ITD1017",
+        "target": "ITA1018",
+        "transition_prob": 0.0197
+      },
+      {
+        "source": "ITA0215",
+        "target": "ITD1017",
+        "transition_prob": 0.0201
+      },
+      {
+        "source": "ITA0215",
+        "target": "ITH0516",
+        "transition_prob": 0.023
+      },
+      {
+        "source": "ITA0215",
+        "target": "ITA1017",
+        "transition_prob": 0.0277
+      },
+      {
+        "source": "ITA0215",
+        "target": "ITA9919",
+        "transition_prob": 0.0138
+      },
+      {
+        "source": "ITA0215",
+        "target": "ITA0216",
+        "transition_prob": 0.0359
+      },
+      {
+        "source": "ITA0215",
+        "target": "ITH0517",
+        "transition_prob": 0.0166
+      },
+      {
+        "source": "ITA0215",
+        "target": "ITL0219",
+        "transition_prob": 0.0178
+      },
+      {
+        "source": "ITA0215",
+        "target": "ITA1018",
+        "transition_prob": 0.013
+      },
+      {
+        "source": "ITA0215",
+        "target": "ITM1316",
+        "transition_prob": 0.0165
+      },
+      {
+        "source": "ITA0815",
+        "target": "ITA0216",
+        "transition_prob": 0.0189
+      },
+      {
+        "source": "ITA0815",
+        "target": "ITA9919",
+        "transition_prob": 0.0487
+      },
+      {
+        "source": "ITA0815",
+        "target": "ITA0518",
+        "transition_prob": 0.0126
+      },
+      {
+        "source": "ITA0815",
+        "target": "ITA0217",
+        "transition_prob": 0.0142
+      },
+      {
+        "source": "ITA0815",
+        "target": "ITL0219",
+        "transition_prob": 0.0708
+      },
+      {
+        "source": "ITA0815",
+        "target": "ITA0519",
+        "transition_prob": 0.022
+      },
+      {
+        "source": "ITA0815",
+        "target": "ITB0517",
+        "transition_prob": 0.0126
+      },
+      {
+        "source": "ITM1316",
+        "target": "ITB0517",
+        "transition_prob": 0.01
+      },
+      {
+        "source": "ITM1316",
+        "target": "ITA1017",
+        "transition_prob": 0.0301
+      },
+      {
+        "source": "ITM1316",
+        "target": "ITX9918",
+        "transition_prob": 0.0432
+      },
+      {
+        "source": "ITM1316",
+        "target": "ITA0518",
+        "transition_prob": 0.0182
+      },
+      {
+        "source": "ITM1316",
+        "target": "ITL0219",
+        "transition_prob": 0.029
+      },
+      {
+        "source": "ITM1316",
+        "target": "ITM1318",
+        "transition_prob": 0.0304
+      },
+      {
+        "source": "ITH0219",
+        "target": "ITH0320",
+        "transition_prob": 0.0305
+      },
+      {
+        "source": "ITB0418",
+        "target": "ITH0219",
+        "transition_prob": 0.012
+      },
+      {
+        "source": "ITB0418",
+        "target": "ITH0320",
+        "transition_prob": 0.0228
+      },
+      {
+        "source": "ITB0418",
+        "target": "ITA9919",
+        "transition_prob": 0.0114
+      },
+      {
+        "source": "ITB0418",
+        "target": "ITH0319",
+        "transition_prob": 0.0349
+      },
+      {
+        "source": "ITB0418",
+        "target": "ITL0219",
+        "transition_prob": 0.0207
+      },
+      {
+        "source": "ITB0418",
+        "target": "ITH0519",
+        "transition_prob": 0.0102
+      },
+      {
+        "source": "ITB0418",
+        "target": "ITM1019",
+        "transition_prob": 0.0148
+      },
+      {
+        "source": "ITB0418",
+        "target": "ITB0419",
+        "transition_prob": 0.0127
+      },
+      {
+        "source": "ITA0918",
+        "target": "ITZ0820",
+        "transition_prob": 0.0116
+      },
+      {
+        "source": "ITA0918",
+        "target": "ITH0519",
+        "transition_prob": 0.0158
+      },
+      {
+        "source": "ITA0918",
+        "target": "ITZ0819",
+        "transition_prob": 0.014
+      },
+      {
+        "source": "ITA0918",
+        "target": "ITH0319",
+        "transition_prob": 0.0109
+      },
+      {
+        "source": "ITA0918",
+        "target": "ITL0219",
+        "transition_prob": 0.0219
+      },
+      {
+        "source": "ITC0613",
+        "target": "ITC0615",
+        "transition_prob": 0.0311
+      },
+      {
+        "source": "ITC0613",
+        "target": "ITA0015",
+        "transition_prob": 0.0101
+      },
+      {
+        "source": "ITC0613",
+        "target": "ITA0216",
+        "transition_prob": 0.0177
+      },
+      {
+        "source": "ITC0613",
+        "target": "ITA0915",
+        "transition_prob": 0.0218
+      },
+      {
+        "source": "ITC0613",
+        "target": "ITC0114",
+        "transition_prob": 0.0104
+      },
+      {
+        "source": "ITC0613",
+        "target": "ITZ0818",
+        "transition_prob": 0.0303
+      },
+      {
+        "source": "ITC0613",
+        "target": "ITC0014",
+        "transition_prob": 0.0106
+      },
+      {
+        "source": "ITC0613",
+        "target": "ITK0517",
+        "transition_prob": 0.0106
+      },
+      {
+        "source": "ITC0613",
+        "target": "ITI0016",
+        "transition_prob": 0.0126
+      },
+      {
+        "source": "ITK0215",
+        "target": "ITK0317",
+        "transition_prob": 0.0775
+      },
+      {
+        "source": "ITK0215",
+        "target": "ITZ0818",
+        "transition_prob": 0.0207
+      },
+      {
+        "source": "ITK0215",
+        "target": "ITK0318",
+        "transition_prob": 0.0216
+      },
+      {
+        "source": "ITK0215",
+        "target": "ITL0219",
+        "transition_prob": 0.0257
+      },
+      {
+        "source": "ITK0215",
+        "target": "ITK0418",
+        "transition_prob": 0.0293
+      },
+      {
+        "source": "ITK0215",
+        "target": "ITK9918",
+        "transition_prob": 0.0131
+      },
+      {
+        "source": "ITK0214",
+        "target": "ITK0215",
+        "transition_prob": 0.069
+      },
+      {
+        "source": "ITK0214",
+        "target": "ITK0317",
+        "transition_prob": 0.0729
+      },
+      {
+        "source": "ITK0214",
+        "target": "ITL0219",
+        "transition_prob": 0.0377
+      },
+      {
+        "source": "ITK0214",
+        "target": "ITK0420",
+        "transition_prob": 0.0152
+      },
+      {
+        "source": "ITK0214",
+        "target": "ITK0417",
+        "transition_prob": 0.0331
+      },
+      {
+        "source": "ITK0214",
+        "target": "ITK9918",
+        "transition_prob": 0.0194
+      },
+      {
+        "source": "ITC0417",
+        "target": "ITC9918",
+        "transition_prob": 0.0231
+      },
+      {
+        "source": "ITC0417",
+        "target": "ITZ0818",
+        "transition_prob": 0.0692
+      },
+      {
+        "source": "ITC0417",
+        "target": "ITA0518",
+        "transition_prob": 0.0123
+      },
+      {
+        "source": "ITC0417",
+        "target": "ITZ0819",
+        "transition_prob": 0.0195
+      },
+      {
+        "source": "ITC0417",
+        "target": "ITB9918",
+        "transition_prob": 0.0205
+      },
+      {
+        "source": "ITC0614",
+        "target": "ITL0219",
+        "transition_prob": 0.034
+      },
+      {
+        "source": "ITC0614",
+        "target": "ITB0515",
+        "transition_prob": 0.0109
+      },
+      {
+        "source": "ITC0614",
+        "target": "ITH0516",
+        "transition_prob": 0.0207
+      },
+      {
+        "source": "ITC0614",
+        "target": "ITA0216",
+        "transition_prob": 0.0138
+      },
+      {
+        "source": "ITC0614",
+        "target": "ITZ0818",
+        "transition_prob": 0.0106
+      },
+      {
+        "source": "ITC0614",
+        "target": "ITI0015",
+        "transition_prob": 0.0111
+      },
+      {
+        "source": "ITC0614",
+        "target": "ITI0016",
+        "transition_prob": 0.0107
+      },
+      {
+        "source": "ITA1318",
+        "target": "ITH0319",
+        "transition_prob": 0.012
+      },
+      {
+        "source": "ITA1318",
+        "target": "ITH0320",
+        "transition_prob": 0.0173
+      },
+      {
+        "source": "ITA1318",
+        "target": "ITM1019",
+        "transition_prob": 0.019
+      },
+      {
+        "source": "ITA1318",
+        "target": "ITL0219",
+        "transition_prob": 0.0407
+      },
+      {
+        "source": "ITA1318",
+        "target": "ITA0519",
+        "transition_prob": 0.011
+      },
+      {
+        "source": "ITC0918",
+        "target": "ITL0219",
+        "transition_prob": 0.0634
+      },
+      {
+        "source": "ITH0518",
+        "target": "ITH0519",
+        "transition_prob": 0.0147
+      },
+      {
+        "source": "ITH0518",
+        "target": "ITL0219",
+        "transition_prob": 0.0305
+      },
+      {
+        "source": "ITH0518",
+        "target": "ITH0319",
+        "transition_prob": 0.015
+      },
+      {
+        "source": "ITH0518",
+        "target": "ITM1019",
+        "transition_prob": 0.0124
+      },
+      {
+        "source": "ITH0518",
+        "target": "ITA0519",
+        "transition_prob": 0.0124
+      },
+      {
+        "source": "ITC0013",
+        "target": "ITM1314",
+        "transition_prob": 0.0151
+      },
+      {
+        "source": "ITC0013",
+        "target": "ITL0219",
+        "transition_prob": 0.0271
+      },
+      {
+        "source": "ITC0013",
+        "target": "ITI0314",
+        "transition_prob": 0.0246
+      },
+      {
+        "source": "ITC0013",
+        "target": "ITZ0818",
+        "transition_prob": 0.0151
+      },
+      {
+        "source": "ITC0013",
+        "target": "ITH0516",
+        "transition_prob": 0.0161
+      },
+      {
+        "source": "ITC0013",
+        "target": "ITI0317",
+        "transition_prob": 0.0126
+      },
+      {
+        "source": "ITC0013",
+        "target": "ITI0016",
+        "transition_prob": 0.0281
+      },
+      {
+        "source": "ITC0013",
+        "target": "ITA0014",
+        "transition_prob": 0.0126
+      },
+      {
+        "source": "ITC0013",
+        "target": "ITD0616",
+        "transition_prob": 0.011
+      },
+      {
+        "source": "ITC0013",
+        "target": "ITB0514",
+        "transition_prob": 0.0136
+      },
+      {
+        "source": "ITC0013",
+        "target": "ITI0316",
+        "transition_prob": 0.0241
+      },
+      {
+        "source": "ITD0916",
+        "target": "ITD0817",
+        "transition_prob": 0.0173
+      },
+      {
+        "source": "ITD0916",
+        "target": "ITX9918",
+        "transition_prob": 0.0137
+      },
+      {
+        "source": "ITD0916",
+        "target": "ITB0517",
+        "transition_prob": 0.0137
+      },
+      {
+        "source": "ITD0916",
+        "target": "ITZ0818",
+        "transition_prob": 0.0365
+      },
+      {
+        "source": "ITD0916",
+        "target": "ITD0918",
+        "transition_prob": 0.0155
+      },
+      {
+        "source": "ITD0916",
+        "target": "ITL0219",
+        "transition_prob": 0.0447
+      },
+      {
+        "source": "ITD0916",
+        "target": "ITZ0817",
+        "transition_prob": 0.0109
+      },
+      {
+        "source": "ITK0517",
+        "target": "ITZ0818",
+        "transition_prob": 0.0334
+      },
+      {
+        "source": "ITK0517",
+        "target": "ITL0219",
+        "transition_prob": 0.0736
+      },
+      {
+        "source": "ITK0114",
+        "target": "ITL0219",
+        "transition_prob": 0.052
+      },
+      {
+        "source": "ITK0114",
+        "target": "ITK0317",
+        "transition_prob": 0.0233
+      },
+      {
+        "source": "ITK0114",
+        "target": "ITZ0818",
+        "transition_prob": 0.0189
+      },
+      {
+        "source": "ITK0114",
+        "target": "ITA1017",
+        "transition_prob": 0.0224
+      },
+      {
+        "source": "ITK0114",
+        "target": "ITA0216",
+        "transition_prob": 0.017
+      },
+      {
+        "source": "ITK0316",
+        "target": "ITK0317",
+        "transition_prob": 0.0644
+      },
+      {
+        "source": "ITK0316",
+        "target": "ITK0417",
+        "transition_prob": 0.0143
+      },
+      {
+        "source": "ITK0316",
+        "target": "ITK0318",
+        "transition_prob": 0.0222
+      },
+      {
+        "source": "ITK0316",
+        "target": "ITL0219",
+        "transition_prob": 0.0415
+      },
+      {
+        "source": "ITK0316",
+        "target": "ITK0418",
+        "transition_prob": 0.0236
+      },
+      {
+        "source": "ITK0316",
+        "target": "ITK9918",
+        "transition_prob": 0.0136
+      },
+      {
+        "source": "ITK0316",
+        "target": "ITZ0818",
+        "transition_prob": 0.0208
+      },
+      {
+        "source": "ITK0316",
+        "target": "ITH0517",
+        "transition_prob": 0.01
+      },
+      {
+        "source": "ITH0318",
+        "target": "ITH0219",
+        "transition_prob": 0.0154
+      },
+      {
+        "source": "ITH0318",
+        "target": "ITH0319",
+        "transition_prob": 0.0522
+      },
+      {
+        "source": "ITH0318",
+        "target": "ITL0219",
+        "transition_prob": 0.019
+      },
+      {
+        "source": "ITH0318",
+        "target": "ITM1019",
+        "transition_prob": 0.0226
+      },
+      {
+        "source": "ITH0318",
+        "target": "ITA9919",
+        "transition_prob": 0.0119
+      },
+      {
+        "source": "ITH0318",
+        "target": "ITH0320",
+        "transition_prob": 0.0148
+      },
+      {
+        "source": "ITM1317",
+        "target": "ITL0219",
+        "transition_prob": 0.0158
+      },
+      {
+        "source": "ITM1317",
+        "target": "ITM1019",
+        "transition_prob": 0.0105
+      },
+      {
+        "source": "ITM1317",
+        "target": "ITM1318",
+        "transition_prob": 0.0789
+      },
+      {
+        "source": "ITM1317",
+        "target": "ITX9918",
+        "transition_prob": 0.0316
+      },
+      {
+        "source": "ITM1317",
+        "target": "ITI0118",
+        "transition_prob": 0.0158
+      },
+      {
+        "source": "ITC0416",
+        "target": "ITZ0818",
+        "transition_prob": 0.0775
+      },
+      {
+        "source": "ITC0416",
+        "target": "ITC9918",
+        "transition_prob": 0.0185
+      },
+      {
+        "source": "ITC0416",
+        "target": "ITZ0817",
+        "transition_prob": 0.0142
+      },
+      {
+        "source": "ITC0416",
+        "target": "ITB9920",
+        "transition_prob": 0.0136
+      },
+      {
+        "source": "ITL0116",
+        "target": "ITL0219",
+        "transition_prob": 0.0905
+      },
+      {
+        "source": "ITL0116",
+        "target": "ITI0317",
+        "transition_prob": 0.0157
+      },
+      {
+        "source": "ITL0116",
+        "target": "ITK0420",
+        "transition_prob": 0.0138
+      },
+      {
+        "source": "ITL0116",
+        "target": "ITZ0818",
+        "transition_prob": 0.0226
+      },
+      {
+        "source": "ITL0116",
+        "target": "ITC0418",
+        "transition_prob": 0.0187
+      },
+      {
+        "source": "ITL0116",
+        "target": "ITH0517",
+        "transition_prob": 0.0128
+      },
+      {
+        "source": "ITB0516",
+        "target": "ITC9918",
+        "transition_prob": 0.0105
+      },
+      {
+        "source": "ITB0516",
+        "target": "ITB0419",
+        "transition_prob": 0.0126
+      },
+      {
+        "source": "ITB0516",
+        "target": "ITL0219",
+        "transition_prob": 0.0291
+      },
+      {
+        "source": "ITB0516",
+        "target": "ITB0517",
+        "transition_prob": 0.0592
+      },
+      {
+        "source": "ITB0516",
+        "target": "ITB0418",
+        "transition_prob": 0.0336
+      },
+      {
+        "source": "ITB0516",
+        "target": "ITK0317",
+        "transition_prob": 0.0177
+      },
+      {
+        "source": "ITB0516",
+        "target": "ITZ0818",
+        "transition_prob": 0.0339
+      },
+      {
+        "source": "ITD0818",
+        "target": "ITL0219",
+        "transition_prob": 0.0107
+      },
+      {
+        "source": "ITC0418",
+        "target": "ITL0219",
+        "transition_prob": 0.036
+      },
+      {
+        "source": "ITA0519",
+        "target": "ITH0320",
+        "transition_prob": 0.0167
+      },
+      {
+        "source": "ITI0014",
+        "target": "ITA0216",
+        "transition_prob": 0.0262
+      },
+      {
+        "source": "ITI0014",
+        "target": "ITL0219",
+        "transition_prob": 0.0281
+      },
+      {
+        "source": "ITI0014",
+        "target": "ITI0016",
+        "transition_prob": 0.0242
+      },
+      {
+        "source": "ITI0014",
+        "target": "ITH0516",
+        "transition_prob": 0.0223
+      },
+      {
+        "source": "ITI0014",
+        "target": "ITI0118",
+        "transition_prob": 0.0113
+      },
+      {
+        "source": "ITI0014",
+        "target": "ITM1316",
+        "transition_prob": 0.0123
+      },
+      {
+        "source": "ITI0014",
+        "target": "ITM1318",
+        "transition_prob": 0.0108
+      },
+      {
+        "source": "ITI0014",
+        "target": "ITI0316",
+        "transition_prob": 0.0188
+      },
+      {
+        "source": "ITI0014",
+        "target": "ITA0915",
+        "transition_prob": 0.0145
+      },
+      {
+        "source": "ITI0014",
+        "target": "ITX9918",
+        "transition_prob": 0.0117
+      },
+      {
+        "source": "ITI0014",
+        "target": "ITM1315",
+        "transition_prob": 0.0221
+      },
+      {
+        "source": "ITI0014",
+        "target": "ITI0317",
+        "transition_prob": 0.011
+      },
+      {
+        "source": "ITI0014",
+        "target": "ITZ0818",
+        "transition_prob": 0.0206
+      },
+      {
+        "source": "ITI0014",
+        "target": "ITH0517",
+        "transition_prob": 0.0117
+      },
+      {
+        "source": "ITI0014",
+        "target": "ITB0517",
+        "transition_prob": 0.0128
+      },
+      {
+        "source": "ITI0014",
+        "target": "ITI0015",
+        "transition_prob": 0.0154
+      },
+      {
+        "source": "ITI0014",
+        "target": "ITA1018",
+        "transition_prob": 0.0126
+      },
+      {
+        "source": "ITK0318",
+        "target": "ITK0420",
+        "transition_prob": 0.0133
+      },
+      {
+        "source": "ITK0318",
+        "target": "ITL0219",
+        "transition_prob": 0.0247
+      },
+      {
+        "source": "ITK0318",
+        "target": "ITH0319",
+        "transition_prob": 0.0178
+      },
+      {
+        "source": "ITD9918",
+        "target": "ITL0219",
+        "transition_prob": 0.0842
+      },
+      {
+        "source": "ITA1115",
+        "target": "ITH0516",
+        "transition_prob": 0.0137
+      },
+      {
+        "source": "ITA1115",
+        "target": "ITA1017",
+        "transition_prob": 0.0149
+      },
+      {
+        "source": "ITA1115",
+        "target": "ITH0517",
+        "transition_prob": 0.0145
+      },
+      {
+        "source": "ITA1115",
+        "target": "ITM1316",
+        "transition_prob": 0.0106
+      },
+      {
+        "source": "ITA1115",
+        "target": "ITL0219",
+        "transition_prob": 0.0345
+      },
+      {
+        "source": "ITA1115",
+        "target": "ITZ0818",
+        "transition_prob": 0.0306
+      },
+      {
+        "source": "ITA1115",
+        "target": "ITI0316",
+        "transition_prob": 0.0129
+      },
+      {
+        "source": "ITD1218",
+        "target": "ITL0219",
+        "transition_prob": 0.0665
+      },
+      {
+        "source": "ITH0319",
+        "target": "ITH0320",
+        "transition_prob": 0.0399
+      },
+      {
+        "source": "ITK0113",
+        "target": "ITK0215",
+        "transition_prob": 0.0303
+      },
+      {
+        "source": "ITK0113",
+        "target": "ITA1318",
+        "transition_prob": 0.0112
+      },
+      {
+        "source": "ITK0113",
+        "target": "ITZ0818",
+        "transition_prob": 0.0315
+      },
+      {
+        "source": "ITK0113",
+        "target": "ITK0317",
+        "transition_prob": 0.0354
+      },
+      {
+        "source": "ITK0113",
+        "target": "ITK0214",
+        "transition_prob": 0.0375
+      },
+      {
+        "source": "ITK0113",
+        "target": "ITL0219",
+        "transition_prob": 0.0495
+      },
+      {
+        "source": "ITK0113",
+        "target": "ITD0214",
+        "transition_prob": 0.0392
+      },
+      {
+        "source": "ITK0113",
+        "target": "ITI0314",
+        "transition_prob": 0.0106
+      },
+      {
+        "source": "ITK0113",
+        "target": "ITK0114",
+        "transition_prob": 0.01
+      },
+      {
+        "source": "ITK0113",
+        "target": "ITK0316",
+        "transition_prob": 0.0201
+      },
+      {
+        "source": "ITK0113",
+        "target": "ITK0318",
+        "transition_prob": 0.0104
+      },
+      {
+        "source": "ITK0113",
+        "target": "ITH0516",
+        "transition_prob": 0.0148
+      },
+      {
+        "source": "ITK0113",
+        "target": "ITZ0817",
+        "transition_prob": 0.0127
+      },
+      {
+        "source": "ITK0113",
+        "target": "ITI0317",
+        "transition_prob": 0.0104
+      },
+      {
+        "source": "ITA0417",
+        "target": "ITA1318",
+        "transition_prob": 0.0149
+      },
+      {
+        "source": "ITA0417",
+        "target": "ITM1318",
+        "transition_prob": 0.0167
+      },
+      {
+        "source": "ITA0417",
+        "target": "ITA1018",
+        "transition_prob": 0.013
+      },
+      {
+        "source": "ITA0417",
+        "target": "ITZ0818",
+        "transition_prob": 0.0167
+      },
+      {
+        "source": "ITA0417",
+        "target": "ITL0219",
+        "transition_prob": 0.013
+      },
+      {
+        "source": "ITA0417",
+        "target": "ITH0319",
+        "transition_prob": 0.0204
+      },
+      {
+        "source": "ITA0417",
+        "target": "ITM1019",
+        "transition_prob": 0.013
+      },
+      {
+        "source": "ITA0417",
+        "target": "ITX9918",
+        "transition_prob": 0.0316
+      },
+      {
+        "source": "ITA0417",
+        "target": "ITI0118",
+        "transition_prob": 0.013
+      },
+      {
+        "source": "ITA1018",
+        "target": "ITH0219",
+        "transition_prob": 0.0123
+      },
+      {
+        "source": "ITA1018",
+        "target": "ITH0319",
+        "transition_prob": 0.0162
+      },
+      {
+        "source": "ITA1018",
+        "target": "ITM1019",
+        "transition_prob": 0.0259
+      },
+      {
+        "source": "ITA1018",
+        "target": "ITL0219",
+        "transition_prob": 0.0223
+      },
+      {
+        "source": "ITB0017",
+        "target": "ITZ0818",
+        "transition_prob": 0.0138
+      },
+      {
+        "source": "ITB0017",
+        "target": "ITM1019",
+        "transition_prob": 0.0156
+      },
+      {
+        "source": "ITB0017",
+        "target": "ITH0319",
+        "transition_prob": 0.0138
+      },
+      {
+        "source": "ITB0017",
+        "target": "ITL0219",
+        "transition_prob": 0.0123
+      },
+      {
+        "source": "ITD0917",
+        "target": "ITL0219",
+        "transition_prob": 0.0776
+      },
+      {
+        "source": "ITD0917",
+        "target": "ITA1318",
+        "transition_prob": 0.0105
+      },
+      {
+        "source": "ITD0917",
+        "target": "ITZ0818",
+        "transition_prob": 0.0358
+      },
+      {
+        "source": "ITD0917",
+        "target": "ITC9918",
+        "transition_prob": 0.0117
+      },
+      {
+        "source": "ITL0115",
+        "target": "ITZ0818",
+        "transition_prob": 0.043
+      },
+      {
+        "source": "ITL0115",
+        "target": "ITL0219",
+        "transition_prob": 0.0524
+      },
+      {
+        "source": "ITL0115",
+        "target": "ITI0316",
+        "transition_prob": 0.0133
+      },
+      {
+        "source": "ITL0115",
+        "target": "ITK0318",
+        "transition_prob": 0.0172
+      },
+      {
+        "source": "ITL0115",
+        "target": "ITA0217",
+        "transition_prob": 0.0109
+      },
+      {
+        "source": "ITD0614",
+        "target": "ITL0219",
+        "transition_prob": 0.0168
+      },
+      {
+        "source": "ITD0614",
+        "target": "ITI0016",
+        "transition_prob": 0.0194
+      },
+      {
+        "source": "ITD0614",
+        "target": "ITA0217",
+        "transition_prob": 0.0116
+      },
+      {
+        "source": "ITD0614",
+        "target": "ITD0016",
+        "transition_prob": 0.0259
+      },
+      {
+        "source": "ITD0614",
+        "target": "ITH0516",
+        "transition_prob": 0.0233
+      },
+      {
+        "source": "ITD0614",
+        "target": "ITD0216",
+        "transition_prob": 0.0259
+      },
+      {
+        "source": "ITD0614",
+        "target": "ITI0316",
+        "transition_prob": 0.0272
+      },
+      {
+        "source": "ITK0317",
+        "target": "ITK0418",
+        "transition_prob": 0.0222
+      },
+      {
+        "source": "ITK0317",
+        "target": "ITK0420",
+        "transition_prob": 0.0145
+      },
+      {
+        "source": "ITK0317",
+        "target": "ITZ0818",
+        "transition_prob": 0.0182
+      },
+      {
+        "source": "ITK0317",
+        "target": "ITK9918",
+        "transition_prob": 0.0111
+      },
+      {
+        "source": "ITK0317",
+        "target": "ITK0318",
+        "transition_prob": 0.0427
+      },
+      {
+        "source": "ITK0317",
+        "target": "ITL0219",
+        "transition_prob": 0.0165
+      },
+      {
+        "source": "ITK0317",
+        "target": "ITH0319",
+        "transition_prob": 0.01
+      },
+      {
+        "source": "ITC0415",
+        "target": "ITZ0818",
+        "transition_prob": 0.0291
+      },
+      {
+        "source": "ITC0415",
+        "target": "ITC0417",
+        "transition_prob": 0.0106
+      },
+      {
+        "source": "ITC0415",
+        "target": "ITL0219",
+        "transition_prob": 0.0295
+      },
+      {
+        "source": "ITC0415",
+        "target": "ITC0418",
+        "transition_prob": 0.0307
+      },
+      {
+        "source": "ITC0415",
+        "target": "ITC9918",
+        "transition_prob": 0.013
+      },
+      {
+        "source": "ITC0415",
+        "target": "ITH0516",
+        "transition_prob": 0.0193
+      },
+      {
+        "source": "ITA1019",
+        "target": "ITZ0820",
+        "transition_prob": 0.0104
+      },
+      {
+        "source": "ITB0015",
+        "target": "ITZ0818",
+        "transition_prob": 0.0278
+      },
+      {
+        "source": "ITB0015",
+        "target": "ITC0418",
+        "transition_prob": 0.0192
+      },
+      {
+        "source": "ITB0015",
+        "target": "ITH0516",
+        "transition_prob": 0.0141
+      },
+      {
+        "source": "ITB0015",
+        "target": "ITL0219",
+        "transition_prob": 0.0664
+      },
+      {
+        "source": "ITB0015",
+        "target": "ITA0216",
+        "transition_prob": 0.0134
+      },
+      {
+        "source": "ITB0015",
+        "target": "ITI0016",
+        "transition_prob": 0.0125
+      },
+      {
+        "source": "ITX0015",
+        "target": "ITL0219",
+        "transition_prob": 0.1004
+      },
+      {
+        "source": "ITX0015",
+        "target": "ITA0216",
+        "transition_prob": 0.0279
+      },
+      {
+        "source": "ITX0015",
+        "target": "ITA1017",
+        "transition_prob": 0.0223
+      },
+      {
+        "source": "ITX0015",
+        "target": "ITX9918",
+        "transition_prob": 0.0227
+      },
+      {
+        "source": "ITX0015",
+        "target": "ITA9919",
+        "transition_prob": 0.0105
+      },
+      {
+        "source": "ITX0015",
+        "target": "ITH0516",
+        "transition_prob": 0.0126
+      },
+      {
+        "source": "ITX0015",
+        "target": "ITA0917",
+        "transition_prob": 0.0138
+      },
+      {
+        "source": "ITX0015",
+        "target": "ITZ0818",
+        "transition_prob": 0.013
+      },
+      {
+        "source": "ITX0015",
+        "target": "ITD1017",
+        "transition_prob": 0.0101
+      },
+      {
+        "source": "ITC0017",
+        "target": "ITC9918",
+        "transition_prob": 0.0113
+      },
+      {
+        "source": "ITC0017",
+        "target": "ITL0219",
+        "transition_prob": 0.0508
+      },
+      {
+        "source": "ITC0017",
+        "target": "ITZ0818",
+        "transition_prob": 0.0169
+      },
+      {
+        "source": "ITC0017",
+        "target": "ITB0419",
+        "transition_prob": 0.0113
+      },
+      {
+        "source": "ITC0017",
+        "target": "ITC0418",
+        "transition_prob": 0.0113
+      },
+      {
+        "source": "ITZ0819",
+        "target": "ITH0320",
+        "transition_prob": 0.0206
+      },
+      {
+        "source": "ITZ0819",
+        "target": "ITZ0820",
+        "transition_prob": 0.0148
+      },
+      {
+        "source": "ITK0615",
+        "target": "ITL0219",
+        "transition_prob": 0.1817
+      },
+      {
+        "source": "ITK0615",
+        "target": "ITX9918",
+        "transition_prob": 0.0117
+      },
+      {
+        "source": "ITK0615",
+        "target": "ITA0216",
+        "transition_prob": 0.0167
+      },
+      {
+        "source": "ITK0615",
+        "target": "ITK0318",
+        "transition_prob": 0.01
+      },
+      {
+        "source": "ITK0518",
+        "target": "ITK0420",
+        "transition_prob": 0.0133
+      },
+      {
+        "source": "ITK0518",
+        "target": "ITL0219",
+        "transition_prob": 0.0424
+      },
+      {
+        "source": "ITK0518",
+        "target": "ITA9919",
+        "transition_prob": 0.0106
+      },
+      {
+        "source": "ITK0518",
+        "target": "ITK0419",
+        "transition_prob": 0.0106
+      },
+      {
+        "source": "ITA1118",
+        "target": "ITM1019",
+        "transition_prob": 0.016
+      },
+      {
+        "source": "ITA1118",
+        "target": "ITL0219",
+        "transition_prob": 0.0502
+      },
+      {
+        "source": "ITD0816",
+        "target": "ITD0617",
+        "transition_prob": 0.0124
+      },
+      {
+        "source": "ITD0816",
+        "target": "ITH0319",
+        "transition_prob": 0.0365
+      },
+      {
+        "source": "ITD0816",
+        "target": "ITH0320",
+        "transition_prob": 0.01
+      },
+      {
+        "source": "ITD0816",
+        "target": "ITL0219",
+        "transition_prob": 0.0216
+      },
+      {
+        "source": "ITD0816",
+        "target": "ITD0918",
+        "transition_prob": 0.0174
+      },
+      {
+        "source": "ITX0017",
+        "target": "ITL0219",
+        "transition_prob": 0.0252
+      },
+      {
+        "source": "ITX0017",
+        "target": "ITZ0818",
+        "transition_prob": 0.0234
+      },
+      {
+        "source": "ITX0017",
+        "target": "ITM1318",
+        "transition_prob": 0.0132
+      },
+      {
+        "source": "ITX0017",
+        "target": "ITX9918",
+        "transition_prob": 0.0216
+      },
+      {
+        "source": "ITX0017",
+        "target": "ITA9919",
+        "transition_prob": 0.0192
+      },
+      {
+        "source": "ITX0017",
+        "target": "ITI0118",
+        "transition_prob": 0.0138
+      },
+      {
+        "source": "ITK0216",
+        "target": "ITZ0818",
+        "transition_prob": 0.0255
+      },
+      {
+        "source": "ITK0216",
+        "target": "ITL0219",
+        "transition_prob": 0.0737
+      },
+      {
+        "source": "ITK0216",
+        "target": "ITK0417",
+        "transition_prob": 0.0215
+      },
+      {
+        "source": "ITD0518",
+        "target": "ITH0519",
+        "transition_prob": 0.0115
+      },
+      {
+        "source": "ITA1116",
+        "target": "ITA1117",
+        "transition_prob": 0.0231
+      },
+      {
+        "source": "ITA1116",
+        "target": "ITI0118",
+        "transition_prob": 0.0145
+      },
+      {
+        "source": "ITA1116",
+        "target": "ITA1118",
+        "transition_prob": 0.013
+      },
+      {
+        "source": "ITA1116",
+        "target": "ITX9918",
+        "transition_prob": 0.013
+      },
+      {
+        "source": "ITA1116",
+        "target": "ITZ0818",
+        "transition_prob": 0.013
+      },
+      {
+        "source": "ITM1113",
+        "target": "ITM1314",
+        "transition_prob": 0.2274
+      },
+      {
+        "source": "ITM1113",
+        "target": "ITA0215",
+        "transition_prob": 0.0232
+      },
+      {
+        "source": "ITM1113",
+        "target": "ITL0219",
+        "transition_prob": 0.0197
+      },
+      {
+        "source": "ITM1113",
+        "target": "ITM1315",
+        "transition_prob": 0.0615
+      },
+      {
+        "source": "ITM1113",
+        "target": "ITA0216",
+        "transition_prob": 0.0197
+      },
+      {
+        "source": "ITM1113",
+        "target": "ITA0217",
+        "transition_prob": 0.0209
+      },
+      {
+        "source": "ITM1113",
+        "target": "ITA0214",
+        "transition_prob": 0.0197
+      },
+      {
+        "source": "ITK0417",
+        "target": "ITZ0818",
+        "transition_prob": 0.0388
+      },
+      {
+        "source": "ITK0417",
+        "target": "ITK0318",
+        "transition_prob": 0.0421
+      },
+      {
+        "source": "ITK0417",
+        "target": "ITK0420",
+        "transition_prob": 0.0477
+      },
+      {
+        "source": "ITK0417",
+        "target": "ITK0418",
+        "transition_prob": 0.038
+      },
+      {
+        "source": "ITK0417",
+        "target": "ITK9918",
+        "transition_prob": 0.0307
+      },
+      {
+        "source": "ITK0417",
+        "target": "ITL0219",
+        "transition_prob": 0.0251
+      },
+      {
+        "source": "ITD1014",
+        "target": "ITH0516",
+        "transition_prob": 0.035
+      },
+      {
+        "source": "ITD1014",
+        "target": "ITD0817",
+        "transition_prob": 0.0729
+      },
+      {
+        "source": "ITD1014",
+        "target": "ITD1017",
+        "transition_prob": 0.105
+      },
+      {
+        "source": "ITD1014",
+        "target": "ITA0215",
+        "transition_prob": 0.0204
+      },
+      {
+        "source": "ITD1014",
+        "target": "ITH0517",
+        "transition_prob": 0.0306
+      },
+      {
+        "source": "ITD1014",
+        "target": "ITD0215",
+        "transition_prob": 0.0131
+      },
+      {
+        "source": "ITD1014",
+        "target": "ITI0016",
+        "transition_prob": 0.0117
+      },
+      {
+        "source": "ITD1014",
+        "target": "ITI0317",
+        "transition_prob": 0.0102
+      },
+      {
+        "source": "ITB0718",
+        "target": "ITB0419",
+        "transition_prob": 0.0101
+      },
+      {
+        "source": "ITB0718",
+        "target": "ITH0320",
+        "transition_prob": 0.0151
+      },
+      {
+        "source": "ITB0718",
+        "target": "ITL0219",
+        "transition_prob": 0.0478
+      },
+      {
+        "source": "ITB0718",
+        "target": "ITM1019",
+        "transition_prob": 0.0107
+      },
+      {
+        "source": "ITD0016",
+        "target": "ITL0219",
+        "transition_prob": 0.038
+      },
+      {
+        "source": "ITD0016",
+        "target": "ITI0317",
+        "transition_prob": 0.0136
+      },
+      {
+        "source": "ITD0016",
+        "target": "ITD1017",
+        "transition_prob": 0.0127
+      },
+      {
+        "source": "ITD0016",
+        "target": "ITX9918",
+        "transition_prob": 0.0117
+      },
+      {
+        "source": "ITD0016",
+        "target": "ITA1017",
+        "transition_prob": 0.0122
+      },
+      {
+        "source": "ITD0016",
+        "target": "ITZ0818",
+        "transition_prob": 0.0103
+      },
+      {
+        "source": "ITD0016",
+        "target": "ITD0918",
+        "transition_prob": 0.0113
+      },
+      {
+        "source": "ITD0016",
+        "target": "ITI0119",
+        "transition_prob": 0.0122
+      },
+      {
+        "source": "ITK0418",
+        "target": "ITK0419",
+        "transition_prob": 0.0117
+      },
+      {
+        "source": "ITK0418",
+        "target": "ITL0219",
+        "transition_prob": 0.0273
+      },
+      {
+        "source": "ITK0418",
+        "target": "ITK0420",
+        "transition_prob": 0.0571
+      },
+      {
+        "source": "ITK0418",
+        "target": "ITZ0819",
+        "transition_prob": 0.0104
+      },
+      {
+        "source": "ITD0617",
+        "target": "ITL0219",
+        "transition_prob": 0.0614
+      },
+      {
+        "source": "ITD0617",
+        "target": "ITM1318",
+        "transition_prob": 0.0101
+      },
+      {
+        "source": "ITD0617",
+        "target": "ITX9918",
+        "transition_prob": 0.0236
+      },
+      {
+        "source": "ITD0617",
+        "target": "ITD9918",
+        "transition_prob": 0.0118
+      },
+      {
+        "source": "ITD0617",
+        "target": "ITD0818",
+        "transition_prob": 0.0118
+      },
+      {
+        "source": "ITD0617",
+        "target": "ITD0918",
+        "transition_prob": 0.0126
+      },
+      {
+        "source": "ITD0617",
+        "target": "ITA9919",
+        "transition_prob": 0.0101
+      },
+      {
+        "source": "ITD1016",
+        "target": "ITI0119",
+        "transition_prob": 0.0148
+      },
+      {
+        "source": "ITD1016",
+        "target": "ITD1017",
+        "transition_prob": 0.0197
+      },
+      {
+        "source": "ITD1016",
+        "target": "ITI0317",
+        "transition_prob": 0.0394
+      },
+      {
+        "source": "ITD1016",
+        "target": "ITH0517",
+        "transition_prob": 0.064
+      },
+      {
+        "source": "ITD1016",
+        "target": "ITL0219",
+        "transition_prob": 0.0197
+      },
+      {
+        "source": "ITD1016",
+        "target": "ITD0817",
+        "transition_prob": 0.0148
+      },
+      {
+        "source": "ITD1016",
+        "target": "ITA0519",
+        "transition_prob": 0.0148
+      },
+      {
+        "source": "ITD1016",
+        "target": "ITZ0818",
+        "transition_prob": 0.0246
+      },
+      {
+        "source": "ITD0615",
+        "target": "ITB0517",
+        "transition_prob": 0.0343
+      },
+      {
+        "source": "ITD0615",
+        "target": "ITL0219",
+        "transition_prob": 0.0359
+      },
+      {
+        "source": "ITD0615",
+        "target": "ITA0917",
+        "transition_prob": 0.0147
+      },
+      {
+        "source": "ITD0615",
+        "target": "ITI0118",
+        "transition_prob": 0.0147
+      },
+      {
+        "source": "ITD0615",
+        "target": "ITH0517",
+        "transition_prob": 0.0147
+      },
+      {
+        "source": "ITD0615",
+        "target": "ITZ0818",
+        "transition_prob": 0.0131
+      },
+      {
+        "source": "ITK9918",
+        "target": "ITL0219",
+        "transition_prob": 0.06
+      },
+      {
+        "source": "ITK9918",
+        "target": "ITK0420",
+        "transition_prob": 0.034
+      },
+      {
+        "source": "ITK0616",
+        "target": "ITL0219",
+        "transition_prob": 0.0565
+      },
+      {
+        "source": "ITK0616",
+        "target": "ITZ0818",
+        "transition_prob": 0.0421
+      },
+      {
+        "source": "ITK0616",
+        "target": "ITI0119",
+        "transition_prob": 0.0108
+      },
+      {
+        "source": "ITK0616",
+        "target": "ITD0918",
+        "transition_prob": 0.0108
+      },
+      {
+        "source": "ITK0616",
+        "target": "ITK0517",
+        "transition_prob": 0.0144
+      },
+      {
+        "source": "ITK0616",
+        "target": "ITK0420",
+        "transition_prob": 0.0132
+      },
+      {
+        "source": "ITA9918",
+        "target": "ITH0320",
+        "transition_prob": 0.0103
+      },
+      {
+        "source": "ITA9918",
+        "target": "ITL0219",
+        "transition_prob": 0.0159
+      },
+      {
+        "source": "ITA9918",
+        "target": "ITZ0820",
+        "transition_prob": 0.0103
+      },
+      {
+        "source": "ITK0519",
+        "target": "ITK0420",
+        "transition_prob": 0.0229
+      },
+      {
+        "source": "ITA0416",
+        "target": "ITZ0817",
+        "transition_prob": 0.0571
+      },
+      {
+        "source": "ITA0416",
+        "target": "ITD0918",
+        "transition_prob": 0.0286
+      },
+      {
+        "source": "ITA0416",
+        "target": "ITA0518",
+        "transition_prob": 0.0286
+      },
+      {
+        "source": "ITA0416",
+        "target": "ITZ0818",
+        "transition_prob": 0.0571
+      },
+      {
+        "source": "ITA0416",
+        "target": "ITK0318",
+        "transition_prob": 0.0286
+      },
+      {
+        "source": "ITA0416",
+        "target": "ITI0119",
+        "transition_prob": 0.0286
+      },
+      {
+        "source": "ITA0416",
+        "target": "ITK0419",
+        "transition_prob": 0.0286
+      },
+      {
+        "source": "ITA0416",
+        "target": "ITB0419",
+        "transition_prob": 0.0286
+      },
+      {
+        "source": "ITM1215",
+        "target": "ITZ0818",
+        "transition_prob": 0.027
+      },
+      {
+        "source": "ITM1215",
+        "target": "ITL0219",
+        "transition_prob": 0.0901
+      },
+      {
+        "source": "ITM1215",
+        "target": "ITA1017",
+        "transition_prob": 0.027
+      },
+      {
+        "source": "ITM1215",
+        "target": "ITA0216",
+        "transition_prob": 0.036
+      },
+      {
+        "source": "ITM1215",
+        "target": "ITI0118",
+        "transition_prob": 0.018
+      },
+      {
+        "source": "ITM1215",
+        "target": "ITH0516",
+        "transition_prob": 0.018
+      },
+      {
+        "source": "ITM1215",
+        "target": "ITA1117",
+        "transition_prob": 0.018
+      },
+      {
+        "source": "ITM1215",
+        "target": "ITH0320",
+        "transition_prob": 0.018
+      },
+      {
+        "source": "ITM1215",
+        "target": "ITI0316",
+        "transition_prob": 0.018
+      },
+      {
+        "source": "ITM1215",
+        "target": "ITH0318",
+        "transition_prob": 0.018
+      },
+      {
+        "source": "ITA0617",
+        "target": "ITH0319",
+        "transition_prob": 0.0526
+      },
+      {
+        "source": "ITA0617",
+        "target": "ITI0118",
+        "transition_prob": 0.0526
+      },
+      {
+        "source": "ITA0617",
+        "target": "ITM1318",
+        "transition_prob": 0.0526
+      },
+      {
+        "source": "ITA0617",
+        "target": "ITA1318",
+        "transition_prob": 0.0526
+      },
+      {
+        "source": "ITL0218",
+        "target": "ITK0420",
+        "transition_prob": 0.02
+      },
+      {
+        "source": "ITL0218",
+        "target": "ITA1019",
+        "transition_prob": 0.02
+      },
+      {
+        "source": "ITL0218",
+        "target": "ITH0519",
+        "transition_prob": 0.02
+      },
+      {
+        "source": "ITL0218",
+        "target": "ITZ0819",
+        "transition_prob": 0.02
+      },
+      {
+        "source": "ITL0218",
+        "target": "ITH0320",
+        "transition_prob": 0.06
+      },
+      {
+        "source": "ITL0218",
+        "target": "ITH0319",
+        "transition_prob": 0.04
+      }
+    ]
+  }
+}
