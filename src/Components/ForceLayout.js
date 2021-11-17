@@ -65,6 +65,18 @@ const ForceLayout = (props) => {
       .attr("stroke-opacity", 0.6)
       .attr("stroke-width", (d) => Math.sqrt(d.value));
 
+    const mouseover = (event, d) => {
+      event.target.style.cursor = "pointer";
+      // event.target.style.transition = "all 0.5s";
+      event.target.attributes.r.value = "12";
+    };
+
+    const mouseout = (event, d) => {
+      // event.target.style.cursor = "pointer";
+      // event.target.style.transition = "all 0.5s";
+      event.target.attributes.r.value = "7";
+    };
+
     const node = svg
       .selectAll("circle")
       .data(data.nodes)
@@ -105,8 +117,9 @@ const ForceLayout = (props) => {
             d.fy = null;
           })
       )
+      .on("mouseover", mouseover)
+      .on("mouseout", mouseout)
       .on("click", (event, d) => {
-        console.log(d);
         setNodeId(d.id);
         setNodeName(d.name);
         setNodeSubFunction(d.subFunction);
@@ -182,6 +195,7 @@ const ForceLayout = (props) => {
 
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ display: "flex", flexDirection: "column" }}>
+              <div></div>
               <div style={{ textAlign: "start" }}>
                 <h4>Id: {nodeId}</h4>
               </div>
@@ -194,8 +208,9 @@ const ForceLayout = (props) => {
               <div style={{ textAlign: "start" }}>
                 <h4>Level: {nodeLevel}</h4>
               </div>
+              <div></div>
               <div style={{ textAlign: "start" }}>
-                <h4>Sub Level: {nodeLevel}</h4>
+                <h4>Sub Level: {nodeSubLevel}</h4>
               </div>
               <div style={{ textAlign: "start" }}>
                 <h4>Grade: {nodeGrade}</h4>
@@ -208,6 +223,9 @@ const ForceLayout = (props) => {
 
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ display: "flex", flexDirection: "column" }}>
+              <div>
+                <h5>Source</h5>
+              </div>
               <div style={{ textAlign: "start" }}>
                 <h4>Id: {nodeId}</h4>
               </div>
@@ -220,8 +238,11 @@ const ForceLayout = (props) => {
               <div style={{ textAlign: "start" }}>
                 <h4>Level: {nodeLevel}</h4>
               </div>
+              <div>
+                <h5>Target</h5>
+              </div>
               <div style={{ textAlign: "start" }}>
-                <h4>Sub Level: {nodeLevel}</h4>
+                <h4>Sub Level: {nodeSubLevel}</h4>
               </div>
               <div style={{ textAlign: "start" }}>
                 <h4>Grade: {nodeGrade}</h4>

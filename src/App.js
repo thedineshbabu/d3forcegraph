@@ -15,7 +15,9 @@ function App() {
         </button>
       </div>
       {layout === "Basic" && <ForceLayout width={960} height={500} />}
-      {layout === "GroupInBoxLayout" && <GroupInBoxLayout />}
+      {layout === "GroupInBoxLayout" && (
+        <GroupInBoxLayout width={960} height={500} />
+      )}
     </div>
   );
 }
