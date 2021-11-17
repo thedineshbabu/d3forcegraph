@@ -4,7 +4,7 @@ import GroupInBoxLayout from "./Components/GroupInBoxLayout";
 import React, { useState } from "react";
 
 function App() {
-  const [layout, setLayout] = useState("GroupInBoxLayout");
+  const [layout, setLayout] = useState("Basic");
 
   return (
     <div className="App">
@@ -16,7 +16,7 @@ function App() {
       </div>
       {layout === "Basic" && <ForceLayout width={960} height={500} />}
       {layout === "GroupInBoxLayout" && (
-        <GroupInBoxLayout width={960} height={500} />
+        <GroupInBoxLayout width={960} height={600} />
       )}
     </div>
   );

@@ -128,6 +128,14 @@ const ForceLayout = (props) => {
         setNodeGrade(d.grade);
       });
 
+    node
+      .append("text")
+      .attr("x", 12)
+      .attr("dy", ".35em")
+      .text(function (d) {
+        return d.name;
+      });
+
     simulation.on("tick", () => {
       node
         .attr("cx", function (d) {

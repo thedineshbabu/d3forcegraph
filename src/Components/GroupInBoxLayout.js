@@ -2,12 +2,14 @@ import React, { useState, useEffect, useRef } from "react";
 import * as d3 from "d3";
 import Select from "react-select";
 // import sampleData from "./sampleData.json";
-import sampleData from "./groupData.json";
+import sampleData from "./oldData.json";
 import forceInABox from "./forceInABox";
 import "./GroupInBoxLayout.css";
 
 const GroupInBoxLayout = (props) => {
   const myContainer = useRef(null);
+
+  // const groupName = nodeColor;
 
   const { width, height } = props;
 
@@ -20,11 +22,27 @@ const GroupInBoxLayout = (props) => {
     { value: "treemap", label: "Tree Map" },
   ];
 
+  const nodeColors = [
+    { value: "subFunction", label: "Sub Function" },
+    { value: "level", label: "Level" },
+    { value: "subLevel", label: "Sub Level" },
+    { value: "grade", label: "Grade" },
+  ];
+
+  const [nodeColor, setNodeColor] = useState("subFunction");
+
+  const [selectedNodeColor, setselectedNodeColor] = useState(nodeColors[0]);
+
   const [selectedOption, setSelectedOption] = useState(options[1]);
 
   const handleOptionChange = (selectedOption) => {
     setSelectedOption(selectedOption);
     setGraphType(selectedOption.value);
+  };
+
+  const handleNodeColorChange = (selectedOption) => {
+    setselectedNodeColor(selectedOption);
+    setNodeColor(selectedOption.value);
   };
 
   const style = {
@@ -44,7 +62,16 @@ const GroupInBoxLayout = (props) => {
 
     const color = d3.scaleOrdinal(d3.schemeCategory10);
 
-    var force = d3.forceSimulation().force("collide", d3.forceCollide(5));
+    var force = d3
+      .forceSimulation(data.nodes)
+      .force(
+        "link",
+        d3
+          .forceLink(data.links)
+          .id((d) => d.id)
+          .distance(20)
+      )
+      .force("collide", d3.forceCollide(5));
 
     const svg = d3
       .select(myContainer.current)
@@ -55,7 +82,7 @@ const GroupInBoxLayout = (props) => {
     let groupingForce = forceInABox()
       .strength(0.1) // Strength to foci
       .template(template) // Either treemap or force
-      .groupBy("group") // Node attribute to group
+      .groupBy(nodeColor) // Node attribute to group
       .links(data.links) // The graph links. Must be called after setting the grouping attribute
       .enableGrouping(useGroupInABox)
       .nodeSize(15) // Used to compute the size of the template nodes, think of it as the radius the node uses, including its padding
@@ -64,7 +91,7 @@ const GroupInBoxLayout = (props) => {
 
     force
       .nodes(data.nodes)
-      .force("group", groupingForce)
+      .force(nodeColor, groupingForce)
       .force(
         "link",
         d3
@@ -99,7 +126,18 @@ const GroupInBoxLayout = (props) => {
       .attr("class", "node")
       .attr("r", 7)
       .style("fill", function (d) {
-        return color(d.group);
+        if (nodeColor === "subFunction") {
+          return color(d.subFunction);
+        }
+        if (nodeColor === "level") {
+          return color(d.level);
+        } else if (nodeColor === "subLevel") {
+          return color(d.subLevel);
+        } else if (nodeColor === "grade") {
+          return color(d.grade);
+        } else {
+          return color(d.subFunction);
+        }
       })
       .call(
         d3
@@ -129,12 +167,12 @@ const GroupInBoxLayout = (props) => {
     force.stop();
 
     if (drawTemplate) {
-      force.force("group").drawTemplate(svg);
+      force.force(nodeColor).drawTemplate(svg);
     } else {
-      force.force("group").deleteTemplate(svg);
+      force.force(nodeColor).deleteTemplate(svg);
     }
-    force.force("group").enableGrouping(useGroupInABox);
-    force.force("group").template(template);
+    force.force(nodeColor).enableGrouping(useGroupInABox);
+    force.force(nodeColor).template(template);
     force.restart();
 
     force.on("tick", function () {
@@ -165,7 +203,7 @@ const GroupInBoxLayout = (props) => {
         divElement.removeChild(divElement.firstChild);
       }
     };
-  }, [props, graphType, drawTemplate]);
+  }, [props, graphType, drawTemplate, nodeColor]);
 
   return (
     <div
@@ -176,11 +214,21 @@ const GroupInBoxLayout = (props) => {
       }}
     >
       <div style={{ display: "flex", justifyContent: "center" }}>
+        <div>
+          <h1>GroupInBoxLayout</h1>
+        </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          marginBottom: "25px",
+        }}
+      >
         <div
           style={{
-            width: "500px",
+            width: "150px",
             alignSelf: "center",
-            marginTop: "25px",
             flexDirection: "row",
           }}
         >
@@ -192,9 +240,21 @@ const GroupInBoxLayout = (props) => {
         </div>
         <div
           style={{
-            width: "500px",
+            width: "200px",
             alignSelf: "center",
-            marginTop: "25px",
+            flexDirection: "row",
+          }}
+        >
+          <Select
+            value={selectedNodeColor}
+            onChange={handleNodeColorChange}
+            options={nodeColors}
+          />
+        </div>
+        <div
+          style={{
+            width: "150px",
+            alignSelf: "center",
             flexDirection: "row",
           }}
         >
@@ -206,9 +266,7 @@ const GroupInBoxLayout = (props) => {
           <label>Draw Template</label>
         </div>
       </div>
-      <div>
-        <h1>GroupInBoxLayout</h1>
-      </div>
+
       <div ref={myContainer} style={style} />
     </div>
   );
