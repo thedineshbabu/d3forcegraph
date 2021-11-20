@@ -1,14 +1,9 @@
 import * as d3 from "d3";
 
-export default function forceInABox() {
-  // d3 style
-  function constant(_) {
-    return () => _;
-  }
+export default function forceInABox(showTitle = false) {
+  const constant = (_) => () => _;
 
-  function index(d) {
-    return d.index;
-  }
+  const index = (d) => d.index;
 
   let id = index,
     nodes = [],
@@ -27,7 +22,7 @@ export default function forceInABox() {
     templateNodes = [],
     offset = [0, 0],
     templateForce,
-    groupBy = function (d) {
+    groupBy = (d) => {
       return d.cluster;
     },
     template = "treemap",
@@ -35,7 +30,7 @@ export default function forceInABox() {
     strength = 0.1;
   // showingTemplate = false;
 
-  function force(alpha) {
+  const force = (alpha) => {
     if (!enableGrouping) {
       return force;
     }
@@ -50,7 +45,7 @@ export default function forceInABox() {
       node.vx += (foci[groupBy(node)].x - node.x) * k;
       node.vy += (foci[groupBy(node)].y - node.y) * k;
     }
-  }
+  };
 
   function initialize() {
     if (!nodes) return;
@@ -73,14 +68,14 @@ export default function forceInABox() {
     initialize();
   };
 
-  function getLinkKey(l) {
+  const getLinkKey = (l) => {
     let sourceID = groupBy(l.source),
       targetID = groupBy(l.target);
 
     return sourceID <= targetID
       ? sourceID + "~" + targetID
       : targetID + "~" + sourceID;
-  }
+  };
 
   function computeClustersNodeCounts(nodes) {
     let clustersCounts = new Map(),
@@ -294,12 +289,12 @@ export default function forceInABox() {
           .strength(forceLinkStrength)
       );
 
-    console.log(
-      "Initialize with force ",
-      templateForce.nodes().length,
-      " ",
-      templateForce.force("links").links().length
-    );
+    // console.log(
+    //   "Initialize with force ",
+    //   templateForce.nodes().length,
+    //   " ",
+    //   templateForce.force("links").links().length
+    // );
 
     // let i = 0;
     // while (i++ < 500) templateForce.tick();
@@ -310,6 +305,7 @@ export default function forceInABox() {
   }
 
   function drawTreemap(container) {
+    console.log("Draw treemap", templateNodes);
     // Delete the circle Template if it exists
     container.selectAll("circle.cell").remove();
     container.selectAll("line.cell").remove();
@@ -322,6 +318,7 @@ export default function forceInABox() {
       .attr("x", function (d) {
         return d.x0;
       })
+      .attr("text", (d) => d.data.id)
       .attr("y", function (d) {
         return d.y0;
       })
@@ -331,6 +328,26 @@ export default function forceInABox() {
       .attr("height", function (d) {
         return d.y1 - d.y0;
       });
+    if (showTitle) {
+      container.selectAll("text.cell").remove();
+      container
+        .selectAll("text.cell")
+        .data(templateNodes)
+        .enter()
+        .append("svg:text")
+        .attr("class", "cellText")
+        .attr("x", function (d) {
+          return d.x0 + (d.x1 - d.x0) / 2;
+        })
+        .attr("y", function (d) {
+          return d.y0 + (d.y1 - d.y0) / 2 - 50;
+        })
+        .attr("dy", "0.35em")
+        .attr("text-anchor", "middle")
+        .text(function (d) {
+          return d.data.id;
+        });
+    }
 
     // container
     //   .selectAll("rect.cell")
@@ -352,6 +369,10 @@ export default function forceInABox() {
   function drawGraph(container) {
     // Delete the treemap if any
     container.selectAll("rect.cell").remove();
+    container.selectAll("text.cellText").remove();
+
+    // console.log("Draw graph", templateNodes);
+
     let templateLinksSel = container
       .selectAll("line.cell")
       .data(templateForce.force("links").links());
@@ -392,6 +413,30 @@ export default function forceInABox() {
       .attr("r", function (d) {
         return d.r;
       });
+
+    if (showTitle) {
+      let templateTextSel = container
+        .selectAll("text.cell")
+        .data(templateForce.nodes());
+      templateTextSel
+        .enter()
+        .append("svg:text")
+        .attr("class", "cellText")
+        .merge(templateNodesSel)
+        .attr("x", (d) => {
+          console.log(`x ${d.x} & ${d.id}`);
+          return d.x;
+        })
+        .attr("y", (d) => {
+          console.log(`y ${d.y} & ${d.id}`);
+          return d.y;
+        })
+        .attr("dy", "0.45em")
+        .attr("text-anchor", "middle")
+        .text((d) => {
+          return d.id;
+        });
+    }
 
     templateForce
       .on("tick", () => {
