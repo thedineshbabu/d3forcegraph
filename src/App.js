@@ -2,6 +2,7 @@ import "./App.css";
 import ForceLayout from "./Components/ForceLayout";
 import GroupInBoxLayout from "./Components/GroupInBoxLayout";
 import React, { useState } from "react";
+import ArcLayout from "./Components/ArcLayout";
 
 function App() {
   const [layout, setLayout] = useState("Basic");
@@ -12,12 +13,14 @@ function App() {
         <button onClick={() => setLayout("Basic")}>Basic</button>{" "}
         <button onClick={() => setLayout("GroupInBoxLayout")}>
           GroupInBoxLayout
-        </button>
+        </button>{" "}
+        <button onClick={() => setLayout("ArcLayout")}>Arc</button>
       </div>
       {layout === "Basic" && <ForceLayout width={960} height={500} />}
       {layout === "GroupInBoxLayout" && (
-        <GroupInBoxLayout width={960} height={600} />
+        <GroupInBoxLayout width={1024} height={768} />
       )}
+      {layout === "ArcLayout" && <ArcLayout width={960} height={500} />}
     </div>
   );
 }

@@ -1,21 +1,50 @@
 import React, { useState, useEffect, useRef } from "react";
 import * as d3 from "d3";
 import Select from "react-select";
-// import sampleData from "./sampleData.json";
-import sampleData from "./oldData.json";
+import sampleData from "./sampleData.json";
+// import sampleData from "./oldData.json";
 import forceInABox from "./forceInABox";
 import "./GroupInBoxLayout.css";
+import { subFunctions, getGraphData } from "./Helper";
+import MultiSelect from "./MultiSelect";
 
 const GroupInBoxLayout = (props) => {
   const myContainer = useRef(null);
 
-  // const groupName = nodeColor;
+  const defaultProps = {
+    allOption: {
+      label: "Select all",
+      value: "*",
+    },
+  };
+
+  const handleMultiSelectChange = (selected) => {
+    if (
+      selected !== null &&
+      selected.length > 0 &&
+      selected[selected.length - 1].value === defaultProps.allOption.value
+    ) {
+      setSelectedSubFunction(subFunctions());
+      return subFunctions();
+    }
+    setSelectedSubFunction(selected);
+    return selected;
+  };
 
   const { width, height } = props;
 
   const [graphType, setGraphType] = useState("treemap");
 
   const [drawTemplate, setDrawTemplate] = useState(false);
+
+  const [showTitle, setShowTitle] = useState(false);
+
+  const subFunctionOptions = subFunctions().map((subFunction) => {
+    return { value: subFunction, label: subFunction };
+  });
+
+  const [selectedSubFunction, setSelectedSubFunction] =
+    useState(subFunctionOptions);
 
   const options = [
     { value: "force", label: "Force" },
@@ -31,9 +60,11 @@ const GroupInBoxLayout = (props) => {
 
   const [nodeColor, setNodeColor] = useState("subFunction");
 
-  const [selectedNodeColor, setselectedNodeColor] = useState(nodeColors[0]);
+  const [selectedNodeColor, setSelectedNodeColor] = useState(nodeColors[0]);
 
   const [selectedOption, setSelectedOption] = useState(options[1]);
+
+  const [data, setData] = useState(getGraphData(subFunctions(), sampleData));
 
   const handleOptionChange = (selectedOption) => {
     setSelectedOption(selectedOption);
@@ -41,7 +72,7 @@ const GroupInBoxLayout = (props) => {
   };
 
   const handleNodeColorChange = (selectedOption) => {
-    setselectedNodeColor(selectedOption);
+    setSelectedNodeColor(selectedOption);
     setNodeColor(selectedOption.value);
   };
 
@@ -53,12 +84,23 @@ const GroupInBoxLayout = (props) => {
   };
 
   useEffect(() => {
+    // setData(getGraphData(selectedSubFunction, sampleData));
+
+    const funcs = [
+      ...selectedSubFunction.map((subFunction) => {
+        return subFunction.value;
+      }),
+    ];
+
+    // console.log("selectedSubFunction", funcs);
+    setData(getGraphData(funcs, sampleData));
+  }, [selectedSubFunction]);
+
+  useEffect(() => {
     const { width, height } = props;
 
     let useGroupInABox = true,
       template = graphType;
-
-    const data = sampleData;
 
     const color = d3.scaleOrdinal(d3.schemeCategory10);
 
@@ -79,7 +121,7 @@ const GroupInBoxLayout = (props) => {
       .attr("width", width)
       .attr("height", height);
 
-    let groupingForce = forceInABox()
+    let groupingForce = forceInABox(showTitle)
       .strength(0.1) // Strength to foci
       .template(template) // Either treemap or force
       .groupBy(nodeColor) // Node attribute to group
@@ -87,7 +129,7 @@ const GroupInBoxLayout = (props) => {
       .enableGrouping(useGroupInABox)
       .nodeSize(15) // Used to compute the size of the template nodes, think of it as the radius the node uses, including its padding
       .forceCharge(-50 * 15) // Separation between nodes on the force template
-      .size([width, height]); // Size of the chart
+      .size([width, height]);
 
     force
       .nodes(data.nodes)
@@ -203,7 +245,15 @@ const GroupInBoxLayout = (props) => {
         divElement.removeChild(divElement.firstChild);
       }
     };
-  }, [props, graphType, drawTemplate, nodeColor]);
+  }, [
+    props,
+    graphType,
+    drawTemplate,
+    nodeColor,
+    data,
+    selectedSubFunction,
+    showTitle,
+  ]);
 
   return (
     <div
@@ -215,7 +265,7 @@ const GroupInBoxLayout = (props) => {
     >
       <div style={{ display: "flex", justifyContent: "center" }}>
         <div>
-          <h1>GroupInBoxLayout</h1>
+          <h1>Group In Box Layout</h1>
         </div>
       </div>
       <div
@@ -227,7 +277,7 @@ const GroupInBoxLayout = (props) => {
       >
         <div
           style={{
-            width: "150px",
+            width: "250px",
             alignSelf: "center",
             flexDirection: "row",
           }}
@@ -240,7 +290,7 @@ const GroupInBoxLayout = (props) => {
         </div>
         <div
           style={{
-            width: "200px",
+            width: "250px",
             alignSelf: "center",
             flexDirection: "row",
           }}
@@ -253,7 +303,7 @@ const GroupInBoxLayout = (props) => {
         </div>
         <div
           style={{
-            width: "150px",
+            width: "250px",
             alignSelf: "center",
             flexDirection: "row",
           }}
@@ -265,9 +315,47 @@ const GroupInBoxLayout = (props) => {
           />
           <label>Draw Template</label>
         </div>
+        <div
+          style={{
+            width: "250px",
+            alignSelf: "center",
+            flexDirection: "row",
+          }}
+        >
+          <input
+            type="checkbox"
+            checked={showTitle}
+            onChange={(e) => setShowTitle(e.target.checked)}
+          />
+          <label>Show Title</label>
+        </div>
       </div>
-
-      <div ref={myContainer} style={style} />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          maxWidth: "80%",
+          alignSelf: "center",
+        }}
+      >
+        <div>
+          <MultiSelect
+            handleMultiSelectChange={handleMultiSelectChange}
+            optionSelected={selectedSubFunction}
+            colourOptions={subFunctionOptions}
+            defaultProps={defaultProps}
+          />
+        </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          paddingTop: "20px",
+        }}
+      >
+        <div ref={myContainer} style={style} />
+      </div>
     </div>
   );
 };
