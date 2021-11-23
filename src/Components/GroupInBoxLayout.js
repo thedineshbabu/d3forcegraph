@@ -1,12 +1,21 @@
 import React, { useState, useEffect, useRef } from "react";
 import * as d3 from "d3";
-import Select from "react-select";
+// import Select from "react-select";
 import sampleData from "./sampleData.json";
 // import sampleData from "./oldData.json";
 import forceInABox from "./forceInABox";
 import "./GroupInBoxLayout.css";
 import { subFunctions, getGraphData } from "./Helper";
 import MultiSelect from "./MultiSelect";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+// import Typography from "@mui/material/Typography";
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
 
 const GroupInBoxLayout = (props) => {
   const myContainer = useRef(null);
@@ -33,7 +42,7 @@ const GroupInBoxLayout = (props) => {
 
   const { width, height } = props;
 
-  const [graphType, setGraphType] = useState("treemap");
+  const [graphType, setGraphType] = useState("force");
 
   const [drawTemplate, setDrawTemplate] = useState(false);
 
@@ -46,35 +55,35 @@ const GroupInBoxLayout = (props) => {
   const [selectedSubFunction, setSelectedSubFunction] =
     useState(subFunctionOptions);
 
-  const options = [
-    { value: "force", label: "Force" },
-    { value: "treemap", label: "Tree Map" },
-  ];
+  // const options = [
+  //   { value: "force", label: "Force" },
+  //   { value: "treemap", label: "Tree Map" },
+  // ];
 
-  const nodeColors = [
-    { value: "subFunction", label: "Sub Function" },
-    { value: "level", label: "Level" },
-    { value: "subLevel", label: "Sub Level" },
-    { value: "grade", label: "Grade" },
-  ];
+  // const nodeColors = [
+  //   { value: "subFunction", label: "Sub Function" },
+  //   { value: "level", label: "Level" },
+  //   { value: "subLevel", label: "Sub Level" },
+  //   { value: "grade", label: "Grade" },
+  // ];
 
   const [nodeColor, setNodeColor] = useState("subFunction");
 
-  const [selectedNodeColor, setSelectedNodeColor] = useState(nodeColors[0]);
+  // const [selectedNodeColor, setSelectedNodeColor] = useState("subFunction");
 
-  const [selectedOption, setSelectedOption] = useState(options[1]);
+  // const [selectedOption, setSelectedOption] = useState(options[1]);
 
   const [data, setData] = useState(getGraphData(subFunctions(), sampleData));
 
-  const handleOptionChange = (selectedOption) => {
-    setSelectedOption(selectedOption);
-    setGraphType(selectedOption.value);
-  };
+  // const handleOptionChange = (selectedOption) => {
+  //   setSelectedOption(selectedOption);
+  //   setGraphType(selectedOption.value);
+  // };
 
-  const handleNodeColorChange = (selectedOption) => {
-    setSelectedNodeColor(selectedOption);
-    setNodeColor(selectedOption.value);
-  };
+  // const handleNodeColorChange = (selectedOption) => {
+  //   setSelectedNodeColor(selectedOption);
+  //   setNodeColor(selectedOption.value);
+  // };
 
   const style = {
     width,
@@ -263,16 +272,16 @@ const GroupInBoxLayout = (props) => {
         flexDirection: "column",
       }}
     >
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <div>
-          <h1>Group In Box Layout</h1>
-        </div>
-      </div>
+      {/* <Box>
+        <Typography variant="h4">Group In Box Layout</Typography>
+      </Box> */}
+
       <div
         style={{
           display: "flex",
           justifyContent: "space-around",
           marginBottom: "25px",
+          marginTop: "25px",
         }}
       >
         <div
@@ -282,11 +291,26 @@ const GroupInBoxLayout = (props) => {
             flexDirection: "row",
           }}
         >
-          <Select
+          {/* <Select
             value={selectedOption}
             onChange={handleOptionChange}
             options={options}
-          />
+          /> */}
+          <Box sx={{ minWidth: 120 }}>
+            <FormControl fullWidth>
+              <InputLabel id="graph-select-label">Graph Type</InputLabel>
+              <Select
+                labelId="graph-select-label"
+                id="graph-select"
+                value={graphType}
+                label="Graph Type"
+                onChange={(e) => setGraphType(e.target.value)}
+              >
+                <MenuItem value="force">Force</MenuItem>
+                <MenuItem value="treemap">Tree Map</MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
         </div>
         <div
           style={{
@@ -295,11 +319,23 @@ const GroupInBoxLayout = (props) => {
             flexDirection: "row",
           }}
         >
-          <Select
-            value={selectedNodeColor}
-            onChange={handleNodeColorChange}
-            options={nodeColors}
-          />
+          <Box sx={{ minWidth: 120 }}>
+            <FormControl fullWidth>
+              <InputLabel id="group-select-label">Grouping</InputLabel>
+              <Select
+                labelId="group-select-label"
+                id="group-select"
+                value={nodeColor}
+                label="Grouping"
+                onChange={(e) => setNodeColor(e.target.value)}
+              >
+                <MenuItem value="subFunction">Sub Function</MenuItem>
+                <MenuItem value="level">Level</MenuItem>
+                <MenuItem value="subLevel">Sub Level</MenuItem>
+                <MenuItem value="grade">Grade</MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
         </div>
         <div
           style={{
@@ -308,12 +344,17 @@ const GroupInBoxLayout = (props) => {
             flexDirection: "row",
           }}
         >
-          <input
-            type="checkbox"
-            checked={drawTemplate}
-            onChange={(e) => setDrawTemplate(e.target.checked)}
-          />
-          <label>Draw Template</label>
+          <FormGroup>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  checked={drawTemplate}
+                  onChange={(e) => setDrawTemplate(e.target.checked)}
+                />
+              }
+              label="Draw Template"
+            />
+          </FormGroup>
         </div>
         <div
           style={{
@@ -322,12 +363,19 @@ const GroupInBoxLayout = (props) => {
             flexDirection: "row",
           }}
         >
-          <input
-            type="checkbox"
-            checked={showTitle}
-            onChange={(e) => setShowTitle(e.target.checked)}
-          />
-          <label>Show Title</label>
+          {drawTemplate && (
+            <FormGroup>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={showTitle}
+                    onChange={(e) => setShowTitle(e.target.checked)}
+                  />
+                }
+                label="Show Title"
+              />
+            </FormGroup>
+          )}
         </div>
       </div>
       <div
