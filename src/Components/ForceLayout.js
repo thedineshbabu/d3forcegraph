@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import * as d3 from "d3";
-import Select from "react-select";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+// import Typography from "@mui/material/Typography";
 import sampleData from "./sampleData.json";
 
 const ForceLayout = (props) => {
@@ -22,12 +27,12 @@ const ForceLayout = (props) => {
     alignSelf: "center",
   };
 
-  const options = [
-    { value: "subFunction", label: "Sub Function" },
-    { value: "level", label: "Level" },
-    { value: "subLevel", label: "Sub Level" },
-    { value: "grade", label: "Grade" },
-  ];
+  // const options = [
+  //   { value: "subFunction", label: "Sub Function" },
+  //   { value: "level", label: "Level" },
+  //   { value: "subLevel", label: "Sub Level" },
+  //   { value: "grade", label: "Grade" },
+  // ];
 
   useEffect(() => {
     const { width, height } = props;
@@ -179,22 +184,30 @@ const ForceLayout = (props) => {
       <div style={{ display: "flex", justifyContent: "center" }}>
         <div
           style={{
-            width: "500px",
             alignSelf: "center",
             marginTop: "25px",
+            marginBottom: "25px",
             flexDirection: "row",
           }}
         >
-          <Select
-            id="nodeColor"
-            options={options}
-            defaultValue={options[0]}
-            onChange={(e) => setNodeColor(e.value)}
-          />
+          <Box sx={{ minWidth: 120 }}>
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">Node Color</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={nodeColor}
+                label="NodeColor"
+                onChange={(e) => setNodeColor(e.target.value)}
+              >
+                <MenuItem value="subFunction">Sub Function</MenuItem>
+                <MenuItem value="level">Level</MenuItem>
+                <MenuItem value="Sub Level">Sub Level</MenuItem>
+                <MenuItem value="graph">Graph</MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
         </div>
-      </div>
-      <div>
-        <h1>Force Layout</h1>
       </div>
       <div ref={myContainer} style={style} />
       <div style={{ display: "flex", justifyContent: "center" }}>
