@@ -147,7 +147,7 @@ const GroupInBoxLayout = (props) => {
         "link",
         d3
           .forceLink(data.links)
-          .distance(50)
+          .distance(150)
           .strength(groupingForce.getLinkStrength)
       );
 
