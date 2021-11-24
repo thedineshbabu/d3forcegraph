@@ -12,10 +12,13 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-// import Typography from "@mui/material/Typography";
+import Typography from "@mui/material/Typography";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
+import Slider from "@mui/material/Slider";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 
 const GroupInBoxLayout = (props) => {
   const myContainer = useRef(null);
@@ -55,35 +58,16 @@ const GroupInBoxLayout = (props) => {
   const [selectedSubFunction, setSelectedSubFunction] =
     useState(subFunctionOptions);
 
-  // const options = [
-  //   { value: "force", label: "Force" },
-  //   { value: "treemap", label: "Tree Map" },
-  // ];
-
-  // const nodeColors = [
-  //   { value: "subFunction", label: "Sub Function" },
-  //   { value: "level", label: "Level" },
-  //   { value: "subLevel", label: "Sub Level" },
-  //   { value: "grade", label: "Grade" },
-  // ];
-
   const [nodeColor, setNodeColor] = useState("subFunction");
-
-  // const [selectedNodeColor, setSelectedNodeColor] = useState("subFunction");
-
-  // const [selectedOption, setSelectedOption] = useState(options[1]);
 
   const [data, setData] = useState(getGraphData(subFunctions(), sampleData));
 
-  // const handleOptionChange = (selectedOption) => {
-  //   setSelectedOption(selectedOption);
-  //   setGraphType(selectedOption.value);
-  // };
+  const [slider, setSlider] = useState(50);
+  const [sliderValue, setSliderValue] = useState(50);
 
-  // const handleNodeColorChange = (selectedOption) => {
-  //   setSelectedNodeColor(selectedOption);
-  //   setNodeColor(selectedOption.value);
-  // };
+  const handleSliderChange = (event, value) => {
+    setSlider(value);
+  };
 
   const style = {
     width,
@@ -93,15 +77,12 @@ const GroupInBoxLayout = (props) => {
   };
 
   useEffect(() => {
-    // setData(getGraphData(selectedSubFunction, sampleData));
-
     const funcs = [
       ...selectedSubFunction.map((subFunction) => {
         return subFunction.value;
       }),
     ];
 
-    // console.log("selectedSubFunction", funcs);
     setData(getGraphData(funcs, sampleData));
   }, [selectedSubFunction]);
 
@@ -147,7 +128,7 @@ const GroupInBoxLayout = (props) => {
         "link",
         d3
           .forceLink(data.links)
-          .distance(150)
+          .distance(sliderValue)
           .strength(groupingForce.getLinkStrength)
       );
 
@@ -262,6 +243,7 @@ const GroupInBoxLayout = (props) => {
     data,
     selectedSubFunction,
     showTitle,
+    sliderValue,
   ]);
 
   return (
@@ -272,9 +254,34 @@ const GroupInBoxLayout = (props) => {
         flexDirection: "column",
       }}
     >
-      {/* <Box>
-        <Typography variant="h4">Group In Box Layout</Typography>
-      </Box> */}
+      <Box>
+        <Stack spacing={2} direction="row" alignItems="center">
+          <Typography variant="h5" component="div">
+            NodeDistance
+          </Typography>
+          <Slider
+            aria-label="Distance"
+            valueLabelDisplay="auto"
+            value={slider}
+            defaultValue={50}
+            min={50}
+            max={400}
+            onChange={handleSliderChange}
+          />
+          <Button variant="outlined" onClick={() => setSliderValue(slider)}>
+            Update
+          </Button>
+          <Button
+            variant="outlined"
+            onClick={() => {
+              setSlider(50);
+              setSliderValue(50);
+            }}
+          >
+            Reset
+          </Button>
+        </Stack>
+      </Box>
 
       <div
         style={{
@@ -291,11 +298,6 @@ const GroupInBoxLayout = (props) => {
             flexDirection: "row",
           }}
         >
-          {/* <Select
-            value={selectedOption}
-            onChange={handleOptionChange}
-            options={options}
-          /> */}
           <Box sx={{ minWidth: 120 }}>
             <FormControl fullWidth>
               <InputLabel id="graph-select-label">Graph Type</InputLabel>
