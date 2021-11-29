@@ -28,9 +28,9 @@ function App() {
           <Button variant="contained" onClick={() => setLayout("GroupInBox")}>
             GroupInBox
           </Button>
-          <Button variant="contained" onClick={() => setLayout("Arc")}>
+          {/* <Button variant="contained" onClick={() => setLayout("Arc")}>
             Arc
-          </Button>
+          </Button> */}
         </Stack>
         {layout === "Basic" && <ForceLayout width={960} height={500} />}
         {layout === "GroupInBox" && (

@@ -66,11 +66,9 @@ const getGraphData = (functions, customData, probe = 0) => {
     }
   });
   linkNodes = [...new Set(linkNodes)];
-  // console.log("linkNodes", linkNodes);
   let nodesTrimmed = [];
   nodesList.forEach((nodeItm) => {
     if (linkNodes.includes(nodeItm.id)) {
-      // console.log("nodeItm available", nodeItm);
       nodesTrimmed.push(nodeItm);
     }
   });

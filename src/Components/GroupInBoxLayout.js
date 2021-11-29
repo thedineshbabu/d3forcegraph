@@ -19,6 +19,7 @@ import Checkbox from "@mui/material/Checkbox";
 import Slider from "@mui/material/Slider";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+// import TextField from "@mui/material/TextField";
 
 const GroupInBoxLayout = (props) => {
   const myContainer = useRef(null);
@@ -46,9 +47,9 @@ const GroupInBoxLayout = (props) => {
   const { width, height } = props;
 
   const [graphType, setGraphType] = useState("force");
-
+  // const [transProb, setTransProb] = useState(0.001);
+  // const [t, setT] = useState(0);
   const [drawTemplate, setDrawTemplate] = useState(false);
-
   const [showTitle, setShowTitle] = useState(false);
 
   const subFunctionOptions = subFunctions().map((subFunction) => {
@@ -254,34 +255,94 @@ const GroupInBoxLayout = (props) => {
         flexDirection: "column",
       }}
     >
-      <Box>
-        <Stack spacing={2} direction="row" alignItems="center">
-          <Typography variant="h5" component="div">
-            NodeDistance
-          </Typography>
-          <Slider
-            aria-label="Distance"
-            valueLabelDisplay="auto"
-            value={slider}
-            defaultValue={50}
-            min={50}
-            max={400}
-            onChange={handleSliderChange}
-          />
-          <Button variant="outlined" onClick={() => setSliderValue(slider)}>
-            Update
-          </Button>
-          <Button
-            variant="outlined"
-            onClick={() => {
-              setSlider(50);
-              setSliderValue(50);
-            }}
-          >
-            Reset
-          </Button>
-        </Stack>
-      </Box>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignSelf: "center",
+        }}
+      >
+        <Box>
+          <Stack spacing={2} direction="row" alignItems="center">
+            <Typography variant="h7" component="div">
+              Node Distance
+            </Typography>
+            <Box width="800px">
+              <Slider
+                aria-label="Distance"
+                valueLabelDisplay="auto"
+                value={slider}
+                defaultValue={50}
+                min={50}
+                max={400}
+                onChange={handleSliderChange}
+              />
+            </Box>
+            <Button variant="outlined" onClick={() => setSliderValue(slider)}>
+              Update
+            </Button>
+            <Button
+              variant="outlined"
+              onClick={() => {
+                setSlider(50);
+                setSliderValue(50);
+              }}
+            >
+              Reset
+            </Button>
+          </Stack>
+        </Box>
+      </div>
+      {/* <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignSelf: "center",
+        }}
+      >
+        <Box>
+          <Stack spacing={2} direction="row" alignItems="center">
+            <Typography variant="h7" component="div">
+              Transition Probability
+            </Typography>
+            <Box width="800px">
+              <TextField
+                id="transProb"
+                variant="outlined"
+                type="number"
+                value={transProb}
+                InputProps={{
+                  inputProps: {
+                    max: 1,
+                    min: 0.001,
+                    step: 0.001,
+                  },
+                }}
+                onChange={(event) => {
+                  setTransProb(event.target.value);
+                }}
+              />
+            </Box>
+            <Button
+              variant="outlined"
+              onClick={() => {
+                setT(transProb);
+              }}
+            >
+              Update
+            </Button>
+            <Button
+              variant="outlined"
+              onClick={() => {
+                setT(0);
+                setTransProb(0.001);
+              }}
+            >
+              Reset
+            </Button>
+          </Stack>
+        </Box>
+      </div> */}
 
       <div
         style={{
