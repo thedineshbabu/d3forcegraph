@@ -1,6 +1,6 @@
 import * as d3 from "d3";
 
-export default function forceInABox(showTitle = false) {
+export default function forceInABox(showTitle = false, nodeShape = "rect") {
   const constant = (_) => () => _;
 
   const index = (d) => d.index;
@@ -289,23 +289,13 @@ export default function forceInABox(showTitle = false) {
           .strength(forceLinkStrength)
       );
 
-    // console.log(
-    //   "Initialize with force ",
-    //   templateForce.nodes().length,
-    //   " ",
-    //   templateForce.force("links").links().length
-    // );
-
-    // let i = 0;
-    // while (i++ < 500) templateForce.tick();
-
     templateNodes = templateForce.nodes();
 
     getFocisFromTemplate();
   }
 
   function drawTreemap(container) {
-    console.log("Draw treemap", templateNodes);
+    // console.log("Draw treemap", templateNodes);
     // Delete the circle Template if it exists
     container.selectAll("circle.cell").remove();
     container.selectAll("line.cell").remove();
@@ -323,9 +313,11 @@ export default function forceInABox(showTitle = false) {
         return d.y0;
       })
       .attr("width", function (d) {
+        // console.log("width", d.x1 - d.x0);
         return d.x1 - d.x0;
       })
       .attr("height", function (d) {
+        // console.log("height", d.y1 - d.y0);
         return d.y1 - d.y0;
       });
     if (showTitle) {
@@ -348,30 +340,13 @@ export default function forceInABox(showTitle = false) {
           return d.data.id;
         });
     }
-
-    // container
-    //   .selectAll("rect.cell")
-    //   .data(templateNodes)
-    //   .enter()
-    //   .append("svg:text")
-    //   // .append("svg:text")
-    //   .attr("class", "cell-label")
-    //   .attr("x", "50%")
-    //   .attr("y", "50%")
-    //   .attr("dominant-baseline", "central")
-    //   .attr("text-anchor", "middle")
-    //   .text("test");
-
-    // container
-    // .selectAll("rect.cell")
   }
 
   function drawGraph(container) {
     // Delete the treemap if any
     container.selectAll("rect.cell").remove();
+    container.selectAll("circle.cell").remove();
     container.selectAll("text.cellText").remove();
-
-    // console.log("Draw graph", templateNodes);
 
     let templateLinksSel = container
       .selectAll("line.cell")
@@ -397,22 +372,38 @@ export default function forceInABox(showTitle = false) {
       .style("stroke-opacity", "0.5");
 
     let templateNodesSel = container
-      .selectAll("circle.cell")
+      .selectAll("rect.cell")
       .data(templateForce.nodes());
-    templateNodesSel
-      .enter()
-      .append("svg:circle")
-      .attr("class", "cell")
-      .merge(templateNodesSel)
-      .attr("cx", function (d) {
-        return d.x;
-      })
-      .attr("cy", function (d) {
-        return d.y;
-      })
-      .attr("r", function (d) {
-        return d.r;
-      });
+    if (nodeShape === "rect") {
+      templateNodesSel = templateNodesSel
+        .enter()
+        .append("svg:rect")
+        .attr("class", "cell")
+        .merge(templateNodesSel)
+        .attr("x", function (d) {
+          return d.x;
+        })
+        .attr("y", function (d) {
+          return d.y;
+        });
+    }
+
+    if (nodeShape === "circle") {
+      templateNodesSel = templateNodesSel
+        .enter()
+        .append("svg:circle")
+        .attr("class", "cell")
+        .merge(templateNodesSel)
+        .attr("cx", function (d) {
+          return d.x;
+        })
+        .attr("cy", function (d) {
+          return d.y;
+        })
+        .attr("r", function (d) {
+          return d.r;
+        });
+    }
 
     if (showTitle) {
       let templateTextSel = container
@@ -440,7 +431,6 @@ export default function forceInABox(showTitle = false) {
 
     templateForce
       .on("tick", () => {
-        // console.log("tick");
         drawGraph(container);
       })
       .restart();

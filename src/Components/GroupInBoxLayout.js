@@ -47,6 +47,7 @@ const GroupInBoxLayout = (props) => {
   const { width, height } = props;
 
   const [graphType, setGraphType] = useState("force");
+  const [nodeShape, setNodeShape] = useState("rect");
   // const [transProb, setTransProb] = useState(0.001);
   // const [t, setT] = useState(0);
   const [drawTemplate, setDrawTemplate] = useState(false);
@@ -60,9 +61,7 @@ const GroupInBoxLayout = (props) => {
     useState(subFunctionOptions);
 
   const [nodeColor, setNodeColor] = useState("subFunction");
-
   const [data, setData] = useState(getGraphData(subFunctions(), sampleData));
-
   const [slider, setSlider] = useState(50);
   const [sliderValue, setSliderValue] = useState(50);
 
@@ -112,7 +111,19 @@ const GroupInBoxLayout = (props) => {
       .attr("width", width)
       .attr("height", height);
 
-    let groupingForce = forceInABox(showTitle)
+    // svg
+    //   .append("defs")
+    //   .append("marker")
+    //   .attr("id", "arrowhead")
+    //   .attr("refX", 17 + 3) /*must be smarter way to calculate shift*/
+    //   .attr("refY", 2)
+    //   .attr("markerWidth", 6)
+    //   .attr("markerHeight", 4)
+    //   .attr("orient", "auto")
+    //   .append("path")
+    //   .attr("d", "M 0,0 V 4 L6,2 Z"); //this is actual shape for arrowhead
+
+    let groupingForce = forceInABox(showTitle, nodeShape)
       .strength(0.1) // Strength to foci
       .template(template) // Either treemap or force
       .groupBy(nodeColor) // Node attribute to group
@@ -144,20 +155,71 @@ const GroupInBoxLayout = (props) => {
 
     const mouseover = (event, d) => {
       event.target.style.cursor = "pointer";
-      event.target.attributes.r.value = "12";
+      // event.target.attributes.r.value = "12";
     };
 
     const mouseout = (event, d) => {
-      event.target.attributes.r.value = "7";
+      // event.target.attributes.r.value = "7";
     };
 
-    let node = svg
-      .selectAll(".node")
-      .data(data.nodes)
-      .enter()
-      .append("circle")
-      .attr("class", "node")
-      .attr("r", 7)
+    let node = svg.selectAll(".node").data(data.nodes);
+
+    if (nodeShape === "circle") {
+      node = node.enter().append("circle").attr("class", "node").attr("r", 7);
+    }
+    if (nodeShape === "rect") {
+      node = node
+        .enter()
+        .append("rect")
+        .attr("class", "node")
+        .attr("width", 10)
+        .attr("height", 10);
+    }
+
+    // node = node
+    //   .enter()
+    //   // .append("circle")
+    //   .append("rect")
+    //   .attr("class", "node")
+    //   .attr("width", 10)
+    //   .attr("height", 10);
+    // .attr("r", 7)
+    // .style("fill", function (d) {
+    //   if (nodeColor === "subFunction") {
+    //     return color(d.subFunction);
+    //   }
+    //   if (nodeColor === "level") {
+    //     return color(d.level);
+    //   } else if (nodeColor === "subLevel") {
+    //     return color(d.subLevel);
+    //   } else if (nodeColor === "grade") {
+    //     return color(d.grade);
+    //   } else {
+    //     return color(d.subFunction);
+    //   }
+    // })
+    // .call(
+    //   d3
+    //     .drag()
+    //     .on("start", (event, d) => {
+    //       if (!event.active) force.alphaTarget(0.3).restart();
+    //       d.fx = d.x;
+    //       d.fy = d.y;
+    //     })
+    //     .on("drag", (event, d) => {
+    //       d.fx = event.x;
+    //       d.fy = event.y;
+    //     })
+    //     .on("end", (event, d) => {
+    //       if (!event.active) force.alphaTarget(0);
+    //       d.fx = null;
+    //       d.fy = null;
+    //     })
+    // )
+    // .on("mouseover", mouseover)
+    // .on("mouseout", mouseout);
+
+    node
       .style("fill", function (d) {
         if (nodeColor === "subFunction") {
           return color(d.subFunction);
@@ -222,13 +284,31 @@ const GroupInBoxLayout = (props) => {
         .attr("y2", function (d) {
           return d.target.y;
         });
-      node
-        .attr("cx", function (d) {
-          return d.x;
-        })
-        .attr("cy", function (d) {
-          return d.y;
-        });
+      // .attr("marker-end", function (d) {
+      //   if (d.value === 1) {
+      //     return "url(#arrowhead)";
+      //   } else {
+      //     return " ";
+      //   }
+      // });
+      if (nodeShape === "circle") {
+        node
+          .attr("cx", function (d) {
+            return d.x;
+          })
+          .attr("cy", function (d) {
+            return d.y;
+          });
+      }
+      if (nodeShape === "rect") {
+        node
+          .attr("x", function (d) {
+            return d.x;
+          })
+          .attr("y", function (d) {
+            return d.y;
+          });
+      }
     });
     let divElement = myContainer.current;
     return () => {
@@ -245,6 +325,7 @@ const GroupInBoxLayout = (props) => {
     selectedSubFunction,
     showTitle,
     sliderValue,
+    nodeShape,
   ]);
 
   return (
@@ -371,6 +452,29 @@ const GroupInBoxLayout = (props) => {
               >
                 <MenuItem value="force">Force</MenuItem>
                 <MenuItem value="treemap">Tree Map</MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
+        </div>
+        <div
+          style={{
+            width: "250px",
+            alignSelf: "center",
+            flexDirection: "row",
+          }}
+        >
+          <Box sx={{ minWidth: 120 }}>
+            <FormControl fullWidth>
+              <InputLabel id="shape-select-label">Node Shape</InputLabel>
+              <Select
+                labelId="shape-select-label"
+                id="shape-select"
+                value={nodeShape}
+                label="nodeShape"
+                onChange={(e) => setNodeShape(e.target.value)}
+              >
+                <MenuItem value="circle">Circle</MenuItem>
+                <MenuItem value="rect">Square</MenuItem>
               </Select>
             </FormControl>
           </Box>
