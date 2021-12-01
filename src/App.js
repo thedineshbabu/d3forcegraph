@@ -1,20 +1,19 @@
 import "./App.css";
-import ForceLayout from "./Components/ForceLayout";
+// import ForceLayout from "./Components/ForceLayout";
 import GroupInBoxLayout from "./Components/GroupInBoxLayout";
-import React, { useState } from "react";
-import ArcLayout from "./Components/ArcLayout";
+import React from "react";
 import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 function App() {
-  const [layout, setLayout] = useState("Basic");
+  // const [layout, setLayout] = useState("GroupInBox");
 
   return (
     <div className="App">
       <Stack direction="column" spacing={2} alignItems="center">
         <Typography variant="h4">
-          <b>{layout}</b>
+          <b>KF Intelligence Force Graph</b>
         </Typography>
         <Stack
           spacing={2}
@@ -22,21 +21,18 @@ function App() {
           alignItems="center"
           justifyContent="center"
         >
-          <Button variant="contained" onClick={() => setLayout("Basic")}>
+          {/* <Button variant="contained" onClick={() => setLayout("Basic")}>
             Basic
-          </Button>
-          <Button variant="contained" onClick={() => setLayout("GroupInBox")}>
+          </Button> */}
+          {/* <Button variant="contained" onClick={() => setLayout("GroupInBox")}>
             GroupInBox
-          </Button>
-          {/* <Button variant="contained" onClick={() => setLayout("Arc")}>
-            Arc
           </Button> */}
         </Stack>
-        {layout === "Basic" && <ForceLayout width={960} height={500} />}
-        {layout === "GroupInBox" && (
-          <GroupInBoxLayout width={1024} height={768} />
-        )}
-        {layout === "Arc" && <ArcLayout width={960} height={500} />}
+        {/* {layout === "Basic" && <ForceLayout width={960} height={500} />} */}
+        {/* {layout === "GroupInBox" && (
+          <GroupInBoxLayout width={1250} height={900} />
+        )} */}
+        <GroupInBoxLayout width={1250} height={900} />
       </Stack>
     </div>
   );

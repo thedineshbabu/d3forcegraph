@@ -1425,7 +1425,7 @@
         "grade": 16
       }
     ],
-    "links": [
+    "edges": [
       {
         "source": "ITB0612",
         "target": "ITB0514",
