@@ -200,7 +200,6 @@ const GroupInBoxLayout = (props) => {
       });
 
     function linkArc(d) {
-      // console.log(d, "d-arc");
       var dx = d.target.x - d.source.x,
         dy = d.target.y - d.source.y,
         dr = Math.sqrt(dx * dx + dy * dy);
@@ -347,6 +346,7 @@ const GroupInBoxLayout = (props) => {
             return d.y;
           });
       }
+      // for node share rect
       // if (nodeShape === "rect") {
       //   node
       //     .attr("x", function (d) {
