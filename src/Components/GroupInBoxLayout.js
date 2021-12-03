@@ -3,7 +3,13 @@ import * as d3 from "d3";
 import sampleData from "./sampleData.json";
 import forceInABox from "./forceInABox";
 import "./GroupInBoxLayout.css";
-import { subFunctions, getGraphData } from "./Helper";
+import {
+  subFunctions,
+  getGraphData,
+  levels,
+  subLevels,
+  grades,
+} from "./Helper";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -24,6 +30,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import ListItemText from "@mui/material/ListItemText";
+import d3Tip from "d3-tip";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -50,10 +57,10 @@ const GroupInBoxLayout = (props) => {
   };
 
   const myContainer = useRef(null);
-
   const [graphType, setGraphType] = useState("force");
   const nodeShape = "circle";
   const [drawTemplate, setDrawTemplate] = useState(false);
+  const [showDirections, setShowDirections] = useState(false);
   const [showTitle, setShowTitle] = useState(false);
   const [nodeColor, setNodeColor] = useState("subFunction");
   const [sliderProbe, setSliderProbe] = useState(0.001);
@@ -99,6 +106,7 @@ const GroupInBoxLayout = (props) => {
   useEffect(() => {
     const width = sliderWidthValue;
     const height = sliderHeightValue;
+    const dLinks = data.links;
 
     let useGroupInABox = true,
       template = graphType;
@@ -110,9 +118,9 @@ const GroupInBoxLayout = (props) => {
       .force(
         "link",
         d3
-          .forceLink(data.links)
+          .forceLink(dLinks)
           .id((d) => d.id)
-          .distance(50)
+          .distance(5)
       )
       .force("collide", d3.forceCollide(sliderValue));
 
@@ -122,61 +130,143 @@ const GroupInBoxLayout = (props) => {
       .attr("width", width)
       .attr("height", height);
 
+    const getNodeData = () => {
+      if (nodeColor === "subFunction") {
+        return [...subFunctionName];
+      } else if (nodeColor === "level") {
+        return [...levels()];
+      } else if (nodeColor === "subLevel") {
+        return [...subLevels()];
+      } else if (nodeColor === "grade") {
+        return [...grades()];
+      } else {
+        return [...subFunctionName];
+      }
+    };
+
+    const getNodeName = (d) => {
+      if (nodeColor === "subFunction") {
+        return d.subFunction;
+      } else if (nodeColor === "level") {
+        return d.level;
+      } else if (nodeColor === "subLevel") {
+        return d.subLevel;
+      } else if (nodeColor === "grade") {
+        return d.grade;
+      } else {
+        return d.subFunction;
+      }
+    };
+
+    svg
+      .append("defs")
+      .selectAll("marker")
+      .data(getNodeData())
+      .enter()
+      .append("marker")
+      .attr("id", (d) => {
+        return d.replace(/ /g, "");
+      })
+      .attr("viewBox", "0 -5 10 10")
+      .attr("refX", 15)
+      .attr("refY", -1.5)
+      .attr("markerWidth", 6)
+      .attr("markerHeight", 6)
+      .attr("orient", "auto")
+      .append("path")
+      .attr("fill", color)
+      .attr("d", "M0,-5L10,0L0,5");
+
+    var tip = d3Tip()
+      .attr("class", "d3-tip")
+      .offset([-12, 0])
+      .html(function (d) {
+        return `<span>Title: ${d.title}</span><br><span>Sub Function: ${d.subFunction}</span>`;
+      });
+
+    svg.call(tip);
+
+    let path = svg
+      .append("g")
+      .selectAll("path")
+      .data(dLinks)
+      .enter()
+      .append("path")
+      .attr("class", function (d) {
+        return "link " + getNodeName(d.source).replace(/ /g, "");
+      })
+      .attr("marker-end", function (d) {
+        return "url(#" + getNodeName(d.source).replace(/ /g, "") + ")";
+      });
+
+    function linkArc(d) {
+      // console.log(d, "d-arc");
+      var dx = d.target.x - d.source.x,
+        dy = d.target.y - d.source.y,
+        dr = Math.sqrt(dx * dx + dy * dy);
+      return (
+        "M" +
+        d.source.x +
+        "," +
+        d.source.y +
+        "A" +
+        dr +
+        "," +
+        dr +
+        " 0 0,1 " +
+        d.target.x +
+        "," +
+        d.target.y
+      );
+    }
+
+    function transform(d) {
+      return "translate(" + d.x + "," + d.y + ")";
+    }
+
+    // function pin(d) {
+    //   d3.select(this).classed("fixed", (d.fixed = !d.fixed));
+    // }
+
     let groupingForce = forceInABox(showTitle, nodeShape)
       .strength(0.1) // Strength to foci
       .template(template) // Either treemap or force
       .groupBy(nodeColor) // Node attribute to group
-      .links(data.links) // The graph links. Must be called after setting the grouping attribute
+      // .links(data.links) // The graph links. Must be called after setting the grouping attribute
+      .links(dLinks)
       .enableGrouping(useGroupInABox)
       .nodeSize(15) // Used to compute the size of the template nodes, think of it as the radius the node uses, including its padding
       .forceCharge(-50 * 15) // Separation between nodes on the force template
       .size([width, height]);
 
-    force
-      .nodes(data.nodes)
-      .force(nodeColor, groupingForce)
-      .force(
-        "link",
-        d3
-          .forceLink(data.links)
-          .distance(50)
-          .strength(groupingForce.getLinkStrength)
-      );
+    force.nodes(data.nodes).force(nodeColor, groupingForce).force(
+      "link",
+      d3
+        // .forceLink(data.links)
+        .forceLink(dLinks)
+        .distance(5)
+        .strength(groupingForce.getLinkStrength)
+    );
 
     const link = svg
       .append("g")
       .selectAll("line")
-      .data(data.links)
+      // .data(data.links)
+      .data(dLinks)
       .enter()
       .append("line")
       .attr("class", "link")
       .attr("stroke-width", (d) => Math.sqrt(d.value));
 
-    const mouseover = (event, d) => {
-      event.target.style.cursor = "pointer";
-      if (nodeShape === "circle") {
-        event.target.attributes.r.value = "12";
-      }
-    };
-
     const mouseout = (event, d) => {
-      if (nodeShape === "circle") {
-        event.target.attributes.r.value = "7";
-      }
+      event.target.attributes.r.value = "7";
+      tip.hide();
     };
 
     let node = svg.selectAll(".node").data(data.nodes);
 
     if (nodeShape === "circle") {
       node = node.enter().append("circle").attr("class", "node").attr("r", 7);
-    }
-    if (nodeShape === "rect") {
-      node = node
-        .enter()
-        .append("rect")
-        .attr("class", "node")
-        .attr("width", 10)
-        .attr("height", 10);
     }
 
     node
@@ -212,7 +302,11 @@ const GroupInBoxLayout = (props) => {
             d.fy = null;
           })
       )
-      .on("mouseover", mouseover)
+      .on("mouseover", function (event, d) {
+        event.target.style.cursor = "pointer";
+        event.target.attributes.r.value = "12";
+        tip.show(d, this);
+      })
       .on("mouseout", mouseout);
 
     node.append("title").text(function (d) {
@@ -231,20 +325,20 @@ const GroupInBoxLayout = (props) => {
     force.restart();
 
     force.on("tick", function () {
-      link
-        .attr("x1", function (d) {
-          return d.source.x;
-        })
-        .attr("x2", function (d) {
-          return d.target.x;
-        })
-        .attr("y1", function (d) {
-          return d.source.y;
-        })
-        .attr("y2", function (d) {
-          return d.target.y;
-        });
-      if (nodeShape === "circle") {
+      if (!showDirections) {
+        link
+          .attr("x1", function (d) {
+            return d.source.x;
+          })
+          .attr("x2", function (d) {
+            return d.target.x;
+          })
+          .attr("y1", function (d) {
+            return d.source.y;
+          })
+          .attr("y2", function (d) {
+            return d.target.y;
+          });
         node
           .attr("cx", function (d) {
             return d.x;
@@ -253,14 +347,18 @@ const GroupInBoxLayout = (props) => {
             return d.y;
           });
       }
-      if (nodeShape === "rect") {
-        node
-          .attr("x", function (d) {
-            return d.x;
-          })
-          .attr("y", function (d) {
-            return d.y;
-          });
+      // if (nodeShape === "rect") {
+      //   node
+      //     .attr("x", function (d) {
+      //       return d.x;
+      //     })
+      //     .attr("y", function (d) {
+      //       return d.y;
+      //     });
+      // }
+      if (showDirections) {
+        path.attr("d", linkArc);
+        node.attr("transform", transform);
       }
     });
     let divElement = myContainer.current;
@@ -280,6 +378,8 @@ const GroupInBoxLayout = (props) => {
     nodeShape,
     sliderWidthValue,
     sliderHeightValue,
+    subFunctionName,
+    showDirections,
   ]);
 
   const handleUpdate = () => {
@@ -359,7 +459,7 @@ const GroupInBoxLayout = (props) => {
                     </Stack>
                     <Stack spacing={2} direction="row" alignItems="center">
                       <Grid container spacing={3} style={{ marginTop: "10px" }}>
-                        <Grid item xs={4}>
+                        <Grid item xs={3}>
                           <Box>
                             <FormControl fullWidth>
                               <InputLabel id="graph-select-label">
@@ -378,7 +478,7 @@ const GroupInBoxLayout = (props) => {
                             </FormControl>
                           </Box>
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid item xs={3}>
                           <Box>
                             <FormControl fullWidth>
                               <InputLabel id="group-select-label">
@@ -399,6 +499,23 @@ const GroupInBoxLayout = (props) => {
                                 <MenuItem value="grade">Grade</MenuItem>
                               </Select>
                             </FormControl>
+                          </Box>
+                        </Grid>
+                        <Grid item xs={2}>
+                          <Box>
+                            <FormGroup>
+                              <FormControlLabel
+                                control={
+                                  <Checkbox
+                                    checked={showDirections}
+                                    onChange={(e) =>
+                                      setShowDirections(e.target.checked)
+                                    }
+                                  />
+                                }
+                                label="Show Directions"
+                              />
+                            </FormGroup>
                           </Box>
                         </Grid>
                         <Grid item xs={2}>

@@ -415,11 +415,9 @@ export default function forceInABox(showTitle = false, nodeShape = "rect") {
         .attr("class", "cellText")
         .merge(templateNodesSel)
         .attr("x", (d) => {
-          console.log(`x ${d.x} & ${d.id}`);
           return d.x;
         })
         .attr("y", (d) => {
-          console.log(`y ${d.y} & ${d.id}`);
           return d.y;
         })
         .attr("dy", "0.45em")

@@ -4,6 +4,18 @@ const subFunctions = () => {
   return [...new Set(sampleData.graph.nodes.map((node) => node.subFunction))];
 };
 
+const levels = () => {
+  return [...new Set(sampleData.graph.nodes.map((node) => node.level))];
+};
+
+const subLevels = () => {
+  return [...new Set(sampleData.graph.nodes.map((node) => node.subLevel))];
+};
+
+const grades = () => {
+  return [...new Set(sampleData.graph.nodes.map((node) => node.grade))];
+};
+
 // const getGraphData = (functions, customData, probe = 0) => {
 //   let nodesList = [];
 //   let linksList = [];
@@ -216,3 +228,9 @@ export { getGraphData };
 export { subFunctions };
 
 export { getRootData };
+
+export { grades };
+
+export { levels };
+
+export { subLevels };
