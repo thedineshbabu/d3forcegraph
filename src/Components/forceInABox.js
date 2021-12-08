@@ -320,26 +320,26 @@ export default function forceInABox(showTitle = false, nodeShape = "rect") {
         // console.log("height", d.y1 - d.y0);
         return d.y1 - d.y0;
       });
-    if (showTitle) {
-      container.selectAll("text.cell").remove();
-      container
-        .selectAll("text.cell")
-        .data(templateNodes)
-        .enter()
-        .append("svg:text")
-        .attr("class", "cellText")
-        .attr("x", function (d) {
-          return d.x0 + (d.x1 - d.x0) / 2;
-        })
-        .attr("y", function (d) {
-          return d.y0 + (d.y1 - d.y0) / 2 - 50;
-        })
-        .attr("dy", "0.35em")
-        .attr("text-anchor", "middle")
-        .text(function (d) {
-          return d.data.id;
-        });
-    }
+    // if (showTitle) {
+    //   container.selectAll("text.cell").remove();
+    //   container
+    //     .selectAll("text.cell")
+    //     .data(templateNodes)
+    //     .enter()
+    //     .append("svg:text")
+    //     .attr("class", "cellText")
+    //     .attr("x", function (d) {
+    //       return d.x0 + (d.x1 - d.x0) / 2;
+    //     })
+    //     .attr("y", function (d) {
+    //       return d.y0 + (d.y1 - d.y0) / 2 - 150;
+    //     })
+    //     .attr("dy", "0.35em")
+    //     .attr("text-anchor", "middle")
+    //     .text(function (d) {
+    //       return d.data.id;
+    //     });
+    // }
   }
 
   function drawGraph(container) {
@@ -405,27 +405,27 @@ export default function forceInABox(showTitle = false, nodeShape = "rect") {
         });
     }
 
-    if (showTitle) {
-      let templateTextSel = container
-        .selectAll("text.cell")
-        .data(templateForce.nodes());
-      templateTextSel
-        .enter()
-        .append("svg:text")
-        .attr("class", "cellText")
-        .merge(templateNodesSel)
-        .attr("x", (d) => {
-          return d.x;
-        })
-        .attr("y", (d) => {
-          return d.y;
-        })
-        .attr("dy", "0.45em")
-        .attr("text-anchor", "middle")
-        .text((d) => {
-          return d.id;
-        });
-    }
+    // if (showTitle) {
+    //   let templateTextSel = container
+    //     .selectAll("text.cell")
+    //     .data(templateForce.nodes());
+    //   templateTextSel
+    //     .enter()
+    //     .append("svg:text")
+    //     .attr("class", "cellText")
+    //     .merge(templateNodesSel)
+    //     .attr("x", (d) => {
+    //       return d.x;
+    //     })
+    //     .attr("y", (d) => {
+    //       return d.y;
+    //     })
+    //     .attr("dy", "0.45em")
+    //     .attr("text-anchor", "middle")
+    //     .text((d) => {
+    //       return d.id;
+    //     });
+    // }
 
     templateForce
       .on("tick", () => {

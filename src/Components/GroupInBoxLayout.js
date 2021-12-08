@@ -9,6 +9,7 @@ import {
   levels,
   subLevels,
   grades,
+  // getRelatedNodes,
 } from "./Helper";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
@@ -24,13 +25,17 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+// import Accordion from "@mui/material/Accordion";
+// import AccordionSummary from "@mui/material/AccordionSummary";
+// import AccordionDetails from "@mui/material/AccordionDetails";
+// import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import ListItemText from "@mui/material/ListItemText";
-import d3Tip from "d3-tip";
+// import DialogTitle from "@mui/material/DialogTitle";
+// import Dialog from "@mui/material/Dialog";
+// import DialogContent from "@mui/material/DialogContent";
+// import DialogActions from "@mui/material/DialogActions";
+// import Paper from "@mui/material/Paper";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -50,30 +55,35 @@ const GroupInBoxLayout = (props) => {
     const {
       target: { value },
     } = event;
-    setSubFunctionName(
-      // On autofill we get a the stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
+    setSubFunctionName(typeof value === "string" ? value.split(",") : value);
   };
 
   const myContainer = useRef(null);
-  const [graphType, setGraphType] = useState("force");
-  const nodeShape = "circle";
-  const [drawTemplate, setDrawTemplate] = useState(false);
-  const [showDirections, setShowDirections] = useState(false);
-  const [showTitle, setShowTitle] = useState(false);
+  const myLegendContainer = useRef(null);
+  const [graphType, setGraphType] = useState("treemap");
+  const [nodeShape, setNodeShape] = useState("circle");
+  const [drawTemplate, setDrawTemplate] = useState(true);
+  // const [showDirections, setShowDirections] = useState(false);
   const [nodeColor, setNodeColor] = useState("subFunction");
   const [sliderProbe, setSliderProbe] = useState(0.001);
   const [sliderProbeValue, setSliderProbeValue] = useState(0.001);
-  const [slider, setSlider] = useState(5);
-  const [sliderValue, setSliderValue] = useState(5);
-  const [sliderWidth, setSliderWidth] = useState(1024);
-  const [sliderWidthValue, setSliderWidthValue] = useState(1024);
-  const [sliderHeight, setSliderHeight] = useState(768);
-  const [sliderHeightValue, setSliderHeightValue] = useState(768);
+  const [slider, setSlider] = useState(10);
+  const [sliderValue, setSliderValue] = useState(10);
+  const [selectedLegend, setSelectedLegend] = useState("");
+  const sliderWidthValue = 1024;
+  const sliderHeightValue = 768;
+  // const [selectedNode, setSelectedNode] = useState(null);
+  // const [open, setOpen] = useState(false);
+  // const [relatedNodes, setRelatedNodes] = useState([]);
 
   const [data, setData] = useState(
-    getGraphData(subFunctions(), sampleData, sliderProbeValue)
+    getGraphData(
+      subFunctions(),
+      sampleData,
+      sliderProbeValue,
+      nodeColor,
+      selectedLegend
+    )
   );
 
   const handleSliderChange = (event, value) => {
@@ -84,14 +94,6 @@ const GroupInBoxLayout = (props) => {
     setSliderProbe(value);
   };
 
-  const handleSliderWidthChange = (event, value) => {
-    setSliderWidth(value);
-  };
-
-  const handleSliderHeightChange = (event, value) => {
-    setSliderHeight(value);
-  };
-
   const style = {
     sliderWidthValue,
     sliderHeightValue,
@@ -100,8 +102,16 @@ const GroupInBoxLayout = (props) => {
   };
 
   useEffect(() => {
-    setData(getGraphData(subFunctionName, sampleData, sliderProbeValue));
-  }, [subFunctionName, sliderProbeValue]);
+    setData(
+      getGraphData(
+        subFunctionName,
+        sampleData,
+        sliderProbeValue,
+        nodeColor,
+        selectedLegend
+      )
+    );
+  }, [subFunctionName, sliderProbeValue, nodeColor, selectedLegend]);
 
   useEffect(() => {
     const width = sliderWidthValue;
@@ -110,25 +120,6 @@ const GroupInBoxLayout = (props) => {
 
     let useGroupInABox = true,
       template = graphType;
-
-    const color = d3.scaleOrdinal(d3.schemeCategory10);
-
-    var force = d3
-      .forceSimulation(data.nodes)
-      .force(
-        "link",
-        d3
-          .forceLink(dLinks)
-          .id((d) => d.id)
-          .distance(5)
-      )
-      .force("collide", d3.forceCollide(sliderValue));
-
-    const svg = d3
-      .select(myContainer.current)
-      .append("svg")
-      .attr("width", width)
-      .attr("height", height);
 
     const getNodeData = () => {
       if (nodeColor === "subFunction") {
@@ -144,6 +135,37 @@ const GroupInBoxLayout = (props) => {
       }
     };
 
+    const keys = selectedLegend === "" ? [...getNodeData()] : [selectedLegend];
+
+    const color = d3.scaleOrdinal(d3.schemeSet3);
+
+    keys.forEach((d) => {
+      color(d);
+    });
+
+    var force = d3
+      .forceSimulation(data.nodes)
+      .force(
+        "link",
+        d3
+          .forceLink(dLinks)
+          .id((d) => d.id)
+          .distance(10)
+      )
+      .force("collide", d3.forceCollide(sliderValue));
+
+    const svg = d3
+      .select(myContainer.current)
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height);
+
+    const legendSvg = d3
+      .select(myLegendContainer.current)
+      .append("svg")
+      .attr("width", 500)
+      .attr("height", 500);
+
     const getNodeName = (d) => {
       if (nodeColor === "subFunction") {
         return d.subFunction;
@@ -158,14 +180,18 @@ const GroupInBoxLayout = (props) => {
       }
     };
 
-    svg
+    var marker = svg
       .append("defs")
       .selectAll("marker")
       .data(getNodeData())
       .enter()
       .append("marker")
       .attr("id", (d) => {
-        return d.replace(/ /g, "");
+        if (typeof d === "string") {
+          return d.replace(/ /g, "");
+        } else {
+          return d;
+        }
       })
       .attr("viewBox", "0 -5 10 10")
       .attr("refX", 15)
@@ -174,101 +200,192 @@ const GroupInBoxLayout = (props) => {
       .attr("markerHeight", 6)
       .attr("orient", "auto")
       .append("path")
-      .attr("fill", color)
+      .attr("id", (d) => {
+        if (typeof d === "string") {
+          return d.replace(/ /g, "");
+        } else {
+          return d;
+        }
+      })
+      .attr("fill", (d) => color(d))
       .attr("d", "M0,-5L10,0L0,5");
 
-    var tip = d3Tip()
-      .attr("class", "d3-tip")
-      .offset([-12, 0])
-      .html(function (d) {
-        return `<span>Title: ${d.title}</span><br><span>Sub Function: ${d.subFunction}</span>`;
-      });
-
-    svg.call(tip);
-
-    let path = svg
-      .append("g")
-      .selectAll("path")
-      .data(dLinks)
+    var texts = svg
+      .selectAll("text.label")
+      .data(data.nodes)
       .enter()
-      .append("path")
-      .attr("class", function (d) {
-        return "link " + getNodeName(d.source).replace(/ /g, "");
-      })
-      .attr("marker-end", function (d) {
-        return "url(#" + getNodeName(d.source).replace(/ /g, "") + ")";
+      .append("text")
+      .attr("class", "label")
+      .style("font-size", "12px")
+      .style("display", "none")
+      .attr("fill", "black")
+      .text(function (d) {
+        return d.name;
       });
 
-    function linkArc(d) {
-      var dx = d.target.x - d.source.x,
-        dy = d.target.y - d.source.y,
-        dr = Math.sqrt(dx * dx + dy * dy);
+    const linkedByIndex = {};
+    dLinks.forEach((d) => {
+      linkedByIndex[`${d.source.index},${d.target.index}`] = 1;
+    });
+
+    function isConnected(a, b) {
       return (
-        "M" +
-        d.source.x +
-        "," +
-        d.source.y +
-        "A" +
-        dr +
-        "," +
-        dr +
-        " 0 0,1 " +
-        d.target.x +
-        "," +
-        d.target.y
+        linkedByIndex[`${a.path[0].__data__.index},${b.index}`] ||
+        linkedByIndex[`${b.index},${a.path[0].__data__.index}`] ||
+        a.path[0].__data__.index === b.index
       );
     }
 
-    function transform(d) {
-      return "translate(" + d.x + "," + d.y + ")";
+    marker.style("opacity", "1");
+
+    function fade(opacity) {
+      return (d) => {
+        node.style("stroke-opacity", function (o) {
+          const thisOpacity = isConnected(d, o) ? 1 : opacity;
+          this.setAttribute("fill-opacity", thisOpacity);
+          return thisOpacity;
+        });
+
+        link.style("stroke-opacity", (o) => {
+          return o.source.id === d.path[0].__data__.id ||
+            o.target.id === d.path[0].__data__.id
+            ? 1
+            : opacity;
+        });
+
+        texts.style("display", (o) => {
+          const thisOpacity = isConnected(d, o) ? 1 : opacity;
+          return thisOpacity === 1 ? "inline" : "none";
+        });
+
+        link.attr("marker-end", function (o) {
+          if (
+            o.source.id === d.path[0].__data__.id ||
+            o.target.id === d.path[0].__data__.id
+          ) {
+            const source = getNodeName(o.source);
+            if (typeof source === "string") {
+              return "url(#" + source.replace(/ /g, "") + ")";
+            } else {
+              return "url(#" + source + ")";
+            }
+          }
+          // console.log("o1", o.source.id);
+          // console.log("o2", o.target.id);
+          // console.log("d", d.path[0].__data__.id);
+          // return "url(#end)";
+          // const source = getNodeName(o.source);
+          // if (typeof source === "string") {
+          //   return "url(#" + source.replace(/ /g, "") + ")";
+          // } else {
+          //   return "url(#" + source + ")";
+          // }
+        });
+
+        if (opacity === 1) {
+          texts.style("display", "none");
+          d3.selectAll("marker").style("opacity", "0");
+        } else {
+          d3.selectAll("marker").style("opacity", "1");
+        }
+      };
     }
 
-    // function pin(d) {
-    //   d3.select(this).classed("fixed", (d.fixed = !d.fixed));
-    // }
+    let legend = legendSvg
+      .selectAll(".dot")
+      .data(keys)
+      .enter()
+      .append("circle")
+      .attr("class", "dot")
+      .attr("r", 8)
+      .attr("cx", 40)
+      .attr("cy", function (d, i) {
+        return 30 + i * 25;
+      })
+      .style("fill", function (d) {
+        return color(d);
+      })
+      .text((d) => {
+        return d;
+      })
+      .on("click", (event, d) => {
+        // setOpen(true);
+        // setSelectedNode(d);
+        // setRelatedNodes(getRelatedNodes(d.id, data));
+        // alert(nodeColor);
+        // alert(d);
+        setSelectedLegend(d);
+      });
 
-    let groupingForce = forceInABox(showTitle, nodeShape)
-      .strength(0.1) // Strength to foci
-      .template(template) // Either treemap or force
-      .groupBy(nodeColor) // Node attribute to group
-      // .links(data.links) // The graph links. Must be called after setting the grouping attribute
+    legendSvg
+      .selectAll("text.label")
+      .data(keys)
+      .enter()
+      .append("text")
+      .attr("class", "label3")
+      .style("font-size", "12px")
+      .style("display", "inline")
+      .attr("fill", "black")
+      .attr("transform", function (d, i) {
+        return "translate(" + 55 + "," + (35 + i * 25) + ")";
+      })
+      .text(function (d) {
+        return d;
+      });
+
+    legend.append("text").text(function (d) {
+      return d;
+    });
+
+    let groupingForce = forceInABox(true, nodeShape)
+      .strength(0.1)
+      .template(template)
+      .groupBy(nodeColor)
       .links(dLinks)
       .enableGrouping(useGroupInABox)
-      .nodeSize(15) // Used to compute the size of the template nodes, think of it as the radius the node uses, including its padding
-      .forceCharge(-50 * 15) // Separation between nodes on the force template
+      .nodeSize(15)
+      .forceCharge(-50 * 15)
       .size([width, height]);
 
-    force.nodes(data.nodes).force(nodeColor, groupingForce).force(
-      "link",
-      d3
-        // .forceLink(data.links)
-        .forceLink(dLinks)
-        .distance(5)
-        .strength(groupingForce.getLinkStrength)
-    );
+    force
+      .nodes(data.nodes)
+      .force(nodeColor, groupingForce)
+      .force(
+        "link",
+        d3
+          .forceLink(dLinks)
+          .distance(10)
+          .strength(groupingForce.getLinkStrength)
+      );
 
     const link = svg
       .append("g")
       .selectAll("line")
-      // .data(data.links)
       .data(dLinks)
       .enter()
       .append("line")
       .attr("class", "link")
-      .attr("stroke-width", (d) => Math.sqrt(d.value));
-
-    const mouseout = (event, d) => {
-      event.target.attributes.r.value = "7";
-      tip.hide();
-    };
+      .attr("stroke-width", (d) => {
+        return 1;
+      });
 
     let node = svg.selectAll(".node").data(data.nodes);
 
     if (nodeShape === "circle") {
       node = node.enter().append("circle").attr("class", "node").attr("r", 7);
+    } else if (nodeShape === "rect") {
+      node = node
+        .enter()
+        .append("rect")
+        .attr("class", "node")
+        .attr("width", 10)
+        .attr("height", 10);
     }
 
     node
+      .text(function (d) {
+        return d.id;
+      })
       .style("fill", function (d) {
         if (nodeColor === "subFunction") {
           return color(d.subFunction);
@@ -301,16 +418,13 @@ const GroupInBoxLayout = (props) => {
             d.fy = null;
           })
       )
-      .on("mouseover", function (event, d) {
-        event.target.style.cursor = "pointer";
-        event.target.attributes.r.value = "12";
-        tip.show(d, this);
-      })
-      .on("mouseout", mouseout);
-
-    node.append("title").text(function (d) {
-      return d.name;
-    });
+      .on("mouseover.fade", fade(0.1))
+      .on("mouseout.fade", fade(1))
+      .on("click", (event, d) => {
+        // setOpen(true);
+        // setSelectedNode(d);
+        // setRelatedNodes(getRelatedNodes(d.id, data));
+      });
 
     force.stop();
 
@@ -324,20 +438,21 @@ const GroupInBoxLayout = (props) => {
     force.restart();
 
     force.on("tick", function () {
-      if (!showDirections) {
-        link
-          .attr("x1", function (d) {
-            return d.source.x;
-          })
-          .attr("x2", function (d) {
-            return d.target.x;
-          })
-          .attr("y1", function (d) {
-            return d.source.y;
-          })
-          .attr("y2", function (d) {
-            return d.target.y;
-          });
+      link
+        .attr("x1", function (d) {
+          return d.source.x;
+        })
+        .attr("x2", function (d) {
+          return d.target.x;
+        })
+        .attr("y1", function (d) {
+          return d.source.y;
+        })
+        .attr("y2", function (d) {
+          return d.target.y;
+        });
+
+      if (nodeShape === "circle") {
         node
           .attr("cx", function (d) {
             return d.x;
@@ -346,25 +461,29 @@ const GroupInBoxLayout = (props) => {
             return d.y;
           });
       }
-      // for node share rect
-      // if (nodeShape === "rect") {
-      //   node
-      //     .attr("x", function (d) {
-      //       return d.x;
-      //     })
-      //     .attr("y", function (d) {
-      //       return d.y;
-      //     });
-      // }
-      if (showDirections) {
-        path.attr("d", linkArc);
-        node.attr("transform", transform);
+
+      if (nodeShape === "rect") {
+        node
+          .attr("x", function (d) {
+            return d.x;
+          })
+          .attr("y", function (d) {
+            return d.y;
+          });
       }
+
+      texts.attr("transform", function (d) {
+        return "translate(" + (d.x + 10) + "," + (d.y + 5) + ")";
+      });
     });
     let divElement = myContainer.current;
+    let legendElement = myLegendContainer.current;
     return () => {
       if (divElement.firstChild) {
         divElement.removeChild(divElement.firstChild);
+      }
+      if (legendElement.firstChild) {
+        legendElement.removeChild(legendElement.firstChild);
       }
     };
   }, [
@@ -373,29 +492,13 @@ const GroupInBoxLayout = (props) => {
     drawTemplate,
     nodeColor,
     data,
-    showTitle,
     sliderValue,
     nodeShape,
     sliderWidthValue,
     sliderHeightValue,
     subFunctionName,
-    showDirections,
+    selectedLegend,
   ]);
-
-  const handleUpdate = () => {
-    setSliderHeightValue(sliderHeight);
-    setSliderWidthValue(sliderWidth);
-    setSliderValue(slider);
-  };
-
-  const handleReset = () => {
-    setSliderHeight(768);
-    setSliderHeightValue(768);
-    setSliderWidthValue(1024);
-    setSliderWidth(1024);
-    setSlider(5);
-    setSliderValue(5);
-  };
 
   return (
     <Container maxWidth="lg">
@@ -403,299 +506,258 @@ const GroupInBoxLayout = (props) => {
         <Grid item xs={12}>
           <Grid container spacing={3}>
             <Grid item xs={12}>
-              <Accordion>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1ab-content"
-                  id="panel1ab-header"
-                >
-                  <Typography>Filters</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Box>
-                    <Stack spacing={2} direction="row" alignItems="center">
-                      <Grid container spacing={3}>
-                        <Grid item xs={2}>
-                          <Typography variant="h7" component="div">
-                            Transition Probability
-                          </Typography>
-                        </Grid>
-                        <Grid item xs={8}>
-                          <Box width="100%">
-                            <Slider
-                              aria-label="Transition Probability"
-                              valueLabelDisplay="auto"
-                              value={sliderProbe}
-                              defaultValue={0.001}
-                              min={0.001}
-                              max={0.5}
-                              step={0.001}
-                              onChange={handleSliderProbeChange}
-                            />
-                          </Box>
-                        </Grid>
-                        <Grid item xs={1}>
-                          <Button
-                            variant="outlined"
-                            onClick={() => {
-                              setSliderProbeValue(sliderProbe);
-                            }}
+              <Box>
+                <Stack spacing={2} direction="row" alignItems="center">
+                  <Grid container spacing={3}>
+                    <Grid item xs={2}>
+                      <Typography variant="h7" component="div">
+                        Transition Probability
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={10}>
+                      <Box width="100%">
+                        <Slider
+                          aria-label="Transition Probability"
+                          valueLabelDisplay="auto"
+                          value={sliderProbe}
+                          defaultValue={0.001}
+                          min={0.001}
+                          max={0.5}
+                          step={0.001}
+                          onChange={handleSliderProbeChange}
+                          onChangeCommitted={(e) => {
+                            setSliderProbeValue(sliderProbe);
+                          }}
+                        />
+                      </Box>
+                    </Grid>
+                  </Grid>
+                </Stack>
+                <Stack spacing={2} direction="row" alignItems="center">
+                  <Grid container spacing={3}>
+                    <Grid item xs={2}>
+                      <Typography variant="h7" component="div">
+                        Node Distance
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={10}>
+                      <Box width="100%">
+                        <Slider
+                          aria-label="Distance"
+                          valueLabelDisplay="auto"
+                          value={slider}
+                          defaultValue={10}
+                          min={10}
+                          max={50}
+                          onChange={handleSliderChange}
+                          onChangeCommitted={(e) => {
+                            setSliderValue(slider);
+                          }}
+                        />
+                      </Box>
+                    </Grid>
+                  </Grid>
+                </Stack>
+                <Stack spacing={2} direction="row" alignItems="center">
+                  <Grid container spacing={3} style={{ marginTop: "10px" }}>
+                    <Grid item xs={3}>
+                      <Box>
+                        <FormControl fullWidth>
+                          <InputLabel id="graph-select-label">
+                            Node Shape
+                          </InputLabel>
+                          <Select
+                            labelId="shape-select-label"
+                            id="shape-select"
+                            value={nodeShape}
+                            label="Node Shape"
+                            onChange={(e) => setNodeShape(e.target.value)}
                           >
-                            Update
-                          </Button>
-                        </Grid>
-                        <Grid item xs={1}>
-                          <Button
-                            variant="outlined"
-                            onClick={() => {
-                              setSliderProbe(0.001);
-                              setSliderProbeValue(0.001);
-                            }}
+                            <MenuItem value="circle">Circle</MenuItem>
+                            <MenuItem value="rect">Square</MenuItem>
+                          </Select>
+                        </FormControl>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={3}>
+                      <Box>
+                        <FormControl fullWidth>
+                          <InputLabel id="graph-select-label">
+                            Graph Type
+                          </InputLabel>
+                          <Select
+                            labelId="graph-select-label"
+                            id="graph-select"
+                            value={graphType}
+                            label="Graph Type"
+                            onChange={(e) => setGraphType(e.target.value)}
                           >
-                            Reset
-                          </Button>
-                        </Grid>
-                      </Grid>
-                    </Stack>
-                    <Stack spacing={2} direction="row" alignItems="center">
-                      <Grid container spacing={3} style={{ marginTop: "10px" }}>
-                        <Grid item xs={3}>
-                          <Box>
-                            <FormControl fullWidth>
-                              <InputLabel id="graph-select-label">
-                                Graph Type
-                              </InputLabel>
-                              <Select
-                                labelId="graph-select-label"
-                                id="graph-select"
-                                value={graphType}
-                                label="Graph Type"
-                                onChange={(e) => setGraphType(e.target.value)}
-                              >
-                                <MenuItem value="force">Force</MenuItem>
-                                <MenuItem value="treemap">Tree Map</MenuItem>
-                              </Select>
-                            </FormControl>
-                          </Box>
-                        </Grid>
-                        <Grid item xs={3}>
-                          <Box>
-                            <FormControl fullWidth>
-                              <InputLabel id="group-select-label">
-                                Grouping
-                              </InputLabel>
-                              <Select
-                                labelId="group-select-label"
-                                id="group-select"
-                                value={nodeColor}
-                                label="Grouping"
-                                onChange={(e) => setNodeColor(e.target.value)}
-                              >
-                                <MenuItem value="subFunction">
-                                  Sub Function
-                                </MenuItem>
-                                <MenuItem value="level">Level</MenuItem>
-                                <MenuItem value="subLevel">Sub Level</MenuItem>
-                                <MenuItem value="grade">Grade</MenuItem>
-                              </Select>
-                            </FormControl>
-                          </Box>
-                        </Grid>
-                        <Grid item xs={2}>
-                          <Box>
-                            <FormGroup>
-                              <FormControlLabel
-                                control={
-                                  <Checkbox
-                                    checked={showDirections}
-                                    onChange={(e) =>
-                                      setShowDirections(e.target.checked)
-                                    }
-                                  />
+                            <MenuItem value="treemap">Tree Map</MenuItem>
+                            <MenuItem value="force">Force</MenuItem>
+                          </Select>
+                        </FormControl>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={3}>
+                      <Box>
+                        <FormControl fullWidth>
+                          <InputLabel id="group-select-label">
+                            Grouping
+                          </InputLabel>
+                          <Select
+                            labelId="group-select-label"
+                            id="group-select"
+                            value={nodeColor}
+                            label="Grouping"
+                            onChange={(e) => setNodeColor(e.target.value)}
+                          >
+                            <MenuItem value="subFunction">
+                              Sub Function
+                            </MenuItem>
+                            <MenuItem value="level">Level</MenuItem>
+                            <MenuItem value="subLevel">Sub Level</MenuItem>
+                            <MenuItem value="grade">Grade</MenuItem>
+                          </Select>
+                        </FormControl>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={3} alignContent="center">
+                      <Box>
+                        <FormGroup>
+                          <FormControlLabel
+                            control={
+                              <Checkbox
+                                checked={drawTemplate}
+                                onChange={(e) =>
+                                  setDrawTemplate(e.target.checked)
                                 }
-                                label="Show Directions"
                               />
-                            </FormGroup>
-                          </Box>
-                        </Grid>
-                        <Grid item xs={2}>
-                          <Box>
-                            <FormGroup>
-                              <FormControlLabel
-                                control={
-                                  <Checkbox
-                                    checked={drawTemplate}
-                                    onChange={(e) =>
-                                      setDrawTemplate(e.target.checked)
-                                    }
-                                  />
-                                }
-                                label="Draw Template"
-                              />
-                            </FormGroup>
-                          </Box>
-                        </Grid>
-                        <Grid item xs={2}>
-                          <Box>
-                            {drawTemplate && (
-                              <FormGroup>
-                                <FormControlLabel
-                                  control={
-                                    <Checkbox
-                                      checked={showTitle}
-                                      onChange={(e) =>
-                                        setShowTitle(e.target.checked)
-                                      }
-                                    />
-                                  }
-                                  label="Show Title"
+                            }
+                            label="Bounding Box"
+                          />
+                        </FormGroup>
+                      </Box>
+                    </Grid>
+                  </Grid>
+                </Stack>
+                <Stack spacing={2} direction="row" alignItems="center">
+                  <Grid container spacing={3} style={{ marginTop: "10px" }}>
+                    <Grid item xs={12}>
+                      <Box>
+                        <FormControl fullWidth>
+                          <InputLabel id="demo-multiple-checkbox-label">
+                            Sub Functions
+                          </InputLabel>
+                          <Select
+                            labelId="demo-multiple-checkbox-label"
+                            id="demo-multiple-checkbox"
+                            multiple
+                            value={subFunctionName}
+                            onChange={handleChange}
+                            input={<OutlinedInput label="SubFunctions" />}
+                            renderValue={(selected) => selected.join(", ")}
+                            MenuProps={MenuProps}
+                          >
+                            {[...subFunctions()].map((name) => (
+                              <MenuItem key={name} value={name}>
+                                <Checkbox
+                                  checked={subFunctionName.indexOf(name) > -1}
                                 />
-                              </FormGroup>
-                            )}
-                          </Box>
-                        </Grid>
-                      </Grid>
-                    </Stack>
-                    <Stack spacing={2} direction="row" alignItems="center">
-                      <Grid container spacing={3} style={{ marginTop: "10px" }}>
-                        <Grid item xs={12}>
-                          <Box>
-                            <FormControl fullWidth>
-                              <InputLabel id="demo-multiple-checkbox-label">
-                                Sub Functions
-                              </InputLabel>
-                              <Select
-                                labelId="demo-multiple-checkbox-label"
-                                id="demo-multiple-checkbox"
-                                multiple
-                                value={subFunctionName}
-                                onChange={handleChange}
-                                input={<OutlinedInput label="SubFunctions" />}
-                                renderValue={(selected) => selected.join(", ")}
-                                MenuProps={MenuProps}
-                              >
-                                {[...subFunctions()].map((name) => (
-                                  <MenuItem key={name} value={name}>
-                                    <Checkbox
-                                      checked={
-                                        subFunctionName.indexOf(name) > -1
-                                      }
-                                    />
-                                    <ListItemText primary={name} />
-                                  </MenuItem>
-                                ))}
-                              </Select>
-                            </FormControl>
-                          </Box>
-                        </Grid>
-                      </Grid>
-                    </Stack>
-                  </Box>
-                </AccordionDetails>
-              </Accordion>
+                                <ListItemText primary={name} />
+                              </MenuItem>
+                            ))}
+                          </Select>
+                        </FormControl>
+                      </Box>
+                    </Grid>
+                  </Grid>
+                </Stack>
+              </Box>
             </Grid>
-          </Grid>
-        </Grid>
-        <Grid item xs={12}>
-          <div ref={myContainer} style={style} />
-        </Grid>
-        <Grid item xs={12}>
-          <Grid container spacing={3}>
             <Grid item xs={12}>
-              <Accordion>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
-                  <Typography>Config</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Box>
-                    <Stack spacing={2} direction="row" alignItems="center">
-                      <Grid container spacing={3}>
-                        <Grid item xs={2}>
-                          <Typography variant="h7" component="div">
-                            Node Distance
-                          </Typography>
-                        </Grid>
-                        <Grid item xs={10}>
-                          <Box width="100%">
-                            <Slider
-                              aria-label="Distance"
-                              valueLabelDisplay="auto"
-                              value={slider}
-                              defaultValue={5}
-                              min={5}
-                              max={50}
-                              onChange={handleSliderChange}
-                            />
-                          </Box>
-                        </Grid>
+              {/* <Dialog onClose={() => setOpen(false)} open={open} fullWidth>
+            <DialogTitle>Node Details</DialogTitle>
+            {selectedNode && (
+              <div>
+                <DialogContent dividers>
+                  <Typography gutterBottom>
+                    <b>Title: </b>
+                    {selectedNode.title}
+                  </Typography>
+                  <Typography gutterBottom>
+                    <b>Sub Function: </b>
+                    {selectedNode.subFunction}
+                  </Typography>
+                  <Typography gutterBottom>
+                    <b>Level: </b>
+                    {selectedNode.level}
+                  </Typography>
+                  <Typography gutterBottom>
+                    <b>Sub Level: </b>
+                    {selectedNode.subLevel}
+                  </Typography>
+                </DialogContent>
+              </div>
+            )}
+            {relatedNodes &&
+              relatedNodes.sourceNodesIds &&
+              relatedNodes.targetNodesIds && (
+                <div>
+                  <DialogTitle>Related Nodes</DialogTitle>
+                  <DialogTitle>From</DialogTitle>
+                  {relatedNodes.sourceNodesIds.map((node) => (
+                    <DialogContent>
+                      <Typography gutterBottom>{node}</Typography>
+                    </DialogContent>
+                  ))}
+                  <DialogTitle>To</DialogTitle>
+                  {relatedNodes.targetNodesIds.map((node) => (
+                    <DialogContent>
+                      <Typography gutterBottom>{node}</Typography>
+                    </DialogContent>
+                  ))}
+                </div>
+              )}
+            <DialogActions>
+              <Button autoFocus>Explore Path</Button>
+            </DialogActions>
+          </Dialog> */}
+              <Grid container spacing={3}>
+                <Box>
+                  <Stack spacing={2} direction="column" alignItems="center">
+                    <Grid container spacing={3} style={{ marginTop: "10px" }}>
+                      <Grid item xs={10}>
+                        <Box>
+                          <div ref={myContainer} style={style} />
+                        </Box>
                       </Grid>
-                    </Stack>
-                    <Stack spacing={2} direction="row" alignItems="center">
-                      <Grid container spacing={3}>
-                        <Grid item xs={2}>
-                          <Typography variant="h7" component="div">
-                            Width
-                          </Typography>
-                        </Grid>
-                        <Grid item xs={10}>
-                          <Box width="100%">
-                            <Slider
-                              aria-label="Distance"
-                              valueLabelDisplay="auto"
-                              value={sliderWidth}
-                              defaultValue={1024}
-                              min={1024}
-                              max={1450}
-                              onChange={handleSliderWidthChange}
-                            />
-                          </Box>
-                        </Grid>
+                      <Grid item xs={2}>
+                        <Box>
+                          <div ref={myLegendContainer} />
+                        </Box>
                       </Grid>
-                    </Stack>
-                    <Stack spacing={2} direction="row" alignItems="center">
-                      <Grid container spacing={3}>
-                        <Grid item xs={2}>
-                          <Typography variant="h7" component="div">
-                            Height
-                          </Typography>
-                        </Grid>
-                        <Grid item xs={10}>
-                          <Box width="100%">
-                            <Slider
-                              aria-label="Distance"
-                              valueLabelDisplay="auto"
-                              value={sliderHeight}
-                              defaultValue={768}
-                              min={768}
-                              max={950}
-                              onChange={handleSliderHeightChange}
-                            />
-                          </Box>
-                        </Grid>
-                      </Grid>
-                    </Stack>
-                    <Stack spacing={2} direction="row" alignItems="center">
-                      <Grid container spacing={3}>
-                        <Grid item xs={10}></Grid>
-                        <Grid item xs={1}>
-                          <Button variant="outlined" onClick={handleUpdate}>
-                            Update
-                          </Button>
-                        </Grid>
-                        <Grid item xs={1}>
-                          <Button variant="outlined" onClick={handleReset}>
-                            Reset
-                          </Button>
-                        </Grid>
-                      </Grid>
-                    </Stack>
-                  </Box>
-                </AccordionDetails>
-              </Accordion>
+                    </Grid>
+                  </Stack>
+                </Box>
+              </Grid>
+            </Grid>
+            <Grid item xs={12}>
+              <Grid container justifyContent="flex-end">
+                <Grid item xs={9}></Grid>
+                <Grid item xs={2}>
+                  {selectedLegend !== "" && (
+                    <Button
+                      variant="outlined"
+                      onClick={() => {
+                        setSelectedLegend("");
+                      }}
+                    >
+                      Back
+                    </Button>
+                  )}
+                </Grid>
+                <Grid item xs={1}></Grid>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
