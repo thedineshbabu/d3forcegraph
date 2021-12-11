@@ -3,6 +3,11 @@
   stroke-width: 1.5px;
 }
 
+.node:hover {
+  stroke: #000;
+  cursor: pointer;
+}
+
 .dot {
   stroke: #777;
   stroke-width: 1.5px;

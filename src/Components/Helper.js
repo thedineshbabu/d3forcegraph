@@ -4,16 +4,20 @@ const subFunctions = () => {
   return [...new Set(sampleData.graph.nodes.map((node) => node.subFunction))];
 };
 
-const levels = () => {
-  return [...new Set(sampleData.graph.nodes.map((node) => node.level))];
+const nodeSubFunctions = (nodes) => {
+  return [...new Set(nodes.map((node) => node.subFunction))];
 };
 
-const subLevels = () => {
-  return [...new Set(sampleData.graph.nodes.map((node) => node.subLevel))];
+const levels = (nodes) => {
+  return [...new Set(nodes.map((node) => node.level))];
 };
 
-const grades = () => {
-  return [...new Set(sampleData.graph.nodes.map((node) => node.grade))];
+const subLevels = (nodes) => {
+  return [...new Set(nodes.map((node) => node.subLevel))];
+};
+
+const grades = (nodes) => {
+  return [...new Set(nodes.map((node) => node.grade))];
 };
 
 const getNodeName = (nodeId) => {
@@ -154,7 +158,7 @@ const getGraphData = (
           return edge.source === nodeItm.id || edge.target === nodeItm.id;
         }
       });
-      console.log("itemArr", itemsArr);
+      // console.log("itemArr", itemsArr);
       itemsArr = legendFilteredLink(nodeColor, selectedLegend, itemsArr);
       if (probe > 0.01) {
         if (itemsArr && itemsArr.Length > 0) {
@@ -321,3 +325,5 @@ export { subLevels };
 export { getNodeName };
 
 export { getRelatedNodes };
+
+export { nodeSubFunctions };
