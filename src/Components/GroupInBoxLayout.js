@@ -533,6 +533,7 @@ const GroupInBoxLayout = (props) => {
               onChange={handleSliderProbeChange}
               onChangeCommitted={(e) => {
                 setSliderProbeValue(sliderProbe);
+                setSelectedNode(null);
               }}
             />
           </Grid>
