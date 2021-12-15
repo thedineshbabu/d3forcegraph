@@ -97,7 +97,6 @@ const GroupInBoxLayout = (props) => {
   }, [subFunctionName, sliderProbeValue, nodeColor, selectedLegend]);
 
   useEffect(() => {
-    console.log("useEffect", myContainer.current.clientHeight);
     const width = myContainer.current.clientWidth;
     const height = 800;
     const dLinks = data.links;
@@ -240,6 +239,13 @@ const GroupInBoxLayout = (props) => {
             : opacity;
         });
 
+        linkText.style("opacity", (o) => {
+          return o.source.id === d.path[0].__data__.id ||
+            o.target.id === d.path[0].__data__.id
+            ? 1
+            : opacity;
+        });
+
         texts.style("display", (o) => {
           const thisOpacity = isConnected(d, o) ? 1 : opacity;
           if (thisOpacity === 1 && opacity !== 1) {
@@ -264,6 +270,7 @@ const GroupInBoxLayout = (props) => {
 
         if (opacity === 1) {
           texts.style("display", "none");
+          linkText.style("opacity", "0");
           d3.selectAll("marker").style("opacity", "0");
           keys.forEach((d) => {
             legendHover(d, "1");
@@ -316,10 +323,7 @@ const GroupInBoxLayout = (props) => {
         return d;
       })
       .on("click", (event, d) => {
-        // setOpen(true);
         setSelectedNode(null);
-        // alert(nodeColor);
-        // alert(d);
         setSelectedLegend(d);
       });
 
@@ -346,7 +350,7 @@ const GroupInBoxLayout = (props) => {
         return d;
       });
 
-    let groupingForce = forceInABox(true, nodeShape)
+    let groupingForce = forceInABox(showTitle, nodeShape)
       .strength(0.1)
       .template(template)
       .groupBy(nodeColor)
@@ -377,6 +381,13 @@ const GroupInBoxLayout = (props) => {
       .attr("stroke-width", (d) => {
         return 1;
       });
+
+    var linkText = svg.append("g").selectAll("text").data(dLinks).enter()
+    .append("text")
+    .attr("class", "link-label")
+    .style("opacity", "0")
+    .text(function(d) { return Math.round(d.transition_prob * 10000) / 100 + "%"; });
+
 
     let node = svg.selectAll(".node").data(data.nodes);
 
@@ -430,7 +441,6 @@ const GroupInBoxLayout = (props) => {
       .on("mouseover.fade", fade(0.1))
       .on("mouseout.fade", fade(1))
       .on("click", (event, d) => {
-        // setOpen(true);
         setSelectedNode(d);
         setRelatedNodes(getRelatedNodes(d.id, data));
       });
@@ -460,6 +470,19 @@ const GroupInBoxLayout = (props) => {
         .attr("y2", function (d) {
           return d.target.y;
         });
+
+        linkText.attr("x", function(d) {
+          if (d.target.x > d.source.x) {
+              return (d.source.x + (d.target.x - d.source.x)/2); }
+          else {
+              return (d.target.x + (d.source.x - d.target.x)/2); }
+      })
+      .attr("y", function(d) {
+          if (d.target.y > d.source.y) {
+              return (d.source.y + (d.target.y - d.source.y)/2); }
+          else {
+              return (d.target.y + (d.source.y - d.target.y)/2); }
+      })
 
       if (nodeShape === "circle") {
         node
@@ -506,6 +529,7 @@ const GroupInBoxLayout = (props) => {
     sliderHeightValue,
     subFunctionName,
     selectedLegend,
+    showTitle,
   ]);
 
   return (
@@ -758,7 +782,7 @@ const GroupInBoxLayout = (props) => {
                               >
                                 {relatedNodes.sourceNodesIds.map(
                                   (node, index) => (
-                                    <p>
+                                    <p key={"p1-" + index}>
                                       {index + 1}. {node}
                                     </p>
                                   )
@@ -787,7 +811,7 @@ const GroupInBoxLayout = (props) => {
                               >
                                 {relatedNodes.targetNodesIds.map(
                                   (node, index) => (
-                                    <p>
+                                    <p key={"p2-" + index}>
                                       {index + 1}. {node}
                                     </p>
                                   )

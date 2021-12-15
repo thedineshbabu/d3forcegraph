@@ -28,8 +28,6 @@ const getNodeName = (nodeId) => {
 };
 
 const getRelatedNodes = (nodeId, data) => {
-  console.log(data, "data");
-  console.log(nodeId);
   const sourceNodes = data.links.filter((link) => {
     return link.source.id === nodeId;
   });
