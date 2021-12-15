@@ -346,7 +346,7 @@ const GroupInBoxLayout = (props) => {
         return d;
       });
 
-    let groupingForce = forceInABox(true, nodeShape)
+    let groupingForce = forceInABox(showTitle, nodeShape)
       .strength(0.1)
       .template(template)
       .groupBy(nodeColor)
@@ -506,6 +506,7 @@ const GroupInBoxLayout = (props) => {
     sliderHeightValue,
     subFunctionName,
     selectedLegend,
+    showTitle
   ]);
 
   return (
