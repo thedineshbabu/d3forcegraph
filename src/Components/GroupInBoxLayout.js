@@ -758,6 +758,9 @@ const GroupInBoxLayout = (props) => {
                               {selectedNode.grade}
                             </p>
                           </div>
+                          <Button variant="contained" onClick={() => {
+                            window.open("http://52.224.33.193:8080/careerpaths?role=Software%20Engineer%20III", "_blank");
+                          }}>Explore</Button>
                           {relatedNodes && (
                             <div>
                               <p
