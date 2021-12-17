@@ -760,7 +760,7 @@ const GroupInBoxLayout = (props) => {
                             </p>
                           </div>
                           <Button variant="contained" onClick={() => {
-                            window.open("http://52.224.33.193:8080/careerpaths?role=Software%20Engineer%20III", "_blank");
+                            window.open("http://20.88.163.156:8080/careerpaths?role=Software%20Engineer%20III", "_blank");
                           }}>Explore</Button>
                           {relatedNodes && (
                             <div>
