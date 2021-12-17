@@ -721,6 +721,7 @@ const GroupInBoxLayout = (props) => {
                           paddingBottom: "10px",
                           maxHeight: "450px",
                           overflowX: "auto",
+                          maxWidth: "300px",
                         }}
                       >
                         <div>

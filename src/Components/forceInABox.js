@@ -333,7 +333,11 @@ export default function forceInABox(showTitle, nodeShape = "rect") {
           return d.x0 + 10;
         })
         .attr("id", function (d) {
-          return d.data.id.replace(/\s/g, "");
+          if (typeof d.data.id === "string") {
+            return d.data.id.replace(/ /g, "");
+          } else {
+            return d.data.id;
+          }
         })
         .attr("y", function (d) {
           // return d.y0 + (d.y1 - d.y0) / 2;
