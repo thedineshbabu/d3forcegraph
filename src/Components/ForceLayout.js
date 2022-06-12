@@ -29,6 +29,7 @@ const ForceLayout = (props) => {
           })
       )
       .force("charge", d3.forceManyBody())
+      .force("collide", d3.forceCollide(75))
       .force("center", d3.forceCenter(width / 2, height / 2));
 
     const svg = d3
@@ -53,10 +54,14 @@ const ForceLayout = (props) => {
       .enter()
       .append("circle")
       .attr("r", 7)
-      .style("stroke", "white")
+      .style("stroke", "gray")
       .style("stroke-width", 1.5)
       .style("fill", function (d) {
-        return color(d.group);
+        if (d.isNext) {
+          return color(d.group);
+        } else {
+          return "#D4CCCC";
+        }
       })
       .on("click", (event, d) => {
         console.log(d);
@@ -97,6 +102,7 @@ const ForceLayout = (props) => {
     >
       <div>
         <h1>Client Function Graph</h1>
+        <h4>Job View</h4>
       </div>
       <div ref={myContainer} style={style} />
     </div>
