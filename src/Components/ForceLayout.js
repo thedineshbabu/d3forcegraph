@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
-import data from "./data.json";
+import data from "./jobview.json";
 
 const ForceLayout = (props) => {
   const myContainer = useRef(null);
@@ -24,28 +24,12 @@ const ForceLayout = (props) => {
         d3
           .forceLink(data.links)
           .id((d) => d.id)
-          .distance(20)
+          .distance((d) => {
+            return d.transitionprob * 1000 * 1000;
+          })
       )
       .force("charge", d3.forceManyBody())
       .force("center", d3.forceCenter(width / 2, height / 2));
-
-    const dragstarted = (event, d) => {
-      if (!event.active) simulation.alphaTarget(0.3).restart();
-      d.fx = d.x;
-      d.fy = d.y;
-    };
-
-    const dragged = (event, d) => {
-      d.fx = event.x;
-      d.fy = event.y;
-    };
-
-    const dragended = (event, d) => {
-      console.log("dragended", event);
-      if (!event.active) simulation.alphaTarget(0);
-      d.fx = null;
-      d.fy = null;
-    };
 
     const svg = d3
       .select(myContainer.current)
@@ -59,7 +43,7 @@ const ForceLayout = (props) => {
       .data(data.links)
       .enter()
       .append("line")
-      .attr("stroke", "pink")
+      .attr("stroke", "gray")
       .attr("stroke-opacity", 0.6)
       .attr("stroke-width", (d) => Math.sqrt(d.value));
 
@@ -74,13 +58,6 @@ const ForceLayout = (props) => {
       .style("fill", function (d) {
         return color(d.group);
       })
-      .call(
-        d3
-          .drag()
-          .on("start", dragstarted)
-          .on("drag", dragged)
-          .on("end", dragended)
-      )
       .on("click", (event, d) => {
         console.log(d);
       });
@@ -119,7 +96,7 @@ const ForceLayout = (props) => {
       }}
     >
       <div>
-        <h1>Force Layout</h1>
+        <h1>Client Function Graph</h1>
       </div>
       <div ref={myContainer} style={style} />
     </div>
